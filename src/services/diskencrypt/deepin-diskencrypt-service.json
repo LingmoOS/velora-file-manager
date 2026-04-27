@@ -1,0 +1,9 @@
+{
+    "name": "org.deepin.Filemanager.DiskEncrypt",
+    "policyStartType": "Resident",
+    "policy": [
+        {
+            "path": "/org/deepin/Filemanager/DiskEncrypt"
+        }
+    ]
+}
