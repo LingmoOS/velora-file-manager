@@ -75,7 +75,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  pkexec,
- deepin-desktop-base | deepin-settings-default | deepin-desktop-server | deepin-desktop-device,
+ lingmo-desktop-base | deepin-settings-default | deepin-desktop-server | deepin-desktop-device,
  libdde-file-manager (=${binary:Version}),
  socat,
  cryfs,
