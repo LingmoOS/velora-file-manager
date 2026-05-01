@@ -1,3 +1,9 @@
+velora-file-manager (6.5.131.lingmo.1) unstable; urgency=medium
+
+  * new release for Lingmo OS.
+
+ -- Lingmo OS Team <team@lingmo.org>  Fri, 01 May 2026 21:14:00 +0800
+
 dde-file-manager (6.5.130) unstable; urgency=medium
 
   * fix: add delayed loading for burn plugin to improve startup performance

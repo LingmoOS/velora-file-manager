@@ -1,7 +1,7 @@
-Source: dde-file-manager
+Source: velora-file-manager
 Section: libdevel
 Priority: optional
-Maintainer: Deepin Packages Builder <packages@linuxdeepin.com>
+Maintainer: Lingmo OS Team <team@lingmo.org>
 Build-Depends:
  debhelper-compat (= 12),
  cmake,
@@ -52,7 +52,7 @@ Build-Depends:
  libappimage-dev,
  libkf6syntaxhighlighting-dev
 Standards-Version: 4.5.0
-Homepage: http://www.deepin.org
+Homepage: https://github.com/LingmoOS/velora-file-manager
 
 Package: dde-desktop
 Architecture: any
