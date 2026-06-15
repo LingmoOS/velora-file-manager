@@ -14,7 +14,7 @@ _当前的开发分支为**master**，编译依赖可能会在没有更新本说
 * pkg-config,
 * libffmpegthumbnailer-dev,
 * libpolkit-agent-1-dev,
-* dde-tray-loader-dev,
+* velora-tray-loader-dev,
 * libtag1-dev,
 * libdmr-dev,
 * libicu-dev,

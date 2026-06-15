@@ -14,7 +14,7 @@ _The **master** branch is current development branch, build dependencies may cha
 - pkg-config,
 - libffmpegthumbnailer-dev,
 - libpolkit-agent-1-dev,
-- dde-tray-loader-dev,
+- velora-tray-loader-dev,
 - libtag1-dev,
 - libdmr-dev,
 - libicu-dev,
