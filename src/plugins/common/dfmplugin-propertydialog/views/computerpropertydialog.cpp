@@ -62,7 +62,7 @@ void ComputerPropertyDialog::iniUI()
     if (!distributerLogoPath.isEmpty() && QFile::exists(distributerLogoPath)) {
         logoIcon = QIcon(distributerLogoPath);
     } else {
-        logoIcon = QIcon::fromTheme("dfm_deepin_logo");
+        logoIcon = QIcon::fromTheme("dfm_lingmo_logo");
     }
     computerIcon->setPixmap(logoIcon.pixmap(152, 39));
 
