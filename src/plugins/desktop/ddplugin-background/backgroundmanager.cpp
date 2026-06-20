@@ -162,7 +162,7 @@ bool BackgroundManager::useColorBackground()
         QString localPath = UniversalUtils::covertUrlToLocalPath(path);
         // these dirs save solid color wallpapers.
         used = localPath.startsWith("/usr/share/wallpapers/custom-solidwallpapers")
-                || localPath.startsWith("/usr/share/wallpapers/deepin-solidwallpapers");
+                || localPath.startsWith("/usr/share/wallpapers/solidwallpapers");
 
         if (used) {
             fmInfo() << "Color background detected at path:" << localPath;

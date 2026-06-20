@@ -1,0 +1,9 @@
+<services>
+  <service name="tar_scm">
+    <param name="url">https://github.com/LingmoOS/dde-file-manager.git</param>
+    <param name="scm">git</param>
+    <param name="revision">main</param>
+    <param name="versionformat">@PARENT_PROJECT_VERSION@</param>
+    <param name="filename">dde-file-manager</param>
+  </service>
+</services>
