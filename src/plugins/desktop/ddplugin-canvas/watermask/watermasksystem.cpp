@@ -11,6 +11,7 @@
 #include <QFileInfo>
 #include <QImageReader>
 #include <QLabel>
+#include <QSettings>
 
 using namespace ddplugin_canvas;
 using namespace dfmbase;
@@ -303,7 +304,29 @@ void WatermaskSystem::stateChanged(int state, int prop)
     logoLabel->setVisible(true);
     textLabel->setVisible(showSate);
 
-    fmInfo() << "Watermask visibility updated - logo: true, text:" << showSate;
+    // 开发版检测：VERSION_TYPE=Alpha 时强制覆盖显示水印
+    {
+        QSettings osRelease("/etc/os-release", QSettings::IniFormat);
+        QString versionType = osRelease.value("VERSION_TYPE").toString().trimmed();
+        if (versionType.compare("Alpha", Qt::CaseInsensitive) == 0) {
+            QString osName = osRelease.value("PRETTY_NAME").toString().trimmed();
+            QString osVer = osRelease.value("VERSION").toString().trimmed();
+            // 取版本号第一段（如 "5.0"）
+            int spaceIdx = osVer.indexOf(' ');
+            if (spaceIdx > 0) osVer = osVer.left(spaceIdx);
+
+            logoLabel->setPixmap(maskPixmap("/usr/share/lingmo/distribution/distribution_logo_transparent.svg",
+                                            logoLabel->size(), logoLabel->devicePixelRatioF()));
+            textLabel->setText(QString("%1 %2 Dev\n%3\n%4")
+                                   .arg(osName, osVer,
+                                        tr("This is Development version"),
+                                        tr("Not suitable for production environment, please use with caution")));
+            textLabel->setVisible(true);
+            fmInfo() << "Alpha version detected, showing development version watermark";
+        }
+    }
+
+    fmInfo() << "Watermask visibility updated - logo: true, text:" << textLabel->isVisible();
     emit showedOn(logoLabel->geometry().topLeft());
 }
 
