@@ -11,7 +11,6 @@
 #include <QFileInfo>
 #include <QImageReader>
 #include <QLabel>
-#include <QSettings>
 
 using namespace ddplugin_canvas;
 using namespace dfmbase;
@@ -27,6 +26,10 @@ WatermaskSystem::WatermaskSystem(QWidget *parent) : QObject(parent)
     // 授权状态改变
     connect(DeepinLicenseHelper::instance(), &DeepinLicenseHelper::postLicenseState,
             this, &WatermaskSystem::stateChanged);
+
+    // 监听水印开关
+    connect(DConfigManager::instance(), &DConfigManager::valueChanged,
+            this, &WatermaskSystem::onWatermarkEnabledChanged);
 
     logoLabel = new QLabel(parent);
     logoLabel->lower();
@@ -301,16 +304,40 @@ void WatermaskSystem::stateChanged(int state, int prop)
         }
     }
 
-    logoLabel->setVisible(true);
-    textLabel->setVisible(showSate);
-
     // 开发版检测：VERSION_TYPE=Alpha 时强制覆盖显示水印
     {
-        QSettings osRelease("/etc/os-release", QSettings::IniFormat);
-        QString versionType = osRelease.value("VERSION_TYPE").toString().trimmed();
-        if (versionType.compare("Alpha", Qt::CaseInsensitive) == 0) {
-            QString osName = osRelease.value("PRETTY_NAME").toString().trimmed();
-            QString osVer = osRelease.value("VERSION").toString().trimmed();
+        QString versionType;
+        QString osName;
+        QString osVer;
+        QFile osRelease("/etc/os-release");
+        if (osRelease.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&osRelease);
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("VERSION_TYPE=")) {
+                    versionType = line.mid(13).trimmed();
+                    if (versionType.startsWith('"') && versionType.endsWith('"'))
+                        versionType = versionType.mid(1, versionType.length() - 2);
+                    else if (versionType.startsWith('\'') && versionType.endsWith('\''))
+                        versionType = versionType.mid(1, versionType.length() - 2);
+                } else if (line.startsWith("PRETTY_NAME=")) {
+                    osName = line.mid(12).trimmed();
+                    if (osName.startsWith('"') && osName.endsWith('"'))
+                        osName = osName.mid(1, osName.length() - 2);
+                    else if (osName.startsWith('\'') && osName.endsWith('\''))
+                        osName = osName.mid(1, osName.length() - 2);
+                } else if (line.startsWith("VERSION=")) {
+                    osVer = line.mid(8).trimmed();
+                    if (osVer.startsWith('"') && osVer.endsWith('"'))
+                        osVer = osVer.mid(1, osVer.length() - 2);
+                    else if (osVer.startsWith('\'') && osVer.endsWith('\''))
+                        osVer = osVer.mid(1, osVer.length() - 2);
+                }
+            }
+            osRelease.close();
+        }
+        m_isAlphaVersion = versionType.compare("Alpha", Qt::CaseInsensitive) == 0;
+        if (m_isAlphaVersion) {
             // 取版本号第一段（如 "5.0"）
             int spaceIdx = osVer.indexOf(' ');
             if (spaceIdx > 0) osVer = osVer.left(spaceIdx);
@@ -321,13 +348,41 @@ void WatermaskSystem::stateChanged(int state, int prop)
                                    .arg(osName, osVer,
                                         tr("This is Development version"),
                                         tr("Not suitable for production environment, please use with caution")));
-            textLabel->setVisible(true);
             fmInfo() << "Alpha version detected, showing development version watermark";
         }
     }
 
-    fmInfo() << "Watermask visibility updated - logo: true, text:" << textLabel->isVisible();
+    m_lastState = state;
+    m_lastProp = prop;
+
+    applyWatermarkVisibility();
+
     emit showedOn(logoLabel->geometry().topLeft());
+}
+
+void WatermaskSystem::onWatermarkEnabledChanged(const QString &key)
+{
+    if (key != "watermarkEnabled")
+        return;
+    applyWatermarkVisibility();
+}
+
+void WatermaskSystem::applyWatermarkVisibility()
+{
+    bool enabled = DConfigManager::instance()->value(kConfName, "watermarkEnabled", true).toBool();
+    if (!enabled) {
+        logoLabel->setVisible(false);
+        textLabel->setVisible(false);
+        fmInfo() << "Watermark hidden by DConfig switch";
+        return;
+    }
+    // watermarkEnabled is true: use addressable visibility
+    // Alpha mode: textLabel was set in stateChanged, always visible
+    // Non-Alpha mode: textLabel visibility follows showLicenseState()
+    bool showText = m_isAlphaVersion || showLicenseState();
+    logoLabel->setVisible(true);
+    textLabel->setVisible(showText);
+    fmInfo() << "Watermark visible - showText:" << showText;
 }
 
 void WatermaskSystem::loadConfig()

@@ -34,14 +34,19 @@ protected:
     static void findResource(const QString &dirPath, const QString &lang, QString *logo, QString *text);
 protected slots:
     void stateChanged(int state, int prop);
+    void onWatermarkEnabledChanged(const QString &key);
 protected:
     inline QWidget *parentWidget() {
         return qobject_cast<QWidget *>(parent());
     }
     void loadConfig();
+    void applyWatermarkVisibility();
 protected:
     QLabel *logoLabel = nullptr;
     QLabel *textLabel = nullptr;
+    int m_lastState = -1;
+    int m_lastProp = 0;
+    bool m_isAlphaVersion = false;
 };
 
 }

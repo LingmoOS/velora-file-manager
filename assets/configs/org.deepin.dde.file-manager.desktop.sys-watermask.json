@@ -122,6 +122,17 @@
 			"description": "Text alignment, left justified: 0x0001, right justified: 0x0002, horizontally centered: 0x0004, top justified: 0x0020, bottom justified: 0x0040, vertically centered: 0x0080.Can be combined, e.g. bottom left alignment: 0x0001|0x0040=0x0041=65",
 			"permissions": "readwrite",
 			"visibility": "public"
+		},
+		"watermarkEnabled": {
+			"value": true,
+			"serial": 0,
+			"flags": [],
+			"name": "Desktop Watermark",
+			"name[zh_CN]": "桌面水印",
+			"description[zh_CN]": "控制桌面水印的显示与隐藏",
+			"description": "Controls the visibility of the desktop system watermark.",
+			"permissions": "readwrite",
+			"visibility": "public"
 		}
 	}
 }
