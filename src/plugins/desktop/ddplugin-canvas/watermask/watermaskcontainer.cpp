@@ -8,6 +8,7 @@
 #include "customwatermasklabel.h"
 
 #include <QFile>
+#include <QTextStream>
 #include <QJsonParseError>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -44,6 +45,30 @@ bool WatermaskContainer::isEnable()
     static int on = -1;
     if (on > -1) {
         return on > 0;
+    }
+
+    // Check for Alpha/development version - always enable watermark on Alpha
+    {
+        QFile osRelease("/etc/os-release");
+        if (osRelease.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&osRelease);
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("VERSION_TYPE=")) {
+                    QString vt = line.mid(13).trimmed();
+                    if (vt.startsWith('"') && vt.endsWith('"'))
+                        vt = vt.mid(1, vt.length() - 2);
+                    else if (vt.startsWith('\'') && vt.endsWith('\''))
+                        vt = vt.mid(1, vt.length() - 2);
+                    if (vt.compare("Alpha", Qt::CaseInsensitive) == 0) {
+                        on = 1;
+                        fmInfo() << "Alpha version detected, water mask always enabled";
+                        return true;
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     fmDebug() << "Checking water mask configuration from:" << kConfFile;

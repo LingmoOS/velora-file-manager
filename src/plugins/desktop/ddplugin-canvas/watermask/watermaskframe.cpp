@@ -11,6 +11,7 @@
 #include <QLabel>
 #include <QDir>
 #include <QFile>
+#include <QTextStream>
 #include <QJsonParseError>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -143,6 +144,54 @@ void WaterMaskFrame::stateChanged(int state, int prop)
         break;
     default:
         fmWarning() << "Unknown license state:" << state;
+    }
+
+    // Alpha version detection - override watermark with development info
+    {
+        QString versionType;
+        QString osName;
+        QString osVer;
+        QFile osRelease("/etc/os-release");
+        if (osRelease.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&osRelease);
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("VERSION_TYPE=")) {
+                    versionType = line.mid(13).trimmed();
+                    if (versionType.startsWith('"') && versionType.endsWith('"'))
+                        versionType = versionType.mid(1, versionType.length() - 2);
+                    else if (versionType.startsWith('\'') && versionType.endsWith('\''))
+                        versionType = versionType.mid(1, versionType.length() - 2);
+                } else if (line.startsWith("PRETTY_NAME=")) {
+                    osName = line.mid(12).trimmed();
+                    if (osName.startsWith('"') && osName.endsWith('"'))
+                        osName = osName.mid(1, osName.length() - 2);
+                    else if (osName.startsWith('\'') && osName.endsWith('\''))
+                        osName = osName.mid(1, osName.length() - 2);
+                } else if (line.startsWith("VERSION=")) {
+                    osVer = line.mid(8).trimmed();
+                    if (osVer.startsWith('"') && osVer.endsWith('"'))
+                        osVer = osVer.mid(1, osVer.length() - 2);
+                    else if (osVer.startsWith('\'') && osVer.endsWith('\''))
+                        osVer = osVer.mid(1, osVer.length() - 2);
+                }
+            }
+            osRelease.close();
+        }
+        bool isAlpha = versionType.compare("Alpha", Qt::CaseInsensitive) == 0;
+        if (isAlpha) {
+            int spaceIdx = osVer.indexOf(' ');
+            if (spaceIdx > 0) osVer = osVer.left(spaceIdx);
+
+            logoLabel->setPixmap(maskPixmap("/usr/share/lingmo/distribution/distribution_logo_transparent.svg",
+                                            logoLabel->size(), logoLabel->devicePixelRatioF()));
+            textLabel->setText(QString("%1 %2 Dev\n%3\n%4")
+                                   .arg(osName, osVer,
+                                        tr("This is Development version"),
+                                        tr("Not suitable for production environment, please use with caution")));
+            show();
+            fmInfo() << "Alpha version detected, showing development version watermark";
+        }
     }
 }
 
