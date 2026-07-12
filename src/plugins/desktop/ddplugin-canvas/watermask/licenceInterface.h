@@ -15,14 +15,14 @@
 #include <QtDBus/QtDBus>
 
 /*
- * Proxy class for interface com.deepin.license
+ * Proxy class for interface com.lingmo.license
  */
 class ComDeepinLicenseInterface: public QDBusAbstractInterface
 {
     Q_OBJECT
 public:
     static inline const char *staticInterfaceName()
-    { return "com.deepin.license.Info"; }
+    { return "com.lingmo.license.Info"; }
 
 public:
     ComDeepinLicenseInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
@@ -47,7 +47,7 @@ Q_SIGNALS: // SIGNALS
 };
 
 namespace com {
-  namespace deepin {
+  namespace lingmo {
     namespace license {
       typedef ::ComDeepinLicenseInterface Info;
     }

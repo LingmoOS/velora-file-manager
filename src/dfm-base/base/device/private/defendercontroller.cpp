@@ -19,9 +19,9 @@
 // and extend the timeout period appropriately
 static const int kMaxDBusTimeout = 25 * 1000;
 
-static const char *const kDefenderServiceName = "com.deepin.defender.daemonservice";
+static const char *const kDefenderServiceName = "com.lingmo.defender.daemonservice";
 static const char *const kDefenderServicePath = "/com/deepin/defender/daemonservice";
-static const char *const kDefenderInterfaceName = "com.deepin.defender.daemonservice";
+static const char *const kDefenderInterfaceName = "com.lingmo.defender.daemonservice";
 
 using namespace dfmbase;
 

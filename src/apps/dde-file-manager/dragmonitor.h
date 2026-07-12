@@ -12,7 +12,7 @@ namespace dfm_drag {
 class DragMoniter : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.filemanager.drag")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.filemanager.drag")
 
 public:
     explicit DragMoniter(QObject *parent = nullptr);

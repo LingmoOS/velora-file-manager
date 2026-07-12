@@ -49,7 +49,7 @@ void CanvasPlugin::registerDBus()
 
     QDBusConnection conn = QDBusConnection::sessionBus();
     auto registerOptions = QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllSignals | QDBusConnection::ExportAllProperties;
-    if (!conn.registerObject("/org/deepin/dde/desktop/canvas", "org.deepin.dde.desktop.canvas", ifs, registerOptions)) {
+    if (!conn.registerObject("/org/lingmo/desktop/canvas", "org.lingmo.desktop.canvas", ifs, registerOptions)) {
         fmCritical() << "org.deepin.dde.desktop.canvas register object failed" << conn.lastError();
         delete ifs;
     } else {

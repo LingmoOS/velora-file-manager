@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.Daemon.RecentManager
+ * Adaptor class for interface org.lingmo.Filemanager.Daemon.RecentManager
  */
 class RecentManagerAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.RecentManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.RecentManager")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.Daemon.RecentManager\">\n"
+"  <interface name=\"org.lingmo.Filemanager.Daemon.RecentManager\">\n"
 "    <signal name=\"ReloadFinished\">\n"
 "      <arg direction=\"out\" type=\"x\" name=\"timestamp\"/>\n"
 "    </signal>\n"

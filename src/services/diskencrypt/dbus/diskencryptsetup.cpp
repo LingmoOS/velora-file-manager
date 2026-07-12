@@ -30,9 +30,9 @@
 
 #include <unistd.h>
 
-static constexpr char kActionEncrypt[] { "org.deepin.Filemanager.DiskEncrypt.Encrypt" };
-static constexpr char kActionDecrypt[] { "org.deepin.Filemanager.DiskEncrypt.Decrypt" };
-static constexpr char kActionChgPwd[] { "org.deepin.Filemanager.DiskEncrypt.ChangePassphrase" };
+static constexpr char kActionEncrypt[] { "org.lingmo.Filemanager.DiskEncrypt.Encrypt" };
+static constexpr char kActionDecrypt[] { "org.lingmo.Filemanager.DiskEncrypt.Decrypt" };
+static constexpr char kActionChgPwd[] { "org.lingmo.Filemanager.DiskEncrypt.ChangePassphrase" };
 
 FILE_ENCRYPT_USE_NS
 
@@ -285,8 +285,8 @@ DiskEncryptSetupPrivate::DiskEncryptSetupPrivate(DiskEncryptSetup *parent)
     qInfo() << "[DiskEncryptSetupPrivate] Initializing private implementation";
 
     // Initialize DConfig
-    config = Dtk::Core::DConfig::create("org.deepin.dde.file-manager",
-                                        "org.deepin.dde.file-manager.diskencrypt",
+    config = Dtk::Core::DConfig::create("org.lingmo.file-manager",
+                                        "org.lingmo.file-manager.diskencrypt",
                                         QString(), this);
     if (!config) {
         qWarning() << "[DiskEncryptSetupPrivate] Failed to create DConfig object";

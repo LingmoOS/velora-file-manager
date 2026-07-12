@@ -13,7 +13,7 @@ class UserShareManagerAdaptor;
 class ShareControlDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.UserShareManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.UserShareManager")
 
 public:
     explicit ShareControlDBus(const char *name, QObject *parent = nullptr);

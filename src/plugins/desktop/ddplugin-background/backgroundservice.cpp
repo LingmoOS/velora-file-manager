@@ -23,7 +23,7 @@ BackgroundService::BackgroundService(QObject *parent)
     connect(wmInter, &WMInter::WorkspaceSwitched, this, &BackgroundService::onWorkspaceSwitched);
 #else
     fmInfo() << "create com.deepin.wm";
-    QDBusInterface *interface = new QDBusInterface("com.deepin.wm",
+    QDBusInterface *interface = new QDBusInterface("com.lingmo.wm",
                                                    "/com/deepin/wm",
                                                    "com.deepin.wm",
                                                    QDBusConnection::sessionBus(),

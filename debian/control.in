@@ -1,4 +1,4 @@
-Source: velora-file-manager
+Source: lingmo-file-manager
 Section: libdevel
 Priority: optional
 Maintainer: Lingmo OS Team <team@lingmo.org>
@@ -9,12 +9,12 @@ Build-Depends:
  pkg-config,
  libffmpegthumbnailer-dev,
  libpolkit-agent-1-dev,
- velora-tray-loader-dev,
+ lingmo-tray-loader-dev,
  libtag1-dev,
  libdmr-dev,
  libicu-dev,
  libxcb-ewmh-dev,
- libdeepin-pdfium-dev,
+ liblingmo-pdfium-dev,
  libssl-dev,
  libgtest-dev,
  libgmock-dev,
@@ -25,7 +25,7 @@ Build-Depends:
  libpoppler-cpp-dev,
  libcryptsetup-dev,
  libpcre2-dev,
- libdde-shell-dev (>= 0.0.10),
+ liblingmo-shell-dev (>= 0.0.10),
  qt6-base-dev,
  qt6-base-private-dev,
  qt6-svg-dev,
@@ -47,41 +47,41 @@ Build-Depends:
  libxcb-xfixes0-dev (>= 1.10~),
  libopenjp2-7-dev,
  liblcms2-dev,
- libdeepin-service-framework-dev,
+ liblingmo-service-framework-dev,
  libheif-dev,
  libappimage-dev,
  libkf6syntaxhighlighting-dev
 Standards-Version: 4.5.0
-Homepage: https://github.com/LingmoOS/velora-file-manager
+Homepage: https://github.com/LingmoOS/lingmo-file-manager
 
-Package: dde-desktop
+Package: lingmo-desktop
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- libdde-file-manager (=${binary:Version}),
+ liblingmo-file-manager (=${binary:Version}),
  libqt6sql6-sqlite,
  qt6-translations-l10n,
  libimageeditor6
 Conflicts: dde-workspace (<< 2.90.5), dde-file-manager-oem, dde-desktop-plugins
-Replaces: dde-file-manager-oem, dde-file-manager (<< 6.0.1), dde-desktop-plugins
+Replaces: dde-file-manager-oem, lingmo-file-manager (<< 6.0.1), dde-desktop-plugins
 Recommends: deepin-screensaver
 Description: deepin desktop-environment - desktop module
  Deepin Desktop Environment (DDE) - desktop module.
 
-Package: dde-file-manager
+Package: lingmo-file-manager
 Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  pkexec,
- lingmo-desktop-base | deepin-settings-default | deepin-desktop-server | deepin-desktop-device,
- libdde-file-manager (=${binary:Version}),
+ lingmo-desktop-base | lingmo-settings-default | deepin-desktop-server | deepin-desktop-device,
+ liblingmo-file-manager (=${binary:Version}),
  socat,
  cryfs,
- dde-device-formatter,
+ lingmo-device-formatter,
  libblockdev-crypto2 | libblockdev-crypto3,
- dde-file-manager-services-plugins (=${binary:Version}),
+ lingmo-file-manager-services-plugins (=${binary:Version}),
  qml6-module-qtquick-controls,
  qml6-module-qtquick-layouts,
  qml6-module-qtquick-window,
@@ -89,15 +89,15 @@ Depends:
  libtss2-tcti-pcap0,
  libtss2-tcti-tabrmd0@PROFESSIONAL_DEPS@
 Replaces: dde-file-manager-oem,
- dde-desktop (<< 6.5.102),
+ lingmo-desktop (<< 6.5.102),
  dde-file-manager-preview,
  dde-file-manager-preview-plugins,
  dde-file-manager-plugins,
  dde-file-manager-daemon-plugins,
  dde-file-manager-common-plugins,
- dde-file-manager-services-plugins (<< 6.5.102)
-Breaks: dde-desktop (<< 6.5.102),
- dde-file-manager-services-plugins (<< 6.5.102)
+ lingmo-file-manager-services-plugins (<< 6.5.102)
+Breaks: lingmo-desktop (<< 6.5.102),
+ lingmo-file-manager-services-plugins (<< 6.5.102)
 Conflicts: dde-file-manager-preview,
  dde-file-manager-preview-plugins,
  dde-file-manager-plugins,
@@ -107,7 +107,7 @@ Recommends: avfs, samba, deepin-anything-server
 Description: File manager front end
  File manager front-end of Deepin OS
 
-Package: libdde-file-manager
+Package: liblingmo-file-manager
 Architecture: any
 Depends:
  ${shlibs:Depends},
@@ -122,23 +122,23 @@ Description: DDE File Manager core librarys
 Replaces: dfmplugin-disk-encrypt
 Conflicts: dfmplugin-disk-encrypt
 
-Package: dde-disk-mount-plugin
+Package: lingmo-disk-mount-plugin
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: plugin of dde-dock
- Disk mount plugin of dde-dock which is created by dde-file-manager
+ Disk mount plugin of dde-dock which is created by lingmo-file-manager
 
 Package: libdfm-extension
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: extension library of dde-file-manager
- Extension library of dde-file-manager which is provided for third parties
+Description: extension library of lingmo-file-manager
+ Extension library of lingmo-file-manager which is provided for third parties
 
-Package: dde-file-manager-services-plugins
+Package: lingmo-file-manager-services-plugins
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: deepin desktop-environment - deepin-service-manager plugins module
- Deepin Desktop Environment (DDE) - deepin-service-manager plugins module.
+Description: deepin desktop-environment - lingmo-service-manager plugins module
+ Deepin Desktop Environment (DDE) - lingmo-service-manager plugins module.
 
 Package: libdfm-extension-dev
 Architecture: any
@@ -147,10 +147,10 @@ Description: Development package for libdfm-extension
  This package contains the header files and pkgconfig
  of libdfm-extension
 
-Package: dde-file-manager-dev
+Package: lingmo-file-manager-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libdde-file-manager (=${binary:Version}),
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblingmo-file-manager (=${binary:Version}),
  libdfm6-io-dev, libdfm6-mount-dev, libdfm6-burn-dev
 Description: DDE File Manager Devel library
  This package contains the header files and static libraries
- of dde-file-manager
+ of lingmo-file-manager

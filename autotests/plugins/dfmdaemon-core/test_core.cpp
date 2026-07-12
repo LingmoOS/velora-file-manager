@@ -176,7 +176,7 @@ TEST_F(TestCore, InitServiceDBusInterfaces_RegisterService_Success)
     stub.set_lamda(&QDBusConnection::registerService, [&](QDBusConnection *, const QString &serviceName) {
         __DBG_STUB_INVOKE__
         registerServiceCalled = true;
-        EXPECT_EQ(serviceName, "org.deepin.Filemanager.Daemon");
+        EXPECT_EQ(serviceName, "org.lingmo.Filemanager.Daemon");
         return true;
     });
 
@@ -207,7 +207,7 @@ TEST_F(TestCore, InitServiceDBusInterfaces_RegisterServiceFailed_ExitsProgram)
     stub.set_lamda(&QDBusConnection::registerService, [&](QDBusConnection *, const QString &serviceName) {
         __DBG_STUB_INVOKE__
         registerServiceCalled = true;
-        EXPECT_EQ(serviceName, "org.deepin.Filemanager.Daemon");
+        EXPECT_EQ(serviceName, "org.lingmo.Filemanager.Daemon");
         return false;
     });
 

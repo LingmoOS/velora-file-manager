@@ -62,7 +62,7 @@ TEST_F(UT_AppearanceInterface, testStaticInterfaceName)
     QString interfaceName = Appearance_Interface::staticInterfaceName();
     
     // Verify interface name is correct
-    EXPECT_EQ(interfaceName, "org.deepin.dde.Appearance1");
+    EXPECT_EQ(interfaceName, "org.lingmo.Appearance1");
 }
 
 TEST_F(UT_AppearanceInterface, testGetCurrentWorkspaceBackgroundForMonitor)

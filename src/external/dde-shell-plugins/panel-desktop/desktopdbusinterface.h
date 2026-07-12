@@ -12,9 +12,9 @@
 
 namespace dde_desktop {
 
-inline constexpr char kDesktopServiceName[] { "com.deepin.dde.desktop" };
-inline constexpr char kDesktopServicePath[] { "/com/deepin/dde/desktop" };
-inline constexpr char kDesktopServiceInterface[] { "com.deepin.dde.desktop" };
+inline constexpr char kDesktopServiceName[] { "com.lingmo.desktop" };
+inline constexpr char kDesktopServicePath[] { "/com/lingmo/desktop" };
+inline constexpr char kDesktopServiceInterface[] { "com.lingmo.desktop" };
 
 class DesktopDBusInterface : public QObject, public QDBusContext
 {

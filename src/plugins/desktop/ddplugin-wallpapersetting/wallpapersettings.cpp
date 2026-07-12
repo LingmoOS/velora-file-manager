@@ -21,8 +21,8 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 
-#define APPEARANCE_SERVICE "org.deepin.dde.Appearance1"
-#define APPEARANCE_PATH "/org/deepin/dde/Appearance1"
+#define APPEARANCE_SERVICE "org.lingmo.dde.Appearance1"
+#define APPEARANCE_PATH "/org/lingmo/dde/Appearance1"
 
 DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
@@ -63,10 +63,10 @@ WallpaperSettingsPrivate::WallpaperSettingsPrivate(WallpaperSettings *parent)
     : QObject(parent), q(parent)
 {
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    fmDebug() << "create com.deepin.wm interface.";
-    wmInter = new WMInter("com.deepin.wm", "/com/deepin/wm",
+    fmDebug() << "create com.lingmo.wm interface.";
+    wmInter = new WMInter("com.lingmo.wm", "/com/lingmo/wm",
                           QDBusConnection::sessionBus(), q);
-    fmDebug() << "end com.deepin.wm interface.";
+    fmDebug() << "end com.lingmo.wm interface.";
 #endif
 
     regionMonitor = new DRegionMonitor(q);
@@ -79,11 +79,11 @@ WallpaperSettingsPrivate::WallpaperSettingsPrivate(WallpaperSettings *parent)
     appearanceIfs->setTimeout(5000);
     fmDebug() << QString("end %1.").arg(APPEARANCE_SERVICE);
 
-    fmDebug() << "create com.deepin.daemon.ScreenSaver.";
-    screenSaverIfs = new ScreenSaverIfs("com.deepin.ScreenSaver",
-                                        "/com/deepin/ScreenSaver",
+    fmDebug() << "create com.lingmo.daemon.ScreenSaver.";
+    screenSaverIfs = new ScreenSaverIfs("com.lingmo.ScreenSaver",
+                                        "/com/lingmo/ScreenSaver",
                                         QDBusConnection::sessionBus(), q);
-    fmDebug() << "end com.deepin.daemon.ScreenSaver.";
+    fmDebug() << "end com.lingmo.daemon.ScreenSaver.";
 
     fmDebug() << "create" << SessionIfs::staticInterfaceName();
     sessionIfs = new SessionIfs(this);
@@ -792,7 +792,7 @@ QString WallpaperSettings::wallpaperSlideShow() const
     QList<QVariant> argumentList;
     argumentList << QVariant::fromValue(d->screenName);
 
-    // com::deepin::daemon::Appearance do not export GetWallpaperSlideShow.
+    // com::lingmo::daemon::Appearance do not export GetWallpaperSlideShow.
     QString wallpaperSlideShow = QDBusPendingReply<QString>(d->appearanceIfs->asyncCallWithArgumentList(QStringLiteral("GetWallpaperSlideShow"), argumentList));
 
     fmDebug() << "dbus Appearance GetWallpaperSlideShow is called, result: " << wallpaperSlideShow;
@@ -1080,7 +1080,7 @@ void WallpaperSettings::loadScreenSaver()
     const QStringList &screensaverConfigurableItems = d->screenSaverIfs->ConfigurableItems();
     QStringList saverNameList = d->screenSaverIfs->allScreenSaver();
     if (saverNameList.isEmpty() && !d->screenSaverIfs->isValid()) {
-        fmWarning() << "com.deepin.ScreenSaver allScreenSaver fail. retry";
+        fmWarning() << "com.lingmo.ScreenSaver allScreenSaver fail. retry";
         d->reloadTimer.start(5000);
         return;
     }
@@ -1184,7 +1184,7 @@ void WallpaperSettings::applyToGreeter()
 
 bool WallpaperSettings::isWallpaperLocked() const
 {
-    if (QFileInfo::exists("/var/lib/deepin/permission-manager/wallpaper_locked")) {
+    if (QFileInfo::exists("/var/lib/lingmo/permission-manager/wallpaper_locked")) {
         QDBusInterface notify("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
         notify.asyncCall(QString("Notify"),
                          QString("dde-file-manager"),   // title

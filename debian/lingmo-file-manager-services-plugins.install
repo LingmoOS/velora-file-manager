@@ -1,0 +1,5 @@
+usr/lib/*/lingmo-service-manager/*.so
+usr/share/lingmo-service-manager/system/*.json
+usr/share/lingmo-service-manager/user/*.json
+usr/share/lingmo-service-manager/other/*.json
+etc/systemd/system/deepin-service-group@.service.d/*

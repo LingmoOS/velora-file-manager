@@ -53,7 +53,7 @@ function(dfm_setup_diskencrypt_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up diskencrypt DBus interfaces for: ${target_name}")
     
     # Define the DBus interface file path using DFM_ASSETS_DIR
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.DiskEncrypt.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.DiskEncrypt.xml")
     
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")

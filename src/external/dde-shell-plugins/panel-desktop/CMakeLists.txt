@@ -40,7 +40,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 ds_install_package(PACKAGE org.deepin.ds.desktop TARGET ds-panel-desktop)
 
 # dbus
-install(FILES data/com.deepin.dde.desktop.service DESTINATION share/dbus-1/services)
+install(FILES data/com.lingmo.desktop.service DESTINATION share/dbus-1/services)
 
 # computer and trash
 install(FILES data/applications/dfm-trash.sh DESTINATION bin/)

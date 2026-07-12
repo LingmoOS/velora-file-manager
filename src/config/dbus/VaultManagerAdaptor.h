@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.Daemon.VaultManager
+ * Adaptor class for interface org.lingmo.Filemanager.Daemon.VaultManager
  */
 class VaultManagerAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.VaultManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.VaultManager")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.Daemon.VaultManager\">\n"
+"  <interface name=\"org.lingmo.Filemanager.Daemon.VaultManager\">\n"
 "    <signal name=\"LockEventTriggered\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"user\"/>\n"
 "    </signal>\n"

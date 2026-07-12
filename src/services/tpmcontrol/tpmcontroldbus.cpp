@@ -31,7 +31,7 @@ TPMControlDBus::TPMControlDBus(const char *name, QObject *parent)
             QDBusConnection::ExportAllProperties;
 
     QDBusConnection::connectToBus(QDBusConnection::SystemBus, QString(name))
-            .registerObject("/org/deepin/Filemanager/TPMControl", this, opts);
+            .registerObject("/org/lingmo/Filemanager/TPMControl", this, opts);
 
     fmInfo() << "TPMControlDBus registered on SystemBus";
 }

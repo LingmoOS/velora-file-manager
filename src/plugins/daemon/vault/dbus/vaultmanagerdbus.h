@@ -15,7 +15,7 @@
 class VaultManagerDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.VaultManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.VaultManager")
 public:
     explicit VaultManagerDBus(QObject *parent = nullptr);
 

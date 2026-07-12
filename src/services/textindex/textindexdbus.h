@@ -19,7 +19,7 @@ SERVICETEXTINDEX_END_NAMESPACE
 class TextIndexDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.TextIndex")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.TextIndex")
 
 public:
     explicit TextIndexDBus(const char *name, QObject *parent = nullptr);

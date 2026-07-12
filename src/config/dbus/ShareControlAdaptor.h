@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.UserShareManager
+ * Adaptor class for interface org.lingmo.Filemanager.UserShareManager
  */
 class ShareControlAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.UserShareManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.UserShareManager")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.UserShareManager\">\n"
+"  <interface name=\"org.lingmo.Filemanager.UserShareManager\">\n"
 "    <method name=\"CloseSmbShareByShareName\">\n"
 "      <arg direction=\"out\" type=\"b\"/>\n"
 "      <arg direction=\"in\" type=\"s\" name=\"name\"/>\n"

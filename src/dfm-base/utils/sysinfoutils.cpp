@@ -85,9 +85,9 @@ bool SysInfoUtils::isDeveloperModeEnabled()
 
     if (Q_UNLIKELY(!hasAcquireDevMode)) {
         hasAcquireDevMode = true;
-        QString service("com.deepin.sync.Helper");
+        QString service("com.lingmo.sync.Helper");
         QString path("/com/deepin/sync/Helper");
-        QString interfaceName("com.deepin.sync.Helper");
+        QString interfaceName("com.lingmo.sync.Helper");
 
         QDBusInterface interface(service, path, interfaceName, QDBusConnection::systemBus());
 

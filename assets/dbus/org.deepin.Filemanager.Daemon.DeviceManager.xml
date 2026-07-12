@@ -1,6 +1,6 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
-  <interface name="org.deepin.Filemanager.Daemon.DeviceManager">
+  <interface name="org.lingmo.Filemanager.Daemon.DeviceManager">
     <signal name="SizeUsedChanged">
       <arg name="id" type="s" direction="out"/>
       <arg name="total" type="x" direction="out"/>

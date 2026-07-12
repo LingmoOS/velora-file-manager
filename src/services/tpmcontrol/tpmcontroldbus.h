@@ -18,7 +18,7 @@ SERVICETPMCONTROL_END_NAMESPACE
 class TPMControlDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.TPMControl")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.TPMControl")
 
 public:
     explicit TPMControlDBus(const char *name, QObject *parent = nullptr);

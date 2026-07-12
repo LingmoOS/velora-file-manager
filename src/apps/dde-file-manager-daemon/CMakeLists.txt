@@ -47,7 +47,7 @@ endif()
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
 # services
-install(FILES dbusservice/org.deepin.Filemanager.Daemon.service
+install(FILES dbusservice/org.lingmo.Filemanager.Daemon.service
     DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/services)
 
 # systemd service

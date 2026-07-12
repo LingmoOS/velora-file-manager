@@ -1,3 +1,3 @@
 [D-BUS Service]
-Name=com.deepin.dde.desktop
+Name=com.lingmo.desktop
 Exec=/usr/bin/dde-desktop

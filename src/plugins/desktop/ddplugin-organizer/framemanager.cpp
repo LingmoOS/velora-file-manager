@@ -187,7 +187,7 @@ void FrameManagerPrivate::onHideAllKeyPressed()
         QString cmdNoRepeation = "dde-dconfig,--set,-a,org.deepin.dde.file-manager,-r,org.deepin.dde.file-manager.desktop.organizer,-k,hideAllDialogRepeatNoMore,-v,true";
         auto sendHideAllNotification = std::make_shared<std::function<void(quint32, bool)>>();
         *sendHideAllNotification = [this, keySequence, tips, cmdNoRepeation, sendHideAllNotification](quint32 replacesId, bool allowRetry) {
-            QString cmdCloseNotify = QString("dbus-send,--type=method_call,--dest=org.freedesktop.Notifications,/org/freedesktop/Notifications,com.deepin.dde.Notification.CloseNotification,uint32:%1")
+            QString cmdCloseNotify = QString("dbus-send,--type=method_call,--dest=org.freedesktop.Notifications,/org/freedesktop/Notifications,com.lingmo.Notification.CloseNotification,uint32:%1")
                                              .arg(replacesId);
             QDBusPendingCall pendingReply = DDBusSender()
                     .service("org.freedesktop.Notifications")
@@ -414,7 +414,7 @@ void FrameManager::turnOn(bool build)
     fmInfo() << "Turning on organizer framework";
 
 #ifdef QT_DEBUG
-    QDBusInterface ifs("com.deepin.dde.desktop",
+    QDBusInterface ifs("com.lingmo.desktop",
                        "/org/deepin/dde/desktop/canvas",
                        "org.deepin.dde.desktop.canvas");
     ifs.call("EnableUIDebug", QVariant::fromValue(false));
@@ -449,7 +449,7 @@ void FrameManager::turnOff()
     fmInfo() << "Turning off organizer framework";
 
 #ifdef QT_DEBUG
-    QDBusInterface ifs("com.deepin.dde.desktop",
+    QDBusInterface ifs("com.lingmo.desktop",
                        "/org/deepin/dde/desktop/canvas",
                        "org.deepin.dde.desktop.canvas");
     ifs.call("EnableUIDebug", QVariant::fromValue(true));

@@ -1,13 +1,13 @@
-Source: dde-folder-preview-plugin
+Source: lingmo-folder-preview-plugin
 Section: devel
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@linuxdeepin.com>
 Build-Depends: debhelper (>= 11),
                cmake,
-               dde-file-manager-dev
+               lingmo-file-manager-dev
 Standards-Version: 4.5.1
 
-Package: dde-folder-preview-plugin
+Package: lingmo-folder-preview-plugin
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Folder preview plugin for DDE File Manager

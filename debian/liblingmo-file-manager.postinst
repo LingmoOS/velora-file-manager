@@ -10,7 +10,7 @@ do
     userDir="$homeDir/$user"
     if [ -d $userDir ]
     then
-        cfgDir="$userDir/.config/deepin/dde-file-manager"
+        cfgDir="$userDir/.config/deepin/lingmo-file-manager"
         if [ -d $cfgDir ]
         then
             echo "create flag in $cfgDir"

@@ -170,7 +170,7 @@ void ExtensionPluginManagerPrivate::restartDesktop(const QUrl &url)
         // remove first
         if (!arguments.isEmpty())
             arguments.pop_front();
-        QDBusConnection::sessionBus().unregisterService("com.deepin.dde.desktop");
+        QDBusConnection::sessionBus().unregisterService("com.lingmo.desktop");
         fmInfo() << "restart self " << qApp->applicationFilePath() << arguments;
         QProcess::startDetached(qApp->applicationFilePath(), arguments);
         _Exit(-1);

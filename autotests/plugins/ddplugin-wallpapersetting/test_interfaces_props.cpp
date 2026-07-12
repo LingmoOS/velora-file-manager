@@ -46,7 +46,7 @@ protected:
 // [Appearance_Interface]_[StaticAndPropertyGetter]_[NoCrash]
 TEST_F(UT_InterfacesProps_Fixture, Appearance_StaticAndPropertyGetter_NoCrash)
 {
-    EXPECT_STREQ(Appearance_Interface::staticInterfaceName(), "org.deepin.dde.Appearance1");
+    EXPECT_STREQ(Appearance_Interface::staticInterfaceName(), "org.lingmo.Appearance1");
 
     Appearance_Interface inter("org.deepin.dde.Appearance1",
                                "/org/deepin/dde/Appearance1",
@@ -107,7 +107,7 @@ TEST_F(UT_InterfacesProps_Fixture, Appearance_AllSlots_NoCrash)
 // [ComDeepinScreenSaverInterface]_[StaticAndPropertyGetter]_[NoCrash]
 TEST_F(UT_InterfacesProps_Fixture, ScreenSaver_StaticAndPropertyGetter_NoCrash)
 {
-    EXPECT_STREQ(ComDeepinScreenSaverInterface::staticInterfaceName(), "com.deepin.ScreenSaver");
+    EXPECT_STREQ(ComDeepinScreenSaverInterface::staticInterfaceName(), "com.lingmo.ScreenSaver");
     ComDeepinScreenSaverInterface inter("com.deepin.ScreenSaver",
                                         "/com/deepin/ScreenSaver",
                                         QDBusConnection::sessionBus());

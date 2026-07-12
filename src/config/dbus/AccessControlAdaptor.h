@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.AccessControlManager
+ * Adaptor class for interface org.lingmo.Filemanager.AccessControlManager
  */
 class AccessControlAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.AccessControlManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.AccessControlManager")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.AccessControlManager\">\n"
+"  <interface name=\"org.lingmo.Filemanager.AccessControlManager\">\n"
 "    <signal name=\"DiskPasswordChecked\">\n"
 "      <arg direction=\"out\" type=\"i\" name=\"code\"/>\n"
 "    </signal>\n"

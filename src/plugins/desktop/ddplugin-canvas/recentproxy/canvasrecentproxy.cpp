@@ -18,7 +18,7 @@ void CanvasRecentProxy::handleReloadRecentFiles(const QList<QUrl> &srcUrls, bool
     if (!ok || srcUrls.isEmpty())
         return;
 
-    QDBusMessage message = QDBusMessage::createMethodCall("org.deepin.Filemanager.Daemon",
+    QDBusMessage message = QDBusMessage::createMethodCall("org.lingmo.Filemanager.Daemon",
                                                           "/org/deepin/Filemanager/Daemon/RecentManager",
                                                           "org.deepin.Filemanager.Daemon.RecentManager",
                                                           "Reload");

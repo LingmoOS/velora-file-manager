@@ -24,5 +24,5 @@ target_link_libraries(
 target_link_options(${PROJECT_NAME} PRIVATE -pie)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
-install(FILES data/com.deepin.filemanager.filedialog.service DESTINATION share/dbus-1/services)
+install(FILES data/com.lingmo.filemanager.filedialog.service DESTINATION share/dbus-1/services)
 

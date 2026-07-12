@@ -29,7 +29,7 @@ DiskEncryptAdaptor::~DiskEncryptAdaptor()
 
 QString DiskEncryptAdaptor::ChangeEncryptPassphress(const QVariantMap &params)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.ChangeEncryptPassphress
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.ChangeEncryptPassphress
     QString out0;
     QMetaObject::invokeMethod(parent(), "ChangeEncryptPassphress", Q_RETURN_ARG(QString, out0), Q_ARG(QVariantMap, params));
     return out0;
@@ -37,7 +37,7 @@ QString DiskEncryptAdaptor::ChangeEncryptPassphress(const QVariantMap &params)
 
 QString DiskEncryptAdaptor::DecryptDisk(const QVariantMap &params)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.DecryptDisk
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.DecryptDisk
     QString out0;
     QMetaObject::invokeMethod(parent(), "DecryptDisk", Q_RETURN_ARG(QString, out0), Q_ARG(QVariantMap, params));
     return out0;
@@ -45,7 +45,7 @@ QString DiskEncryptAdaptor::DecryptDisk(const QVariantMap &params)
 
 int DiskEncryptAdaptor::EncryptStatus(const QString &device)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.EncryptStatus
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.EncryptStatus
     int out0;
     QMetaObject::invokeMethod(parent(), "EncryptStatus", Q_RETURN_ARG(int, out0), Q_ARG(QString, device));
     return out0;
@@ -53,7 +53,7 @@ int DiskEncryptAdaptor::EncryptStatus(const QString &device)
 
 bool DiskEncryptAdaptor::HasPendingTask()
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.HasPendingTask
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.HasPendingTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "HasPendingTask", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -61,13 +61,13 @@ bool DiskEncryptAdaptor::HasPendingTask()
 
 void DiskEncryptAdaptor::IgnoreParamRequest()
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.IgnoreParamRequest
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.IgnoreParamRequest
     QMetaObject::invokeMethod(parent(), "IgnoreParamRequest");
 }
 
 bool DiskEncryptAdaptor::IsWorkerRunning()
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.IsWorkerRunning
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.IsWorkerRunning
     bool out0;
     QMetaObject::invokeMethod(parent(), "IsWorkerRunning", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -75,7 +75,7 @@ bool DiskEncryptAdaptor::IsWorkerRunning()
 
 QString DiskEncryptAdaptor::PrepareEncryptDisk(const QVariantMap &params)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.PrepareEncryptDisk
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.PrepareEncryptDisk
     QString out0;
     QMetaObject::invokeMethod(parent(), "PrepareEncryptDisk", Q_RETURN_ARG(QString, out0), Q_ARG(QVariantMap, params));
     return out0;
@@ -83,7 +83,7 @@ QString DiskEncryptAdaptor::PrepareEncryptDisk(const QVariantMap &params)
 
 QString DiskEncryptAdaptor::QueryTPMToken(const QString &device)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.QueryTPMToken
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.QueryTPMToken
     QString out0;
     QMetaObject::invokeMethod(parent(), "QueryTPMToken", Q_RETURN_ARG(QString, out0), Q_ARG(QString, device));
     return out0;
@@ -91,19 +91,19 @@ QString DiskEncryptAdaptor::QueryTPMToken(const QString &device)
 
 void DiskEncryptAdaptor::ResumeEncryption(const QString &device)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.ResumeEncryption
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.ResumeEncryption
     QMetaObject::invokeMethod(parent(), "ResumeEncryption", Q_ARG(QString, device));
 }
 
 void DiskEncryptAdaptor::SetEncryptParams(const QVariantMap &params)
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.SetEncryptParams
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.SetEncryptParams
     QMetaObject::invokeMethod(parent(), "SetEncryptParams", Q_ARG(QVariantMap, params));
 }
 
 QString DiskEncryptAdaptor::UnfinishedDecryptJob()
 {
-    // handle method call org.deepin.Filemanager.DiskEncrypt.UnfinishedDecryptJob
+    // handle method call org.lingmo.Filemanager.DiskEncrypt.UnfinishedDecryptJob
     QString out0;
     QMetaObject::invokeMethod(parent(), "UnfinishedDecryptJob", Q_RETURN_ARG(QString, out0));
     return out0;

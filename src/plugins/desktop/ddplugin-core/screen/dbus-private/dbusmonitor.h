@@ -17,7 +17,7 @@ class DBusMonitor : public QDBusAbstractInterface
         if (3 != arguments.count())
             return;
         QString interfaceName = msg.arguments().at(0).toString();
-        if (interfaceName !="com.deepin.daemon.Display.Monitor")
+        if (interfaceName !="com.lingmo.daemon.Display.Monitor")
             return;
         QVariantMap changedProps = qdbus_cast<QVariantMap>(arguments.at(1).value<QDBusArgument>());
         QStringList keys = changedProps.keys();
@@ -33,9 +33,9 @@ class DBusMonitor : public QDBusAbstractInterface
    }
 public:
     static inline const char *staticServiceName()
-    { return "com.deepin.daemon.Display"; }
+    { return "com.lingmo.daemon.Display"; }
     static inline const char *staticInterfaceName()
-    { return "com.deepin.daemon.Display.Monitor"; }
+    { return "com.lingmo.daemon.Display.Monitor"; }
 public:
     explicit DBusMonitor(const QString &objectPath, QObject *parent = nullptr);
     ~DBusMonitor();

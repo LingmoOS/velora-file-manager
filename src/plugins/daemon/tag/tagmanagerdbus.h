@@ -13,7 +13,7 @@
 class TagManagerDBus : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.TagManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.TagManager")
 
 public:
     explicit TagManagerDBus(QObject *parent = nullptr);

@@ -1,0 +1,12 @@
+usr/lib/*/libdde-file-manager.so*
+usr/lib/*/libdfm6-base.so*
+usr/lib/*/libdfm6-framework.so*
+usr/lib/*/lingmo-file-manager/plugins/common-core/*.so
+usr/lib/*/lingmo-file-manager/tools/*
+usr/share/lingmo-file-manager/templates/*
+usr/share/lingmo-file-manager/mimetypes/*.mimetype
+usr/share/lingmo-file-manager/mimetypeassociations/*.json
+usr/share/deepin/lingmo-file-manager/oem-menuextensions/.readme
+usr/share/applications/context-menus/.readme
+usr/share/lingmo-file-manager/extensions/appEntry/.readme
+usr/share/dsg/configs/org.deepin.dde.file-manager/*.json

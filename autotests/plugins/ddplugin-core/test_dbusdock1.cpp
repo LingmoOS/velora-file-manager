@@ -116,9 +116,9 @@ TEST_F(TestDBusDock, Constructor_InitializesDBusInterface_Success)
     // Note: isValid() may return false due to stubbed D-Bus connection
     
     // Verify static interface properties
-    EXPECT_STREQ(DBusDock::staticInterfaceName(), "org.deepin.dde.daemon.Dock1");
-    EXPECT_STREQ(DBusDock::staticServiceName(), "org.deepin.dde.daemon.Dock1");
-    EXPECT_STREQ(DBusDock::staticObjectPath(), "/org/deepin/dde/daemon/Dock1");
+    EXPECT_STREQ(DBusDock::staticInterfaceName(), "org.lingmo.daemon.Dock1");
+    EXPECT_STREQ(DBusDock::staticServiceName(), "org.lingmo.daemon.Dock1");
+    EXPECT_STREQ(DBusDock::staticObjectPath(), "/org/lingmo/daemon/Dock1");
 }
 
 /**
@@ -400,7 +400,7 @@ TEST_F(TestDBusDock, Signals_EventNotifications_Success)
     // Simulate property change message processing
     QDBusMessage msg = QDBusMessage::createSignal("/test", "org.freedesktop.DBus.Properties", "PropertiesChanged");
     QVariantList args;
-    args << QString("org.deepin.dde.daemon.Dock1");
+    args << QString("org.lingmo.daemon.Dock1");
     
     QVariantMap changedProps;
     changedProps["HideMode"] = 1;

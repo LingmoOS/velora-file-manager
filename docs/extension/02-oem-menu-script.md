@@ -775,7 +775,7 @@ notify() { notify-send --app-name="OEM菜单" "$1" "$2" 2>/dev/null || true; }
 IMAGE_URI="file://${ABS_IMAGE}"
 
 set_wallpaper_deepin() {
-    # Deepin/UOS: D-Bus call to org.deepin.dde.Appearance1.SetMonitorBackground.
+    # Deepin/UOS: D-Bus call to org.lingmo.Appearance1.SetMonitorBackground.
     # Monitor name is obtained from xrandr (first connected output).
     command -v dbus-send &>/dev/null || return 1
     local monitor

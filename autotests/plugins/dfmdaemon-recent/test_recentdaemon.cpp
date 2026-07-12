@@ -78,7 +78,7 @@ TEST_F(UT_RecentDaemon, start_WithSuccessfulServiceRegistration_ReturnsTrue)
     // Mock service registration success
     stub.set_lamda(&QDBusConnection::registerService, [&](QDBusConnection *, const QString &serviceName) {
         __DBG_STUB_INVOKE__
-        serviceRegistered = (serviceName == "org.deepin.Filemanager.Daemon");
+        serviceRegistered = (serviceName == "org.lingmo.Filemanager.Daemon");
         return true;
     });
 
@@ -350,7 +350,7 @@ TEST_F(UT_RecentDaemon, start_RegistersCorrectDBusObject)
     daemon->start();
 
     EXPECT_TRUE(objectRegistered);
-    EXPECT_EQ(registeredObjectPath, "/org/deepin/Filemanager/Daemon/RecentManager");
+    EXPECT_EQ(registeredObjectPath, "/org/lingmo/Filemanager/Daemon/RecentManager");
 }
 
 TEST_F(UT_RecentDaemon, lifecycle_InitializeStartStop_WorksCorrectly)

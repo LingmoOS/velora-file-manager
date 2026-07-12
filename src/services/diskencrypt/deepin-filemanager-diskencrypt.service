@@ -4,7 +4,7 @@ After=dbus.service
 
 [Service]
 Type=dbus
-BusName=org.deepin.Filemanager.DiskEncrypt
+BusName=org.lingmo.Filemanager.DiskEncrypt
 ExecStart=/usr/bin/deepin-diskencrypt-service
 User=root
 

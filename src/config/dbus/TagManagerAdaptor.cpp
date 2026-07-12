@@ -29,7 +29,7 @@ TagManagerAdaptor::~TagManagerAdaptor()
 
 bool TagManagerAdaptor::Delete(int opt, const QVariantMap &value)
 {
-    // handle method call org.deepin.Filemanager.Daemon.TagManager.Delete
+    // handle method call org.lingmo.Filemanager.Daemon.TagManager.Delete
     bool out0;
     QMetaObject::invokeMethod(parent(), "Delete", Q_RETURN_ARG(bool, out0), Q_ARG(int, opt), Q_ARG(QVariantMap, value));
     return out0;
@@ -37,7 +37,7 @@ bool TagManagerAdaptor::Delete(int opt, const QVariantMap &value)
 
 bool TagManagerAdaptor::Insert(int opt, const QVariantMap &value)
 {
-    // handle method call org.deepin.Filemanager.Daemon.TagManager.Insert
+    // handle method call org.lingmo.Filemanager.Daemon.TagManager.Insert
     bool out0;
     QMetaObject::invokeMethod(parent(), "Insert", Q_RETURN_ARG(bool, out0), Q_ARG(int, opt), Q_ARG(QVariantMap, value));
     return out0;
@@ -45,7 +45,7 @@ bool TagManagerAdaptor::Insert(int opt, const QVariantMap &value)
 
 QDBusVariant TagManagerAdaptor::Query(int opt)
 {
-    // handle method call org.deepin.Filemanager.Daemon.TagManager.Query
+    // handle method call org.lingmo.Filemanager.Daemon.TagManager.Query
     QDBusVariant out0;
     QMetaObject::invokeMethod(parent(), "Query", Q_RETURN_ARG(QDBusVariant, out0), Q_ARG(int, opt));
     return out0;
@@ -53,7 +53,7 @@ QDBusVariant TagManagerAdaptor::Query(int opt)
 
 QDBusVariant TagManagerAdaptor::Query(int opt, const QStringList &value)
 {
-    // handle method call org.deepin.Filemanager.Daemon.TagManager.Query
+    // handle method call org.lingmo.Filemanager.Daemon.TagManager.Query
     QDBusVariant out0;
     QMetaObject::invokeMethod(parent(), "Query", Q_RETURN_ARG(QDBusVariant, out0), Q_ARG(int, opt), Q_ARG(QStringList, value));
     return out0;
@@ -61,7 +61,7 @@ QDBusVariant TagManagerAdaptor::Query(int opt, const QStringList &value)
 
 bool TagManagerAdaptor::Update(int opt, const QVariantMap &value)
 {
-    // handle method call org.deepin.Filemanager.Daemon.TagManager.Update
+    // handle method call org.lingmo.Filemanager.Daemon.TagManager.Update
     bool out0;
     QMetaObject::invokeMethod(parent(), "Update", Q_RETURN_ARG(bool, out0), Q_ARG(int, opt), Q_ARG(QVariantMap, value));
     return out0;

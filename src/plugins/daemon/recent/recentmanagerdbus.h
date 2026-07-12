@@ -11,7 +11,7 @@
 class RecentManagerDBus : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.RecentManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.RecentManager")
 
 public:
     explicit RecentManagerDBus(QObject *parent = nullptr);

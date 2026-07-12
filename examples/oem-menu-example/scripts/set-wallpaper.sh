@@ -6,7 +6,7 @@
 # set-wallpaper.sh — Set an image file as the desktop background.
 #
 # Usage: set-wallpaper.sh <image-path>
-# Supports Deepin/UOS (org.deepin.dde.Appearance1.SetMonitorBackground via D-Bus)
+# Supports Deepin/UOS (org.lingmo.Appearance1.SetMonitorBackground via D-Bus)
 # and standard GNOME (org.gnome.desktop.background).
 
 set -euo pipefail
@@ -32,7 +32,7 @@ notify() {
 IMAGE_URI="file://${ABS_IMAGE}"
 
 set_wallpaper_deepin() {
-    # Deepin/UOS: use org.deepin.dde.Appearance1.SetMonitorBackground via D-Bus.
+    # Deepin/UOS: use org.lingmo.Appearance1.SetMonitorBackground via D-Bus.
     # Monitor name is taken from the first connected output reported by xrandr.
     if ! command -v dbus-send &>/dev/null; then
         return 1

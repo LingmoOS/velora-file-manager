@@ -15,7 +15,7 @@ BackgroundDDE::BackgroundDDE(QObject *parent)
     : BackgroundService(parent)
 {
     fmDebug() << "create org.deepin.dde.Appearance1";
-    interface = new InterFace("org.deepin.dde.Appearance1", "/org/deepin/dde/Appearance1",
+    interface = new InterFace("org.lingmo.Appearance1", "/org/lingmo/Appearance1",
                               QDBusConnection::sessionBus(), this);
     interface->setTimeout(200);
     fmDebug() << "create org.deepin.dde.Appearance1 end";

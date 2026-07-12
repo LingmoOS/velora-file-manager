@@ -11,7 +11,7 @@
 class FileDialogManagerDBus : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.deepin.filemanager.filedialog")
+    Q_CLASSINFO("D-Bus Interface", "com.lingmo.filemanager.filedialog")
 
 public:
     explicit FileDialogManagerDBus(QObject *parent = nullptr);

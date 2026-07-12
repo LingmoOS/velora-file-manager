@@ -51,7 +51,7 @@ AbstractAuditLogJob::AbstractAuditLogJob(QObject *parent)
 void AbstractAuditLogJob::run()
 {
     fmInfo() << "Create D-Bus Auditd interface object start";
-    QDBusInterface auditd("org.deepin.PermissionManager.Auditd",
+    QDBusInterface auditd("org.lingmo.PermissionManager.Auditd",
                           "/org/deepin/PermissionManager/Auditd",
                           "org.deepin.PermissionManager.Auditd",
                           QDBusConnection::systemBus());

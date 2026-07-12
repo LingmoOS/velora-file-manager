@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.Daemon.TagManager
+ * Adaptor class for interface org.lingmo.Filemanager.Daemon.TagManager
  */
 class TagManagerAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.TagManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.TagManager")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.Daemon.TagManager\">\n"
+"  <interface name=\"org.lingmo.Filemanager.Daemon.TagManager\">\n"
 "    <signal name=\"TagsServiceReady\"/>\n"
 "    <signal name=\"NewTagsAdded\">\n"
 "      <arg direction=\"out\" type=\"a{sv}\" name=\"tags\"/>\n"

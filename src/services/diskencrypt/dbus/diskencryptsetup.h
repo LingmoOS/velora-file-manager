@@ -23,7 +23,7 @@ class DiskEncryptSetupPrivate;
 class DiskEncryptSetup : public QDBusService, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.DiskEncrypt")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.DiskEncrypt")
 
 public:
     explicit DiskEncryptSetup(QObject *parent = nullptr);

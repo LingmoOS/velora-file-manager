@@ -29,13 +29,13 @@ AccessControlAdaptor::~AccessControlAdaptor()
 
 void AccessControlAdaptor::ChangeDiskPassword(const QString &oldPwd, const QString &newPwd)
 {
-    // handle method call org.deepin.Filemanager.AccessControlManager.ChangeDiskPassword
+    // handle method call org.lingmo.Filemanager.AccessControlManager.ChangeDiskPassword
     QMetaObject::invokeMethod(parent(), "ChangeDiskPassword", Q_ARG(QString, oldPwd), Q_ARG(QString, newPwd));
 }
 
 bool AccessControlAdaptor::Chmod(const QString &path, uint mode)
 {
-    // handle method call org.deepin.Filemanager.AccessControlManager.Chmod
+    // handle method call org.lingmo.Filemanager.AccessControlManager.Chmod
     bool out0;
     QMetaObject::invokeMethod(parent(), "Chmod", Q_RETURN_ARG(bool, out0), Q_ARG(QString, path), Q_ARG(uint, mode));
     return out0;

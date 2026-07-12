@@ -21,7 +21,7 @@ DCORE_END_NAMESPACE
 
 DDP_BACKGROUND_BEGIN_NAMESPACE
 
-using InterFace = org::deepin::dde::Appearance1;
+using InterFace = org::lingmo::Appearance1;
 
 class BackgroundDDE : public BackgroundService
 {

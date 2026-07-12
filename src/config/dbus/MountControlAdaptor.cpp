@@ -29,7 +29,7 @@ MountControlAdaptor::~MountControlAdaptor()
 
 QVariantMap MountControlAdaptor::Mount(const QString &path, const QVariantMap &opts)
 {
-    // handle method call org.deepin.Filemanager.MountControl.Mount
+    // handle method call org.lingmo.Filemanager.MountControl.Mount
     QVariantMap out0;
     QMetaObject::invokeMethod(parent(), "Mount", Q_RETURN_ARG(QVariantMap, out0), Q_ARG(QString, path), Q_ARG(QVariantMap, opts));
     return out0;
@@ -37,7 +37,7 @@ QVariantMap MountControlAdaptor::Mount(const QString &path, const QVariantMap &o
 
 QStringList MountControlAdaptor::SupportedFileSystems()
 {
-    // handle method call org.deepin.Filemanager.MountControl.SupportedFileSystems
+    // handle method call org.lingmo.Filemanager.MountControl.SupportedFileSystems
     QStringList out0;
     QMetaObject::invokeMethod(parent(), "SupportedFileSystems", Q_RETURN_ARG(QStringList, out0));
     return out0;
@@ -45,7 +45,7 @@ QStringList MountControlAdaptor::SupportedFileSystems()
 
 QVariantMap MountControlAdaptor::Unmount(const QString &path, const QVariantMap &opts)
 {
-    // handle method call org.deepin.Filemanager.MountControl.Unmount
+    // handle method call org.lingmo.Filemanager.MountControl.Unmount
     QVariantMap out0;
     QMetaObject::invokeMethod(parent(), "Unmount", Q_RETURN_ARG(QVariantMap, out0), Q_ARG(QString, path), Q_ARG(QVariantMap, opts));
     return out0;

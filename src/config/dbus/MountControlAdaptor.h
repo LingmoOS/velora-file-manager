@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.MountControl
+ * Adaptor class for interface org.lingmo.Filemanager.MountControl
  */
 class MountControlAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.MountControl")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.MountControl")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.MountControl\">\n"
+"  <interface name=\"org.lingmo.Filemanager.MountControl\">\n"
 "    <method name=\"Mount\">\n"
 "      <arg direction=\"out\" type=\"a{sv}\"/>\n"
 "      <annotation value=\"QVariantMap\" name=\"org.qtproject.QtDBus.QtTypeName.Out0\"/>\n"

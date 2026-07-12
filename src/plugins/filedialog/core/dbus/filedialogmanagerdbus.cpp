@@ -39,7 +39,7 @@ QDBusObjectPath FileDialogManagerDBus::createDialog(QString key)
     FileDialogHandleDBus *handle = new FileDialogHandleDBus();
     Q_UNUSED(new FiledialogAdaptor(handle));
 
-    const QDBusObjectPath path("/com/deepin/filemanager/filedialog/" + key);
+    const QDBusObjectPath path("/com/lingmo/filemanager/filedialog/" + key);
 
     if (curDialogObjectMap.contains(path)) {
         return path;

@@ -11,7 +11,7 @@
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 #    include <com_deepin_wm.h>
-using WMInter = com::deepin::wm;
+using WMInter = com::lingmo::wm;
 #endif
 
 DDP_BACKGROUND_BEGIN_NAMESPACE

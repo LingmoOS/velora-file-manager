@@ -160,9 +160,9 @@ void DeviceManagerDBus::requestRefreshDesktopAsNeeded(const QString &path, const
         fmInfo() << "[DeviceManagerDBus] Found desktop links targeting device path, scheduling desktop refresh - operation:" << operation << "path:" << path;
         // send refresh request delay 3s which walkaround the device is moounting,such as ntfs.
         QTimer::singleShot(3 * 1000, []() {
-            QDBusInterface ifs("com.deepin.dde.desktop",
-                               "/com/deepin/dde/desktop",
-                               "com.deepin.dde.desktop");
+            QDBusInterface ifs("com.lingmo.desktop",
+                               "/com/lingmo/desktop",
+                               "com.lingmo.desktop");
             ifs.asyncCall("Refresh");
         });
     } else {

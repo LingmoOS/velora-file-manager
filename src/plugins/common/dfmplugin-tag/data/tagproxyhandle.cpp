@@ -8,7 +8,7 @@
 
 using namespace dfmplugin_tag;
 static constexpr char kDaemonName[] { "org.deepin.Filemanager.Daemon" };
-static constexpr char kTagDBusPath[] { "/org/deepin/Filemanager/Daemon/TagManager" };
+static constexpr char kTagDBusPath[] { "/org/lingmo/Filemanager/Daemon/TagManager" };
 
 TagProxyHandlePrivate::TagProxyHandlePrivate(TagProxyHandle *qq, QObject *parent)
     : QObject(parent),

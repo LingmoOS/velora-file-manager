@@ -1895,7 +1895,7 @@ protected:
 // [ScreenSaverInterface]_[Properties]_[GetterMethods]
 TEST_F(UT_ScreenSaverInterface, Properties_GetterMethods_Success)
 {
-    ComDeepinScreenSaverInterface interface("com.deepin.daemon.ScreenSaver",
+    ComDeepinScreenSaverInterface interface("com.lingmo.daemon.ScreenSaver",
                                            "/com/deepin/daemon/ScreenSaver",
                                            QDBusConnection::sessionBus());
     
@@ -1911,7 +1911,7 @@ TEST_F(UT_ScreenSaverInterface, Properties_GetterMethods_Success)
 // [ScreenSaverInterface]_[Methods]_[AsyncCalls]
 TEST_F(UT_ScreenSaverInterface, Methods_AsyncCalls_Success)
 {
-    ComDeepinScreenSaverInterface interface("com.deepin.daemon.ScreenSaver",
+    ComDeepinScreenSaverInterface interface("com.lingmo.daemon.ScreenSaver",
                                            "/com/deepin/daemon/ScreenSaver",
                                            QDBusConnection::sessionBus());
     
@@ -3086,7 +3086,7 @@ TEST_F(UT_WallpaperSettings, SwitchMode_WallpaperToScreensaver_ModeChanged)
     
     // Set up required UI components
     ws.d->wallpaperPrview = new WallaperPreview(ws.d);
-    ws.d->screenSaverIfs = new ScreenSaverIfs("com.deepin.ScreenSaver", "/com/deepin/ScreenSaver", QDBusConnection::sessionBus(), &ws);
+    ws.d->screenSaverIfs = new ScreenSaverIfs("com.lingmo.ScreenSaver", "/com/lingmo/ScreenSaver", QDBusConnection::sessionBus(), &ws);
     
     // Mock the preview visibility methods
     stub.set_lamda(&WallaperPreview::setVisible, [](WallaperPreview *, bool) { __DBG_STUB_INVOKE__ });
@@ -3141,7 +3141,7 @@ TEST_F(UT_WallpaperSettings, OnItemPressed_ScreenSaverMode_PreviewsScreensaver)
 {
     WallpaperSettings ws("eDP-1", WallpaperSettings::Mode::ScreenSaverMode);
     ws.d->mode = WallpaperSettings::Mode::ScreenSaverMode;
-    ws.d->screenSaverIfs = new ScreenSaverIfs("com.deepin.ScreenSaver", "/com/deepin/ScreenSaver", QDBusConnection::sessionBus(), &ws);
+    ws.d->screenSaverIfs = new ScreenSaverIfs("com.lingmo.ScreenSaver", "/com/lingmo/ScreenSaver", QDBusConnection::sessionBus(), &ws);
     ws.d->wallpaperPrview = new WallaperPreview(ws.d);
     
     EXPECT_NO_THROW(ws.d->onItemPressed("/tmp/screensaver"));
@@ -3179,7 +3179,7 @@ TEST_F(UT_WallpaperSettings, OnCloseButtonClicked_BasicOperation)
     WallpaperSettings ws("eDP-1", WallpaperSettings::Mode::WallpaperMode);
     ws.d->closeButton = new DIconButton(&ws);
     ws.d->wallpaperList = new WallpaperList(&ws);
-    ws.d->appearanceIfs = new AppearanceIfs("org.deepin.dde.Appearance1", "/org/deepin/dde/Appearance1", QDBusConnection::sessionBus(), &ws);
+    ws.d->appearanceIfs = new AppearanceIfs("org.lingmo.Appearance1", "/org/lingmo/Appearance1", QDBusConnection::sessionBus(), &ws);
     
     // Set up deletion scenario
     ws.d->closeButton->setProperty("background", "/tmp/test.jpg");
@@ -3226,7 +3226,7 @@ TEST_F(UT_WallpaperSettings, OnListBackgroundReply_BasicOperation)
 {
     WallpaperSettings ws("eDP-1", WallpaperSettings::Mode::WallpaperMode);
     ws.d->wallpaperList = new WallpaperList(&ws);
-    ws.d->appearanceIfs = new AppearanceIfs("org.deepin.dde.Appearance1", "/org/deepin/dde/Appearance1", QDBusConnection::sessionBus(), &ws);
+    ws.d->appearanceIfs = new AppearanceIfs("org.lingmo.Appearance1", "/org/lingmo/Appearance1", QDBusConnection::sessionBus(), &ws);
     
     // Basic test without complex mocking
     EXPECT_NO_THROW(ws.d->onListBackgroundReply(nullptr));
@@ -3365,7 +3365,7 @@ TEST_F(UT_WallpaperSettings, SwitchMode_WallpaperToScreensaver_Success)
     
     // Initialize required components
     ws.d->wallpaperPrview = new WallaperPreview(&ws);
-    ws.d->screenSaverIfs = new ScreenSaverIfs("com.deepin.ScreenSaver", "/com/deepin/ScreenSaver", QDBusConnection::sessionBus(), &ws);
+    ws.d->screenSaverIfs = new ScreenSaverIfs("com.lingmo.ScreenSaver", "/com/lingmo/ScreenSaver", QDBusConnection::sessionBus(), &ws);
     ws.d->wallpaperList = new WallpaperList(&ws);
     
     // Initialize UI components for relaylout
@@ -3857,7 +3857,7 @@ TEST_F(UT_WallpaperSettings, SwitchMode_WallpaperToScreensaver_NewTest)
     
     // Initialize required components
     ws.d->wallpaperPrview = new WallaperPreview(ws.d);
-    ws.d->screenSaverIfs = new ScreenSaverIfs("com.deepin.ScreenSaver", "/com/deepin/ScreenSaver", QDBusConnection::sessionBus(), &ws);
+    ws.d->screenSaverIfs = new ScreenSaverIfs("com.lingmo.ScreenSaver", "/com/lingmo/ScreenSaver", QDBusConnection::sessionBus(), &ws);
     
     // Override the global switchMode stub to allow real execution
     stub.set_lamda(ADDR(WallpaperSettings, switchMode), [](WallpaperSettings *self, WallpaperSettings::Mode mode) {

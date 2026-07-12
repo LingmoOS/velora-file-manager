@@ -21,25 +21,25 @@
 #include <QtDBus/QtDBus>
 
 /*
- * Proxy class for interface org.deepin.dde.SessionManager1
+ * Proxy class for interface org.lingmo.SessionManager1
  */
 class DBusSessionManager: public QDBusAbstractInterface
 {
 public:
 #ifdef COMPILE_ON_V2X
     static inline const char *staticInterfaceName()
-    { return "org.deepin.dde.SessionManager1"; }
+    { return "org.lingmo.SessionManager1"; }
     static inline const char *staticServiceName()
-    { return "org.deepin.dde.SessionManager1"; }
+    { return "org.lingmo.SessionManager1"; }
     static inline const char *staticObjectPath()
-    { return "/org/deepin/dde/SessionManager1"; }
+    { return "/org/lingmo/SessionManager1"; }
 #else
     static inline const char *staticInterfaceName()
-    { return "com.deepin.SessionManager"; }
+    { return "com.lingmo.SessionManager"; }
     static inline const char *staticServiceName()
-    { return "com.deepin.SessionManager"; }
+    { return "com.lingmo.SessionManager"; }
     static inline const char *staticObjectPath()
-    { return "/com/deepin/SessionManager"; }
+    { return "/com/lingmo/SessionManager"; }
 #endif
 private:
     Q_OBJECT

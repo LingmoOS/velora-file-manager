@@ -12,7 +12,7 @@
 #include <QDebug>
 
 static constexpr char kObjPath[] { "/org/deepin/Filemanager/DiskEncrypt" };
-static constexpr char kServiceName[] { "org.deepin.Filemanager.DiskEncrypt" };
+static constexpr char kServiceName[] { "org.lingmo.Filemanager.DiskEncrypt" };
 
 int main(int argc, char *argv[])
 {

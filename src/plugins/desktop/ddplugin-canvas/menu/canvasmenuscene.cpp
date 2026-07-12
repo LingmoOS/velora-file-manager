@@ -355,10 +355,10 @@ bool CanvasMenuScene::triggered(QAction *action)
         if (actionId == ActionID::kDisplaySettings) {
             fmDebug() << "Opening display settings via ControlCenter";
 #ifdef COMPILE_ON_V2X
-            QDBusMessage msg = QDBusMessage::createMethodCall("org.deepin.dde.ControlCenter1", "/org/deepin/dde/ControlCenter1",
+            QDBusMessage msg = QDBusMessage::createMethodCall("org.lingmo.ControlCenter1", "/org/lingmo/ControlCenter1",
                                                               "org.deepin.dde.ControlCenter1", "ShowPage");
 #else
-            QDBusMessage msg = QDBusMessage::createMethodCall("com.deepin.dde.ControlCenter", "/com/deepin/dde/ControlCenter",
+            QDBusMessage msg = QDBusMessage::createMethodCall("com.lingmo.ControlCenter", "/com/lingmo/ControlCenter",
                                                               "com.deepin.dde.ControlCenter", "ShowModule");
 
 #endif

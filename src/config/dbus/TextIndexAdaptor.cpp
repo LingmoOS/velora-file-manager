@@ -29,7 +29,7 @@ TextIndexAdaptor::~TextIndexAdaptor()
 
 bool TextIndexAdaptor::CreateIndexTask(const QString &path)
 {
-    // handle method call org.deepin.Filemanager.TextIndex.CreateIndexTask
+    // handle method call org.lingmo.Filemanager.TextIndex.CreateIndexTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "CreateIndexTask", Q_RETURN_ARG(bool, out0), Q_ARG(QString, path));
     return out0;
@@ -37,7 +37,7 @@ bool TextIndexAdaptor::CreateIndexTask(const QString &path)
 
 QString TextIndexAdaptor::GetLastUpdateTime()
 {
-    // handle method call org.deepin.Filemanager.TextIndex.GetLastUpdateTime
+    // handle method call org.lingmo.Filemanager.TextIndex.GetLastUpdateTime
     QString out0;
     QMetaObject::invokeMethod(parent(), "GetLastUpdateTime", Q_RETURN_ARG(QString, out0));
     return out0;
@@ -45,7 +45,7 @@ QString TextIndexAdaptor::GetLastUpdateTime()
 
 bool TextIndexAdaptor::HasRunningTask()
 {
-    // handle method call org.deepin.Filemanager.TextIndex.HasRunningTask
+    // handle method call org.lingmo.Filemanager.TextIndex.HasRunningTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "HasRunningTask", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -53,7 +53,7 @@ bool TextIndexAdaptor::HasRunningTask()
 
 bool TextIndexAdaptor::IndexDatabaseExists()
 {
-    // handle method call org.deepin.Filemanager.TextIndex.IndexDatabaseExists
+    // handle method call org.lingmo.Filemanager.TextIndex.IndexDatabaseExists
     bool out0;
     QMetaObject::invokeMethod(parent(), "IndexDatabaseExists", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -61,7 +61,7 @@ bool TextIndexAdaptor::IndexDatabaseExists()
 
 bool TextIndexAdaptor::RemoveIndexTask(const QStringList &paths)
 {
-    // handle method call org.deepin.Filemanager.TextIndex.RemoveIndexTask
+    // handle method call org.lingmo.Filemanager.TextIndex.RemoveIndexTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "RemoveIndexTask", Q_RETURN_ARG(bool, out0), Q_ARG(QStringList, paths));
     return out0;
@@ -69,7 +69,7 @@ bool TextIndexAdaptor::RemoveIndexTask(const QStringList &paths)
 
 bool TextIndexAdaptor::StopCurrentTask()
 {
-    // handle method call org.deepin.Filemanager.TextIndex.StopCurrentTask
+    // handle method call org.lingmo.Filemanager.TextIndex.StopCurrentTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "StopCurrentTask", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -77,7 +77,7 @@ bool TextIndexAdaptor::StopCurrentTask()
 
 bool TextIndexAdaptor::UpdateIndexTask(const QString &path)
 {
-    // handle method call org.deepin.Filemanager.TextIndex.UpdateIndexTask
+    // handle method call org.lingmo.Filemanager.TextIndex.UpdateIndexTask
     bool out0;
     QMetaObject::invokeMethod(parent(), "UpdateIndexTask", Q_RETURN_ARG(bool, out0), Q_ARG(QString, path));
     return out0;

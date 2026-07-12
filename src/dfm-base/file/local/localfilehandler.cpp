@@ -742,7 +742,7 @@ void LocalFileHandlerPrivate::doAddRecentFile(const QVariantMap &item)
     if (item.isEmpty())
         return;
 
-    QDBusMessage message = QDBusMessage::createMethodCall("org.deepin.Filemanager.Daemon",
+    QDBusMessage message = QDBusMessage::createMethodCall("org.lingmo.Filemanager.Daemon",
                                                           "/org/deepin/Filemanager/Daemon/RecentManager",
                                                           "org.deepin.Filemanager.Daemon.RecentManager",
                                                           "AddItem");

@@ -1,9 +1,9 @@
-Name:           dde-file-manager
+Name:           lingmo-file-manager
 Version:        5.0.0
 Release:        1%{?dist}
 Summary:        DDE File Manager for Lingmo OS
 License:        GPL-3.0-or-later
-URL:            https://github.com/LingmoOS/dde-file-manager
+URL:            https://github.com/LingmoOS/lingmo-file-manager
 Source0:        dde-file-manager-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
@@ -37,10 +37,10 @@ Lingmo desktop environment, providing file browsing and management.
 %files
 %doc README.md
 %license LICENSE*
-%{_bindir}/dde-file-manager
+%{_bindir}/lingmo-file-manager
 %{_bindir}/dfm
-%{_libdir}/dde-file-manager/
-%{_datadir}/dde-file-manager/
+%{_libdir}/lingmo-file-manager/
+%{_datadir}/lingmo-file-manager/
 %{_datadir}/dbus-1/services/*.service
 %{_datadir}/applications/dde-file-manager.desktop
 

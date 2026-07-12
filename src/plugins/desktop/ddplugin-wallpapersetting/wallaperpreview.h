@@ -12,10 +12,10 @@
 
 #ifdef COMPILE_ON_V2X
 #    include "dbus/appearance_interface.h"
-using BackgroudInter = org::deepin::dde::Appearance1;
+using BackgroudInter = org::lingmo::Appearance1;
 #else
 #    include <com_deepin_wm.h>
-using BackgroudInter = com::deepin::wm;
+using BackgroudInter = com::lingmo::wm;
 #endif
 
 #include <QObject>

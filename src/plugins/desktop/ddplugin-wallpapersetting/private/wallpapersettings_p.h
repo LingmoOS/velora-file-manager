@@ -17,10 +17,10 @@
 #endif
 #ifdef COMPILE_ON_V2X
 #    include "dbus/appearance_interface.h"
-#    define APPEARANCE_NAME org::deepin::dde::Appearance1
+#    define APPEARANCE_NAME org::lingmo::Appearance1
 #else
 #    include <com_deepin_daemon_appearance.h>
-#    define APPEARANCE_NAME com::deepin::daemon::Appearance
+#    define APPEARANCE_NAME com::lingmo::daemon::Appearance
 #endif
 
 #include <DIconButton>
@@ -36,11 +36,11 @@ DWIDGET_USE_NAMESPACE
 
 namespace ddplugin_wallpapersetting {
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-using WMInter = com::deepin::wm;
+using WMInter = com::lingmo::wm;
 #endif
 using AppearanceIfs = APPEARANCE_NAME;
 using SessionIfs = DBusSessionManager;
-using ScreenSaverIfs = com::deepin::ScreenSaver;
+using ScreenSaverIfs = com::lingmo::ScreenSaver;
 
 class WallpaperSettingsPrivate : public QObject
 {

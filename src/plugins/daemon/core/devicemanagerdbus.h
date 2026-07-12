@@ -17,7 +17,7 @@
 class DeviceManagerDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.DeviceManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.DeviceManager")
 
 public:
     explicit DeviceManagerDBus(QObject *parent = nullptr);

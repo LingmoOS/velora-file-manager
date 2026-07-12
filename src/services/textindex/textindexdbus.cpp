@@ -10,7 +10,7 @@
 
 #include <QDir>
 
-static constexpr char kTextIndexObjPath[] { "/org/deepin/Filemanager/TextIndex" };
+static constexpr char kTextIndexObjPath[] { "/org/lingmo/Filemanager/TextIndex" };
 
 SERVICETEXTINDEX_BEGIN_NAMESPACE
 DFM_LOG_REGISTER_CATEGORY(SERVICETEXTINDEX_NAMESPACE)

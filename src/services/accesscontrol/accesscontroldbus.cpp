@@ -39,9 +39,9 @@ using ServiceCommon::PolicyKitHelper;
  * \brief D-Bus interface class, Don't nedd a namespace
  */
 
-static constexpr char kAccessControlManagerObjPath[] { "/org/deepin/Filemanager/AccessControlManager" };
-static constexpr char kPolicyKitDiskPwdActionId[] { "org.deepin.Filemanager.AccessControlManager.DiskPwd" };
-static constexpr char kPolicyKitChmodActionId[] { "org.deepin.Filemanager.AccessControlManager.Chmod" };
+static constexpr char kAccessControlManagerObjPath[] { "/org/lingmo/Filemanager/AccessControlManager" };
+static constexpr char kPolicyKitDiskPwdActionId[] { "org.lingmo.Filemanager.AccessControlManager.DiskPwd" };
+static constexpr char kPolicyKitChmodActionId[] { "org.lingmo.Filemanager.AccessControlManager.Chmod" };
 
 AccessControlDBus::AccessControlDBus(const char *name, QObject *parent)
     : QObject(parent), QDBusContext()

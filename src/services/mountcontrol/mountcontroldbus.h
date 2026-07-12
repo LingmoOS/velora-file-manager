@@ -17,7 +17,7 @@ SERVICEMOUNTCONTROL_END_NAMESPACE
 class MountControlDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.MountControl")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.MountControl")
 
 public:
     explicit MountControlDBus(const char *name, QObject *parent = nullptr);

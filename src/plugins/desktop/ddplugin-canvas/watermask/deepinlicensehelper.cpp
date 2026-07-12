@@ -73,7 +73,7 @@ void DeepinLicenseHelper::initFinshed(void *interface)
 
 void DeepinLicenseHelper::createInterface()
 {
-    fmInfo() << "Creating ComDeepinLicenseInterface for service: com.deepin.license";
+    fmInfo() << "Creating ComDeepinLicenseInterface for service: com.lingmo.license";
     auto licenseInterface = new ComDeepinLicenseInterface(
             "com.deepin.license",
             "/com/deepin/license/Info",

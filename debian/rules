@@ -31,7 +31,7 @@ $(shell sed -e 's|@PROFESSIONAL_DEPS@|$(PROFESSIONAL_DEPS)|g' \
 	dh $@ --parallel
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l$(shell pwd)/debian/dde-sharefiles/usr/share/dde-file-manager/sharefiles/lib
+	dh_shlibdeps -l$(shell pwd)/debian/dde-sharefiles/usr/share/lingmo-file-manager/sharefiles/lib
 
 override_dh_auto_configure:
 	dh_auto_configure -- \

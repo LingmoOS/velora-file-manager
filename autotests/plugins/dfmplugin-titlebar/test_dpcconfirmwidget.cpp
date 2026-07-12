@@ -475,9 +475,9 @@ TEST_F(DPCConfirmWidgetTest, AccessControlInterface_Service_ConfiguredCorrectly)
 {
     EXPECT_NE(widget->accessControlInter, nullptr);
     if (widget->accessControlInter) {
-        EXPECT_EQ(widget->accessControlInter->service(), "org.deepin.Filemanager.AccessControlManager");
+        EXPECT_EQ(widget->accessControlInter->service(), "org.lingmo.Filemanager.AccessControlManager");
         EXPECT_EQ(widget->accessControlInter->path(), "/org/deepin/Filemanager/AccessControlManager");
-        EXPECT_EQ(widget->accessControlInter->interface(), "org.deepin.Filemanager.AccessControlManager");
+        EXPECT_EQ(widget->accessControlInter->interface(), "org.lingmo.Filemanager.AccessControlManager");
     }
 }
 

@@ -19,7 +19,7 @@ class AccessControlManagerAdaptor;
 class AccessControlDBus : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.AccessControlManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.AccessControlManager")
 
 public:
     enum ErrCode {

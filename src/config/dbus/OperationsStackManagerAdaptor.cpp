@@ -29,19 +29,19 @@ OperationsStackManagerAdaptor::~OperationsStackManagerAdaptor()
 
 void OperationsStackManagerAdaptor::CleanOperations()
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.CleanOperations
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.CleanOperations
     QMetaObject::invokeMethod(parent(), "CleanOperations");
 }
 
 void OperationsStackManagerAdaptor::CleanOperationsByUrl(const QStringList &urls)
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.CleanOperationsByUrl
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.CleanOperationsByUrl
     QMetaObject::invokeMethod(parent(), "CleanOperationsByUrl", Q_ARG(QStringList, urls));
 }
 
 QVariantMap OperationsStackManagerAdaptor::RevocationOperations()
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.RevocationOperations
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.RevocationOperations
     QVariantMap out0;
     QMetaObject::invokeMethod(parent(), "RevocationOperations", Q_RETURN_ARG(QVariantMap, out0));
     return out0;
@@ -49,7 +49,7 @@ QVariantMap OperationsStackManagerAdaptor::RevocationOperations()
 
 QVariantMap OperationsStackManagerAdaptor::RevocationRedoOperations()
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.RevocationRedoOperations
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.RevocationRedoOperations
     QVariantMap out0;
     QMetaObject::invokeMethod(parent(), "RevocationRedoOperations", Q_RETURN_ARG(QVariantMap, out0));
     return out0;
@@ -57,13 +57,13 @@ QVariantMap OperationsStackManagerAdaptor::RevocationRedoOperations()
 
 void OperationsStackManagerAdaptor::SaveOperations(const QVariantMap &values)
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.SaveOperations
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.SaveOperations
     QMetaObject::invokeMethod(parent(), "SaveOperations", Q_ARG(QVariantMap, values));
 }
 
 void OperationsStackManagerAdaptor::SaveRedoOperations(const QVariantMap &values)
 {
-    // handle method call org.deepin.Filemanager.Daemon.OperationsStackManager.SaveRedoOperations
+    // handle method call org.lingmo.Filemanager.Daemon.OperationsStackManager.SaveRedoOperations
     QMetaObject::invokeMethod(parent(), "SaveRedoOperations", Q_ARG(QVariantMap, values));
 }
 

@@ -12,7 +12,7 @@
 
 #include <DConfig>
 
-static constexpr char kMountControlObjPath[] { "/org/deepin/Filemanager/MountControl" };
+static constexpr char kMountControlObjPath[] { "/org/lingmo/Filemanager/MountControl" };
 
 namespace service_mountcontrol {
 DFM_LOG_REGISTER_CATEGORY(SERVICEMOUNTCONTROL_NAMESPACE)
@@ -96,7 +96,7 @@ QVariantMap MountControlDBus::Unmount(const QString &path, const QVariantMap &op
 
 QStringList MountControlDBus::SupportedFileSystems()
 {
-    // handle method call com.deepin.filemanager.daemon.MountControl.SupportedFileSystems
+    // handle method call com.lingmo.filemanager.daemon.MountControl.SupportedFileSystems
     return d->supportedFS;
 }
 
@@ -108,8 +108,8 @@ MountControlDBusPrivate::MountControlDBusPrivate(MountControlDBus *qq)
 
     cifsHelper->cleanMountPoint();
 
-    auto config = Dtk::Core::DConfig::create("org.deepin.dde.file-manager",
-                                             "org.deepin.dde.file-manager.mount", "", q);
+    auto config = Dtk::Core::DConfig::create("org.lingmo.file-manager",
+                                             "org.lingmo.file-manager.mount", "", q);
     if (!config || !config->value("enableCifsMount").toBool()) {
         fmInfo() << "cannot create config object or cifs mount disabled." << config;
         return;

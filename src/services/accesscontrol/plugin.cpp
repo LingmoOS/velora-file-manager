@@ -17,7 +17,7 @@ extern "C" int DSMRegister(const char *name, void *data)
     // 但加密服务需要在启动时被拉起来，以便能够合并/更新 crypttab 文件
     // 在此处拉起有点脏但暂时没有更好的方法达到目的
     auto r = QtConcurrent::run([] {
-        QDBusInterface iface("org.deepin.Filemanager.DiskEncrypt",
+        QDBusInterface iface("org.lingmo.Filemanager.DiskEncrypt",
                              "/org/deepin/Filemanager/DiskEncrypt",
                              "org.deepin.Filemanager.DiskEncrypt",
                              QDBusConnection::systemBus());

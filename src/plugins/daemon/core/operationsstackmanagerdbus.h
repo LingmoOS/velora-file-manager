@@ -13,7 +13,7 @@
 class OperationsStackManagerDbus : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.OperationsStackManager")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.OperationsStackManager")
 
 public:
     explicit OperationsStackManagerDbus(QObject *parent = nullptr);

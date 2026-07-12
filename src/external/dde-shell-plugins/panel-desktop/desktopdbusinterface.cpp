@@ -17,23 +17,23 @@ DesktopDBusInterface::DesktopDBusInterface(QObject *parent) : QObject(parent)
 void DesktopDBusInterface::Refresh(bool silent)
 {
     QDBusInterface ifs(kDesktopServiceName,
-                       "/org/deepin/dde/desktop/canvas",
-                       "org.deepin.dde.desktop.canvas");
+                       "/org/lingmo/desktop/canvas",
+                       "org.lingmo.desktop.canvas");
     ifs.asyncCall("Refresh", silent);
 }
 
 void DesktopDBusInterface::ShowWallpaperChooser(const QString &screen)
 {
     QDBusInterface ifs(kDesktopServiceName,
-                       "/org/deepin/dde/desktop/wallpapersettings",
-                       "org.deepin.dde.desktop.wallpapersettings");
+                       "/org/lingmo/desktop/wallpapersettings",
+                       "org.lingmo.desktop.wallpapersettings");
     ifs.asyncCall("ShowWallpaperChooser", screen);
 }
 
 void DesktopDBusInterface::ShowScreensaverChooser(const QString &screen)
 {
     QDBusInterface ifs(kDesktopServiceName,
-                       "/org/deepin/dde/desktop/wallpapersettings",
-                       "org.deepin.dde.desktop.wallpapersettings");
+                       "/org/lingmo/desktop/wallpapersettings",
+                       "org.lingmo.desktop.wallpapersettings");
     ifs.asyncCall("ShowScreensaverChooser", screen);
 }

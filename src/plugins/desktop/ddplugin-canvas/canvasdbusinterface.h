@@ -14,7 +14,7 @@ class CanvasManager;
 class CanvasDBusInterface : public QObject, public QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.dde.desktop.canvas")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.desktop.canvas")
 public:
     explicit CanvasDBusInterface(CanvasManager *parent = nullptr);
 

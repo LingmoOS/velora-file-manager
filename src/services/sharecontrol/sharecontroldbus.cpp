@@ -20,8 +20,8 @@
 #include <QDataStream>
 #include <QByteArray>
 
-static constexpr char kUserShareObjPath[] { "/org/deepin/Filemanager/UserShareManager" };
-static constexpr char kPolicyKitActionId[] { "org.deepin.Filemanager.UserShareManager" };
+static constexpr char kUserShareObjPath[] { "/org/lingmo/Filemanager/UserShareManager" };
+static constexpr char kPolicyKitActionId[] { "org.lingmo.Filemanager.UserShareManager" };
 
 namespace service_sharecontrol {
 DFM_LOG_REGISTER_CATEGORY(SERVICESHARECONTROL_NAMESPACE)

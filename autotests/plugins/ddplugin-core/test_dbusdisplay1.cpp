@@ -116,9 +116,9 @@ TEST_F(TestDBusDisplay, Constructor_InitializesDBusInterface_Success)
     // Note: isValid() may return false due to stubbed D-Bus connection
     
     // Verify static interface properties
-    EXPECT_STREQ(DBusDisplay::staticInterfaceName(), "org.deepin.dde.Display1");
-    EXPECT_STREQ(DBusDisplay::staticServiceName(), "org.deepin.dde.Display1");
-    EXPECT_STREQ(DBusDisplay::staticObjectPath(), "/org/deepin/dde/Display1");
+    EXPECT_STREQ(DBusDisplay::staticInterfaceName(), "org.lingmo.Display1");
+    EXPECT_STREQ(DBusDisplay::staticServiceName(), "org.lingmo.Display1");
+    EXPECT_STREQ(DBusDisplay::staticObjectPath(), "/org/lingmo/Display1");
 }
 
 /**
@@ -375,7 +375,7 @@ TEST_F(TestDBusDisplay, Signals_PropertyChanges_Success)
     // Test valid property change message
     QDBusMessage validMsg = QDBusMessage::createSignal("/test", "org.freedesktop.DBus.Properties", "PropertiesChanged");
     QVariantList validArgs;
-    validArgs << QString("org.deepin.dde.Display1");
+    validArgs << QString("org.lingmo.Display1");
     
     QVariantMap changedProps;
     changedProps["Primary"] = QString("HDMI-2");
@@ -392,7 +392,7 @@ TEST_F(TestDBusDisplay, Signals_PropertyChanges_Success)
     // Test message with wrong argument count (should return early)
     QDBusMessage wrongArgsMsg = QDBusMessage::createSignal("/test", "org.freedesktop.DBus.Properties", "PropertiesChanged");
     QVariantList wrongArgs;
-    wrongArgs << QString("org.deepin.dde.Display1"); // Only 1 argument instead of 3
+    wrongArgs << QString("org.lingmo.Display1"); // Only 1 argument instead of 3
     wrongArgsMsg.setArguments(wrongArgs);
     
     dbusDisplay->__propertyChanged__(wrongArgsMsg);
@@ -412,7 +412,7 @@ TEST_F(TestDBusDisplay, Signals_PropertyChanges_Success)
     // Test empty property change map
     QDBusMessage emptyPropsMsg = QDBusMessage::createSignal("/test", "org.freedesktop.DBus.Properties", "PropertiesChanged");
     QVariantList emptyPropsArgs;
-    emptyPropsArgs << QString("org.deepin.dde.Display1");
+    emptyPropsArgs << QString("org.lingmo.Display1");
     
     QVariantMap emptyProps; // Empty map
     QDBusArgument emptyDbusArg;

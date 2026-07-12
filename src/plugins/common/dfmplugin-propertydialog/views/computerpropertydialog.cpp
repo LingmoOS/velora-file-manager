@@ -286,29 +286,29 @@ QString ComputerInfoThread::edition() const
             QString defaultEdition = QString("%1(%2)").arg(DSysInfo::uosEditionName()).arg(DSysInfo::minorVersion());
             if (DSysInfo::UosEdition::UosProfessional == DSysInfo::uosEditionType()
                 || DSysInfo::UosEdition::UosMilitary == DSysInfo::uosEditionType()) {
-                QDBusInterface deepinLicenseInfo("com.deepin.license",
+                QDBusInterface deepinLicenseInfo("com.lingmo.license",
                                                  "/com/deepin/license/Info",
                                                  "com.deepin.license.Info",
                                                  QDBusConnection::systemBus());
                 deepinLicenseInfo.setTimeout(1000);
                 if (!deepinLicenseInfo.isValid()) {
-                    fmWarning() << "Dbus com.deepin.license is not valid!";
+                    fmWarning() << "Dbus com.lingmo.license is not valid!";
                     return defaultEdition;
                 }
-                fmInfo() << "Start call Dbus com.deepin.license AuthorizationState";
+                fmInfo() << "Start call Dbus com.lingmo.license AuthorizationState";
                 int activeInfo = deepinLicenseInfo.property("AuthorizationState").toInt();
-                fmInfo() << "End call Dbus com.deepin.license AuthorizationState";
+                fmInfo() << "End call Dbus com.lingmo.license AuthorizationState";
                 if (kActivated == activeInfo) {
-                    fmInfo() << "Start call Dbus com.deepin.license ServiceProperty";
+                    fmInfo() << "Start call Dbus com.lingmo.license ServiceProperty";
                     QVariant info = deepinLicenseInfo.property("ServiceProperty");
-                    fmInfo() << "End call Dbus com.deepin.license serviceProperty";
+                    fmInfo() << "End call Dbus com.lingmo.license serviceProperty";
                     if (info.isValid() && info.toUInt() == kSecretsSecurity) {
                         return QString("%1(%2)(%3)").arg(DSysInfo::uosEditionName()).arg(tr("For Secrets Security")).arg(DSysInfo::minorVersion());
                     }
 
-                    fmInfo() << "Start call Dbus com.deepin.license AuthorizationProperty";
+                    fmInfo() << "Start call Dbus com.lingmo.license AuthorizationProperty";
                     uint authorizedInfo = deepinLicenseInfo.property("AuthorizationProperty").toUInt();
-                    fmInfo() << "End call Dbus com.deepin.license AuthorizationProperty";
+                    fmInfo() << "End call Dbus com.lingmo.license AuthorizationProperty";
                     if (kGovernment == authorizedInfo) {
                         return QString("%1(%2)(%3)").arg(DSysInfo::uosEditionName()).arg(tr("For Government")).arg(DSysInfo::minorVersion());
                     } else if (kEnterprise == authorizedInfo) {

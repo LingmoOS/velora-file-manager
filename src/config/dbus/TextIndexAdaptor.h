@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.TextIndex
+ * Adaptor class for interface org.lingmo.Filemanager.TextIndex
  */
 class TextIndexAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.TextIndex")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.TextIndex")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.TextIndex\">\n"
+"  <interface name=\"org.lingmo.Filemanager.TextIndex\">\n"
 "    <signal name=\"TaskFinished\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"type\"/>\n"
 "      <arg direction=\"out\" type=\"s\" name=\"path\"/>\n"

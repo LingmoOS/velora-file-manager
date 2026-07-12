@@ -23,7 +23,7 @@ class SyncTask;
 class SyncDBus : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.Daemon.Sync")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.Daemon.Sync")
 
 public:
     explicit SyncDBus(QObject *parent = nullptr);

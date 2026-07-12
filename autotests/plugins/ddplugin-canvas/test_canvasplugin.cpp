@@ -90,7 +90,7 @@ TEST_F(UT_CanvasPlugin, start)
         __DBG_STUB_INVOKE__
         registerDBusCalled = true;
         EXPECT_EQ(path, QString("/org/deepin/dde/desktop/canvas"));
-        EXPECT_EQ(serviceName, QString("org.deepin.dde.desktop.canvas"));
+        EXPECT_EQ(serviceName, QString("org.lingmo.desktop.canvas"));
         return true;
     });
 

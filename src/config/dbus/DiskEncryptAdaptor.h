@@ -17,14 +17,14 @@ class QVariant;
 QT_END_NAMESPACE
 
 /*
- * Adaptor class for interface org.deepin.Filemanager.DiskEncrypt
+ * Adaptor class for interface org.lingmo.Filemanager.DiskEncrypt
  */
 class DiskEncryptAdaptor: public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.Filemanager.DiskEncrypt")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.Filemanager.DiskEncrypt")
     Q_CLASSINFO("D-Bus Introspection", ""
-"  <interface name=\"org.deepin.Filemanager.DiskEncrypt\">\n"
+"  <interface name=\"org.lingmo.Filemanager.DiskEncrypt\">\n"
 "    <signal name=\"PrepareEncryptDiskResult\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"device\"/>\n"
 "      <arg direction=\"out\" type=\"s\" name=\"devName\"/>\n"

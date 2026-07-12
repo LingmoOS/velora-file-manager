@@ -188,7 +188,7 @@ TEST_F(UT_FileDialogManagerDBus, Dialogs_ReturnsEmptyListInitially)
 
 TEST_F(UT_FileDialogManagerDBus, DestroyDialog_InvalidPath_DoesNothing)
 {
-    QDBusObjectPath invalidPath("/com/deepin/filemanager/filedialog/invalid");
+    QDBusObjectPath invalidPath("/com/lingmo/filemanager/filedialog/invalid");
 
     EXPECT_NO_THROW(manager->destroyDialog(invalidPath));
 }

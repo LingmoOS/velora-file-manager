@@ -29,19 +29,19 @@ VaultManagerAdaptor::~VaultManagerAdaptor()
 
 void VaultManagerAdaptor::ClearLockEvent()
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.ClearLockEvent
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.ClearLockEvent
     QMetaObject::invokeMethod(parent(), "ClearLockEvent");
 }
 
 void VaultManagerAdaptor::ComputerSleep(bool bSleep)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.ComputerSleep
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.ComputerSleep
     QMetaObject::invokeMethod(parent(), "ComputerSleep", Q_ARG(bool, bSleep));
 }
 
 qulonglong VaultManagerAdaptor::GetLastestTime()
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.GetLastestTime
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.GetLastestTime
     qulonglong out0;
     QMetaObject::invokeMethod(parent(), "GetLastestTime", Q_RETURN_ARG(qulonglong, out0));
     return out0;
@@ -49,7 +49,7 @@ qulonglong VaultManagerAdaptor::GetLastestTime()
 
 int VaultManagerAdaptor::GetLeftoverErrorInputTimes(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.GetLeftoverErrorInputTimes
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.GetLeftoverErrorInputTimes
     int out0;
     QMetaObject::invokeMethod(parent(), "GetLeftoverErrorInputTimes", Q_RETURN_ARG(int, out0), Q_ARG(int, userID));
     return out0;
@@ -57,7 +57,7 @@ int VaultManagerAdaptor::GetLeftoverErrorInputTimes(int userID)
 
 int VaultManagerAdaptor::GetNeedWaitMinutes(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.GetNeedWaitMinutes
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.GetNeedWaitMinutes
     int out0;
     QMetaObject::invokeMethod(parent(), "GetNeedWaitMinutes", Q_RETURN_ARG(int, out0), Q_ARG(int, userID));
     return out0;
@@ -65,7 +65,7 @@ int VaultManagerAdaptor::GetNeedWaitMinutes(int userID)
 
 qulonglong VaultManagerAdaptor::GetSelfTime()
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.GetSelfTime
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.GetSelfTime
     qulonglong out0;
     QMetaObject::invokeMethod(parent(), "GetSelfTime", Q_RETURN_ARG(qulonglong, out0));
     return out0;
@@ -73,7 +73,7 @@ qulonglong VaultManagerAdaptor::GetSelfTime()
 
 bool VaultManagerAdaptor::IsLockEventTriggered()
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.IsLockEventTriggered
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.IsLockEventTriggered
     bool out0;
     QMetaObject::invokeMethod(parent(), "IsLockEventTriggered", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -81,43 +81,43 @@ bool VaultManagerAdaptor::IsLockEventTriggered()
 
 void VaultManagerAdaptor::LeftoverErrorInputTimesMinusOne(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.LeftoverErrorInputTimesMinusOne
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.LeftoverErrorInputTimesMinusOne
     QMetaObject::invokeMethod(parent(), "LeftoverErrorInputTimesMinusOne", Q_ARG(int, userID));
 }
 
 void VaultManagerAdaptor::RestoreLeftoverErrorInputTimes(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.RestoreLeftoverErrorInputTimes
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.RestoreLeftoverErrorInputTimes
     QMetaObject::invokeMethod(parent(), "RestoreLeftoverErrorInputTimes", Q_ARG(int, userID));
 }
 
 void VaultManagerAdaptor::RestoreNeedWaitMinutes(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.RestoreNeedWaitMinutes
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.RestoreNeedWaitMinutes
     QMetaObject::invokeMethod(parent(), "RestoreNeedWaitMinutes", Q_ARG(int, userID));
 }
 
 void VaultManagerAdaptor::SetRefreshTime(qulonglong time)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.SetRefreshTime
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.SetRefreshTime
     QMetaObject::invokeMethod(parent(), "SetRefreshTime", Q_ARG(qulonglong, time));
 }
 
 void VaultManagerAdaptor::StartTimerOfRestorePasswordInput(int userID)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.StartTimerOfRestorePasswordInput
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.StartTimerOfRestorePasswordInput
     QMetaObject::invokeMethod(parent(), "StartTimerOfRestorePasswordInput", Q_ARG(int, userID));
 }
 
 void VaultManagerAdaptor::SysUserChanged(const QString &curUser)
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.SysUserChanged
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.SysUserChanged
     QMetaObject::invokeMethod(parent(), "SysUserChanged", Q_ARG(QString, curUser));
 }
 
 void VaultManagerAdaptor::TriggerLockEvent()
 {
-    // handle method call org.deepin.Filemanager.Daemon.VaultManager.TriggerLockEvent
+    // handle method call org.lingmo.Filemanager.Daemon.VaultManager.TriggerLockEvent
     QMetaObject::invokeMethod(parent(), "TriggerLockEvent");
 }
 

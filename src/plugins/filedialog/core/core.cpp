@@ -51,7 +51,7 @@ bool Core::registerDialogDBus()
     // add our D-Bus interface and connect to D-Bus
     QString appName { qApp->applicationName() };
     fmInfo() << "Current app is" << appName;
-    QString serviceName { "com.deepin.filemanager.filedialog" };
+    QString serviceName { "com.lingmo.filemanager.filedialog" };
     QString pathName { "/com/deepin/filemanager/filedialogmanager" };
 
     if (appName.endsWith("x11")) {
@@ -63,7 +63,7 @@ bool Core::registerDialogDBus()
     }
 
     if (!QDBusConnection::sessionBus().registerService(serviceName)) {
-        fmWarning("File Dialog: Cannot register the \"com.deepin.filemanager.filedialog\" service.\n");
+        fmWarning("File Dialog: Cannot register the \"com.lingmo.filemanager.filedialog\" service.\n");
         return false;
     }
 
@@ -71,7 +71,7 @@ bool Core::registerDialogDBus()
     Q_UNUSED(new FiledialogmanagerAdaptor(manager));
 
     if (!QDBusConnection::sessionBus().registerObject(pathName, manager)) {
-        fmWarning("File Dialog: Cannot register to the D-Bus object: \"/com/deepin/filemanager/filedialogmanager\"\n");
+        fmWarning("File Dialog: Cannot register to the D-Bus object: \"/com/lingmo/filemanager/filedialogmanager\"\n");
         manager->deleteLater();
         return false;
     }
@@ -126,7 +126,7 @@ void Core::enterHighPerformanceMode()
     }
 
     fmInfo() << "About to call dbus LockCpuFreq";
-    QDBusInterface daemonIface("com.deepin.system.Power", "/com/deepin/system/Power", "com.deepin.system.Power",
+    QDBusInterface daemonIface("com.lingmo.system.Power", "/com/lingmo/system/Power", "com.lingmo.system.Power",
                                QDBusConnection::systemBus());
     // Pull up the CPU frequency for 3s
     daemonIface.asyncCall("LockCpuFreq", "performance", 3);

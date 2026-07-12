@@ -56,7 +56,7 @@ void WlSetPlugin::registerDBus()
 
     QDBusConnection conn = QDBusConnection::sessionBus();
     auto registerOptions = QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllSignals | QDBusConnection::ExportAllProperties;
-    if (!conn.registerObject("/org/deepin/dde/desktop/wallpapersettings", "org.deepin.dde.desktop.wallpapersettings", ifs, registerOptions)) {
+    if (!conn.registerObject("/org/lingmo/desktop/wallpapersettings", "org.lingmo.desktop.wallpapersettings", ifs, registerOptions)) {
         fmCritical() << "org.deepin.dde.desktop.wallpapersettings register object failed" << conn.lastError();
         delete ifs;
     }
@@ -94,7 +94,7 @@ bool EventHandle::wallpaperSetting(const QString &name)
         show(name, (int)WallpaperSettings::Mode::WallpaperMode);
     } else {
         fmDebug() << "call ControlCenter serivce by dbus.";
-        QDBusMessage msg = QDBusMessage::createMethodCall("org.deepin.dde.ControlCenter1", "/org/deepin/dde/ControlCenter1",
+        QDBusMessage msg = QDBusMessage::createMethodCall("org.lingmo.ControlCenter1", "/org/lingmo/ControlCenter1",
                                                           "org.deepin.dde.ControlCenter1", "ShowPage");
         msg.setArguments({ QVariant::fromValue(QString("personalization/wallpaper")) });
         QDBusConnection::sessionBus().asyncCall(msg, 5);

@@ -29,7 +29,7 @@ ShareControlAdaptor::~ShareControlAdaptor()
 
 bool ShareControlAdaptor::CloseSmbShareByShareName(const QString &name, bool show)
 {
-    // handle method call org.deepin.Filemanager.UserShareManager.CloseSmbShareByShareName
+    // handle method call org.lingmo.Filemanager.UserShareManager.CloseSmbShareByShareName
     bool out0;
     QMetaObject::invokeMethod(parent(), "CloseSmbShareByShareName", Q_RETURN_ARG(bool, out0), Q_ARG(QString, name), Q_ARG(bool, show));
     return out0;
@@ -37,7 +37,7 @@ bool ShareControlAdaptor::CloseSmbShareByShareName(const QString &name, bool sho
 
 bool ShareControlAdaptor::EnableSmbServices()
 {
-    // handle method call org.deepin.Filemanager.UserShareManager.EnableSmbServices
+    // handle method call org.lingmo.Filemanager.UserShareManager.EnableSmbServices
     bool out0;
     QMetaObject::invokeMethod(parent(), "EnableSmbServices", Q_RETURN_ARG(bool, out0));
     return out0;
@@ -45,7 +45,7 @@ bool ShareControlAdaptor::EnableSmbServices()
 
 bool ShareControlAdaptor::IsUserSharePasswordSet(const QString &username)
 {
-    // handle method call org.deepin.Filemanager.UserShareManager.IsUserSharePasswordSet
+    // handle method call org.lingmo.Filemanager.UserShareManager.IsUserSharePasswordSet
     bool out0;
     QMetaObject::invokeMethod(parent(), "IsUserSharePasswordSet", Q_RETURN_ARG(bool, out0), Q_ARG(QString, username));
     return out0;
@@ -53,7 +53,7 @@ bool ShareControlAdaptor::IsUserSharePasswordSet(const QString &username)
 
 bool ShareControlAdaptor::SetUserSharePassword(const QString &name, const QString &passwd)
 {
-    // handle method call org.deepin.Filemanager.UserShareManager.SetUserSharePassword
+    // handle method call org.lingmo.Filemanager.UserShareManager.SetUserSharePassword
     bool out0;
     QMetaObject::invokeMethod(parent(), "SetUserSharePassword", Q_RETURN_ARG(bool, out0), Q_ARG(QString, name), Q_ARG(QString, passwd));
     return out0;

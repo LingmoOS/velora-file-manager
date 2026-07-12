@@ -98,7 +98,7 @@ void Core::connectToServer()
     // mount business
     if (!DevProxyMng->initService()) {
         // active server
-        QDBusInterface ifs("org.deepin.Filemanager.Daemon",
+        QDBusInterface ifs("org.lingmo.Filemanager.Daemon",
                            "/org/deepin/Filemanager/Daemon");
         ifs.asyncCall("Ping");
 

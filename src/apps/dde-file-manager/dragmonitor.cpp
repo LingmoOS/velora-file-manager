@@ -28,12 +28,12 @@ void DragMoniter::registerDBus()
         return;
     }
 
-    if (!con.registerService("org.deepin.filemanager.drag")) {
+    if (!con.registerService("org.lingmo.filemanager.drag")) {
         qCCritical(logAppFileManager) << "DragMoniter::registerDBus: Cannot register D-Bus service:" << con.lastError().message();
         return;
     }
 
-    if (!con.registerObject("/org/deepin/filemanager/drag",
+    if (!con.registerObject("/org/lingmo/filemanager/drag",
                             this,
                             QDBusConnection::ExportScriptableSignals)) {
         qCCritical(logAppFileManager) << "DragMoniter::registerDBus: Cannot register D-Bus object:" << con.lastError().message();
@@ -49,8 +49,8 @@ void DragMoniter::unRegisterDBus()
     qCInfo(logAppFileManager) << "DragMoniter::unRegisterDBus: Unregistering D-Bus service";
     qApp->removeEventFilter(this);
     QDBusConnection con = QDBusConnection::sessionBus();
-    con.unregisterObject("/org/deepin/filemanager/drag");
-    con.unregisterService("org.deepin.filemanager.drag");
+    con.unregisterObject("/org/lingmo/filemanager/drag");
+    con.unregisterService("org.lingmo.filemanager.drag");
 }
 
 bool DragMoniter::eventFilter(QObject *watched, QEvent *event)

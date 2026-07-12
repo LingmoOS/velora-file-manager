@@ -27,21 +27,21 @@ bool RecentDaemon::start()
     auto conn = QDBusConnection::sessionBus();
     
     // register service
-    if (!conn.registerService("org.deepin.Filemanager.Daemon")) {
-        fmCritical() << "[RecentDaemon::start] Failed to register DBus service 'org.deepin.Filemanager.Daemon'";
+    if (!conn.registerService("org.lingmo.Filemanager.Daemon")) {
+        fmCritical() << "[RecentDaemon::start] Failed to register DBus service 'org.lingmo.Filemanager.Daemon'";
         ::exit(EXIT_FAILURE);
     }
-    fmInfo() << "[RecentDaemon::start] DBus service 'org.deepin.Filemanager.Daemon' registered successfully";
+    fmInfo() << "[RecentDaemon::start] DBus service 'org.lingmo.Filemanager.Daemon' registered successfully";
 
     recentManager.reset(new RecentManagerDBus);
     Q_UNUSED(new RecentManagerAdaptor(recentManager.data()));
-    if (!conn.registerObject("/org/deepin/Filemanager/Daemon/RecentManager",
+    if (!conn.registerObject("/org/lingmo/Filemanager/Daemon/RecentManager",
                              recentManager.data())) {
-        fmCritical() << "[RecentDaemon::start] Failed to register DBus object '/org/deepin/Filemanager/Daemon/RecentManager'";
+        fmCritical() << "[RecentDaemon::start] Failed to register DBus object '/org/lingmo/Filemanager/Daemon/RecentManager'";
         recentManager.reset(nullptr);
         return false;
     }
-    fmInfo() << "[RecentDaemon::start] DBus object '/org/deepin/Filemanager/Daemon/RecentManager' registered successfully";
+    fmInfo() << "[RecentDaemon::start] DBus object '/org/lingmo/Filemanager/Daemon/RecentManager' registered successfully";
 
     // start watch xbel path
     RecentManager::instance().startWatch();

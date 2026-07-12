@@ -1,0 +1,9 @@
+#arch-dependent-file-not-in-arch-specific-directory
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/plugins/common-core/libdfmplugin-bookmark.so
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/plugins/common-core/libdfmplugin-fileoperations.so
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/plugins/common-core/libdfmplugin-menu.so
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/plugins/common-core/libdfmplugin-trashcore.so
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/tools/libdfm-upgrade.so
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/libdfm-base.so.*
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/libdfm-framework.so.*
+liblingmo-file-manager: arch-dependent-file-not-in-arch-specific-directory usr/lib/loongarch64-linux-gnu/lingmo-file-manager/plugins/common-core/libdfmplugin-propertydialog.so
