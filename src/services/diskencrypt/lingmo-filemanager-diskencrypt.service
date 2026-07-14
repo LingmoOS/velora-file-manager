@@ -1,11 +1,11 @@
 [Unit]
-Description=Deepin Disk Encrypt Service
+Description=Lingmo Disk Encrypt Service
 After=dbus.service
 
 [Service]
 Type=dbus
 BusName=org.lingmo.Filemanager.DiskEncrypt
-ExecStart=/usr/bin/deepin-diskencrypt-service
+ExecStart=/usr/bin/lingmo-diskencrypt-service
 User=root
 
 # ProtectSystem=full

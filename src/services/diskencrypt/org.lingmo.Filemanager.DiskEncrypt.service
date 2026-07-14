@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.lingmo.Filemanager.DiskEncrypt
 Exec=/usr/bin/false
-SystemdService=deepin-filemanager-diskencrypt.service
+SystemdService=lingmo-filemanager-diskencrypt.service

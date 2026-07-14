@@ -43,7 +43,7 @@ DiskEncryptSetup::DiskEncryptSetup(QObject *parent)
 {
     qInfo() << "[DiskEncryptSetup] Initializing disk encryption service";
     initPolicy(QDBusConnection::SystemBus,
-               QString(SERVICE_CONFIG_DIR) + "other/deepin-diskencrypt-service.json");
+               QString(SERVICE_CONFIG_DIR) + "other/lingmo-diskencrypt-service.json");
     dfmmount::DDeviceManager::instance();
     m_dptr->initialize();
 

@@ -18,8 +18,8 @@ extern "C" int DSMRegister(const char *name, void *data)
     // 在此处拉起有点脏但暂时没有更好的方法达到目的
     auto r = QtConcurrent::run([] {
         QDBusInterface iface("org.lingmo.Filemanager.DiskEncrypt",
-                             "/org/deepin/Filemanager/DiskEncrypt",
-                             "org.deepin.Filemanager.DiskEncrypt",
+                             "/org/lingmo/Filemanager/DiskEncrypt",
+                             "org.lingmo.Filemanager.DiskEncrypt",
                              QDBusConnection::systemBus());
         iface.call("IsTaskEmpty");
     });

@@ -1,0 +1,9 @@
+{
+    "name": "org.lingmo.Filemanager.DiskEncrypt",
+    "policyStartType": "Resident",
+    "policy": [
+        {
+            "path": "/org/lingmo/Filemanager/DiskEncrypt"
+        }
+    ]
+}

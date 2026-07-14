@@ -69,7 +69,9 @@ function(dfm_setup_diskencrypt_dbus_interfaces target_name)
         qt6_add_dbus_adaptor(ADAPTOR_SOURCES
             ${DBUS_INTERFACE_FILE}
             dbus/diskencryptsetup.h
-            DiskEncryptSetup)
+            DiskEncryptSetup
+            diskencryptadaptor
+            DiskEncryptAdaptor)
         
         # Add generated sources to target
         if(ADAPTOR_SOURCES)
