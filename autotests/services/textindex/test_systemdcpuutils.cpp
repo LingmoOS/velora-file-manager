@@ -265,7 +265,7 @@ TEST_F(UT_SystemdCpuUtils, SetCpuQuota_ValidServiceWithComplexName_ReturnsTrue)
 {
     setupProcessMock(true, 0);
     QString errorMsg;
-    const QString complexServiceName = "deepin-service-plugin@org.deepin.Filemanager.TextIndex.service";
+    const QString complexServiceName = "deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service";
 
     bool result = SystemdCpuUtils::setCpuQuota(complexServiceName, 75, &errorMsg);
 
@@ -279,7 +279,7 @@ TEST_F(UT_SystemdCpuUtils, ResetCpuQuota_ValidServiceWithComplexName_ReturnsTrue
 {
     setupProcessMock(true, 0);
     QString errorMsg;
-    const QString complexServiceName = "deepin-service-plugin@org.deepin.Filemanager.TextIndex.service";
+    const QString complexServiceName = "deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service";
 
     bool result = SystemdCpuUtils::resetCpuQuota(complexServiceName, &errorMsg);
 

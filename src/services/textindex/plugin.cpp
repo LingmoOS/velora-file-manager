@@ -9,8 +9,8 @@ static TextIndexDBus *textIndexDBus = nullptr;
 
 // DEBUG:
 // 1. budild a debug so file and copy to isntall path
-// 2. systemctl --user stop deepin-service-plugin@org.deepin.Filemanager.TextIndex.service
-// 3. launch app: /usr/bin/deepin-service-manager -n org.deepin.Filemanager.TextIndex
+// 2. systemctl --user stop deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service
+// 3. launch app: /usr/bin/deepin-service-manager -n org.lingmo.Filemanager.TextIndex
 
 extern "C" int DSMRegister(const char *name, void *data)
 {

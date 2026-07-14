@@ -50,8 +50,8 @@ bool TextIndexClient::ensureInterface()
             return false;
         }
 
-        if (!sessionBusIface->isServiceRegistered("org.deepin.Filemanager.TextIndex")) {
-            auto reply = sessionBusIface->startService("org.deepin.Filemanager.TextIndex");
+        if (!sessionBusIface->isServiceRegistered("org.lingmo.Filemanager.TextIndex")) {
+            auto reply = sessionBusIface->startService("org.lingmo.Filemanager.TextIndex");
             if (!reply.isValid())
                 fmWarning() << "[TextIndex] Failed to start service:" << reply.error().message();
         } else {
@@ -60,9 +60,9 @@ bool TextIndexClient::ensureInterface()
 
         // 创建接口
         fmDebug() << "Creating new TextIndex D-Bus interface";
-        interface.reset(new OrgDeepinFilemanagerTextIndexInterface(
-                "org.deepin.Filemanager.TextIndex",
-                "/org/deepin/Filemanager/TextIndex",
+        interface.reset(new OrgLingmoFilemanagerTextIndexInterface(
+                "org.lingmo.Filemanager.TextIndex",
+                "/org/lingmo/Filemanager/TextIndex",
                 QDBusConnection::sessionBus(),
                 this));
 
@@ -74,9 +74,9 @@ bool TextIndexClient::ensureInterface()
         }
 
         // 接口可用，连接信号
-        connect(interface.get(), &OrgDeepinFilemanagerTextIndexInterface::TaskFinished,
+        connect(interface.get(), &OrgLingmoFilemanagerTextIndexInterface::TaskFinished,
                 this, &TextIndexClient::onDBusTaskFinished);
-        connect(interface.get(), &OrgDeepinFilemanagerTextIndexInterface::TaskProgressChanged,
+        connect(interface.get(), &OrgLingmoFilemanagerTextIndexInterface::TaskProgressChanged,
                 this, &TextIndexClient::onDBusTaskProgressChanged);
 
         fmInfo() << "[TextIndex] Interface successfully initialized";

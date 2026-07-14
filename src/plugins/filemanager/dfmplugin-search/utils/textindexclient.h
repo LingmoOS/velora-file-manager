@@ -12,7 +12,7 @@
 #include <memory>
 #include <optional>
 
-class OrgDeepinFilemanagerTextIndexInterface;
+class OrgLingmoFilemanagerTextIndexInterface;
 
 DPSEARCH_BEGIN_NAMESPACE
 
@@ -90,7 +90,7 @@ private:
     bool isSupportedTaskType(const QString &type);
 
 private:
-    std::unique_ptr<OrgDeepinFilemanagerTextIndexInterface> interface;
+    std::unique_ptr<OrgLingmoFilemanagerTextIndexInterface> interface;
 
 private Q_SLOTS:
     void onDBusTaskFinished(const QString &type, const QString &path, bool success);

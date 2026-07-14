@@ -42,7 +42,7 @@ function(dfm_setup_daemon_core_dependencies target_name)
     
     # Add DBus interface for TextIndex
     qt6_add_dbus_interface(DBUS_SOURCES
-        "${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.TextIndex.xml"
+        "${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.TextIndex.xml"
         textindex_interface
     )
     

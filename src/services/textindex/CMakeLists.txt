@@ -31,7 +31,7 @@ dfm_setup_textindex_dependencies(${PROJECT_NAME} "textindex")
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
 install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/user/)
-INSTALL_DBUS_SERVICE(org.deepin.Filemanager.TextIndex)
+INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.TextIndex)
 INSTALL_DCONFIG("org.deepin.dde.file-manager.textindex.json")
 
 # Install systemd drop-in configuration for resource limits
@@ -39,5 +39,5 @@ INSTALL_DCONFIG("org.deepin.dde.file-manager.textindex.json")
 install(FILES
     systemd/memory-limit.conf
     DESTINATION
-    lib/systemd/user/deepin-service-plugin@org.deepin.Filemanager.TextIndex.service.d/
+    lib/systemd/user/deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service.d/
 )

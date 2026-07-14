@@ -1,12 +1,12 @@
 {
-    "name": "org.deepin.Filemanager.TextIndex",
+    "name": "org.lingmo.Filemanager.TextIndex",
     "libPath": "libdde-filemanager-textindex.so",
     "policyStartType": "OnDemand",
     "idleTime": 600,
     "pluginType": "qt",
     "policy": [
         {
-            "path": "/org/deepin/Filemanager/TextIndex"
+            "path": "/org/lingmo/Filemanager/TextIndex"
         }
     ]
 } 

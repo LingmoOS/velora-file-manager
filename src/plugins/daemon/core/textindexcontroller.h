@@ -12,7 +12,7 @@
 #include <memory>
 #include <functional>
 
-class OrgDeepinFilemanagerTextIndexInterface;
+class OrgLingmoFilemanagerTextIndexInterface;
 
 DAEMONPCORE_BEGIN_NAMESPACE
 
@@ -45,7 +45,7 @@ private:
     void updateKeepAliveTimer();
 
 private:
-    std::unique_ptr<OrgDeepinFilemanagerTextIndexInterface> interface;
+    std::unique_ptr<OrgLingmoFilemanagerTextIndexInterface> interface;
     State currentState { State::Disabled };
     bool isConfigEnabled { false };
     QTimer *keepAliveTimer { nullptr };

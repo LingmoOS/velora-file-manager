@@ -191,15 +191,15 @@ void TextIndexController::setupDBusConnections()
     // 先确保服务已启动
     QDBusConnectionInterface *sessionBusIface = QDBusConnection::sessionBus().interface();
     if (sessionBusIface)
-        sessionBusIface->startService("org.deepin.Filemanager.TextIndex");
+        sessionBusIface->startService("org.lingmo.Filemanager.TextIndex");
 
-    interface.reset(new OrgDeepinFilemanagerTextIndexInterface(
-            "org.deepin.Filemanager.TextIndex",
-            "/org/deepin/Filemanager/TextIndex",
+    interface.reset(new OrgLingmoFilemanagerTextIndexInterface(
+            "org.lingmo.Filemanager.TextIndex",
+            "/org/lingmo/Filemanager/TextIndex",
             QDBusConnection::sessionBus(),
             this));
 
-    connect(interface.get(), &OrgDeepinFilemanagerTextIndexInterface::TaskFinished,
+    connect(interface.get(), &OrgLingmoFilemanagerTextIndexInterface::TaskFinished,
             this, [this](const QString &type, const QString &path, bool success) {
                 if (path != QDir::homePath())
                     return;
@@ -208,7 +208,7 @@ void TextIndexController::setupDBusConnections()
                     handler->second(success);
                 }
             });
-    connect(interface.get(), &OrgDeepinFilemanagerTextIndexInterface::TaskProgressChanged,
+    connect(interface.get(), &OrgLingmoFilemanagerTextIndexInterface::TaskProgressChanged,
             this, [this]() {
                 if (currentState == State::Running)
                     return;

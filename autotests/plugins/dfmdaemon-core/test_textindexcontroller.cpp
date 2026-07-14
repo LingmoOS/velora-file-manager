@@ -209,7 +209,7 @@ TEST_F(TestTextIndexController, ActiveBackend_WithInit)
     bool setEnabledCalled = false;
 
     // Mock interface
-    auto mockInterface = new OrgDeepinFilemanagerTextIndexInterface("", "", QDBusConnection::sessionBus());
+    auto mockInterface = new OrgLingmoFilemanagerTextIndexInterface("", "", QDBusConnection::sessionBus());
 
     stub.set_lamda(&TextIndexController::isBackendAvaliable, [&](TextIndexController *) {
         __DBG_STUB_INVOKE__
@@ -217,13 +217,13 @@ TEST_F(TestTextIndexController, ActiveBackend_WithInit)
         return true;
     });
 
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::Init, [&](OrgDeepinFilemanagerTextIndexInterface *) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::Init, [&](OrgLingmoFilemanagerTextIndexInterface *) {
         __DBG_STUB_INVOKE__
         initCalled = true;
         return QDBusPendingReply<void>();
     });
 
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::SetEnabled, [&](OrgDeepinFilemanagerTextIndexInterface *, bool enabled) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::SetEnabled, [&](OrgLingmoFilemanagerTextIndexInterface *, bool enabled) {
         __DBG_STUB_INVOKE__
         setEnabledCalled = true;
         return QDBusPendingReply<void>();
@@ -257,7 +257,7 @@ TEST_F(TestTextIndexController, KeepBackendAlive_BackendDisabledButConfigEnabled
     bool activeBackendCalled = false;
 
     // Mock interface
-    auto mockInterface = new OrgDeepinFilemanagerTextIndexInterface("", "", QDBusConnection::sessionBus());
+    auto mockInterface = new OrgLingmoFilemanagerTextIndexInterface("", "", QDBusConnection::sessionBus());
 
     stub.set_lamda(&TextIndexController::isBackendAvaliable, [&](TextIndexController *) {
         __DBG_STUB_INVOKE__
@@ -265,7 +265,7 @@ TEST_F(TestTextIndexController, KeepBackendAlive_BackendDisabledButConfigEnabled
         return true;
     });
 
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::IsEnabled, [&](OrgDeepinFilemanagerTextIndexInterface *) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::IsEnabled, [&](OrgLingmoFilemanagerTextIndexInterface *) {
         __DBG_STUB_INVOKE__
         isEnabledCalled = true;
         return QDBusPendingReply<bool>();
@@ -360,7 +360,7 @@ TEST_F(TestTextIndexController, SetupDBusConnections_Success)
     stub.set_lamda(&QDBusConnectionInterface::startService, [&](QDBusConnectionInterface *, const QString &name) {
         __DBG_STUB_INVOKE__
         startServiceCalled = true;
-        EXPECT_EQ(name, "org.deepin.Filemanager.TextIndex");
+        EXPECT_EQ(name, "org.lingmo.Filemanager.TextIndex");
         return QDBusPendingReply<void>();
     });
 
@@ -397,13 +397,13 @@ TEST_F(TestTextIndexController, StartIndexTask_CreateTask)
     bool updateIndexTaskCalled = false;
 
     // Mock interface methods
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::CreateIndexTask, [&](OrgDeepinFilemanagerTextIndexInterface *, const QStringList &paths) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::CreateIndexTask, [&](OrgLingmoFilemanagerTextIndexInterface *, const QStringList &paths) {
         __DBG_STUB_INVOKE__
         createIndexTaskCalled = true;
         return QDBusPendingReply<bool>();
     });
 
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::UpdateIndexTask, [&](OrgDeepinFilemanagerTextIndexInterface *, const QStringList &paths) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::UpdateIndexTask, [&](OrgLingmoFilemanagerTextIndexInterface *, const QStringList &paths) {
         __DBG_STUB_INVOKE__
         updateIndexTaskCalled = true;
         return QDBusPendingReply<bool>();
@@ -493,13 +493,13 @@ TEST_F(TestTextIndexController, StartIndexTask_UpdateTask)
     bool updateIndexTaskCalled = false;
 
     // Mock interface methods
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::CreateIndexTask, [&](OrgDeepinFilemanagerTextIndexInterface *, const QStringList &paths) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::CreateIndexTask, [&](OrgLingmoFilemanagerTextIndexInterface *, const QStringList &paths) {
         __DBG_STUB_INVOKE__
         createIndexTaskCalled = true;
         return QDBusPendingReply<bool>();
     });
 
-    stub.set_lamda(&OrgDeepinFilemanagerTextIndexInterface::UpdateIndexTask, [&](OrgDeepinFilemanagerTextIndexInterface *, const QStringList &paths) {
+    stub.set_lamda(&OrgLingmoFilemanagerTextIndexInterface::UpdateIndexTask, [&](OrgLingmoFilemanagerTextIndexInterface *, const QStringList &paths) {
         __DBG_STUB_INVOKE__
         updateIndexTaskCalled = true;
         return QDBusPendingReply<bool>();

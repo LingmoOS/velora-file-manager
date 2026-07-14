@@ -14,7 +14,7 @@ namespace SystemdCpuUtils {
 
 /**
  * @brief Sets CPU quota for a specified systemd user service.
- * @param serviceName Full service name (e.g. "deepin-service-plugin@org.deepin.Filemanager.TextIndex.service")
+ * @param serviceName Full service name (e.g. "deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service")
  * @param percentage CPU quota percentage (e.g. 50 for 50% limit)
  * @param[out] errorMsg If execution fails, contains the error message
  * @return Returns true if command executed successfully, false otherwise

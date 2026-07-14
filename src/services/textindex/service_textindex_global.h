@@ -18,7 +18,7 @@ SERVICETEXTINDEX_BEGIN_NAMESPACE
 namespace Defines {
 
 inline const QString kTextIndexServiceName =
-        QLatin1String("deepin-service-plugin@org.deepin.Filemanager.TextIndex.service");
+        QLatin1String("deepin-service-plugin@org.lingmo.Filemanager.TextIndex.service");
 inline const QString kAnythingDocType = QLatin1String("doc");
 inline const QString kAnythingDirType = QLatin1String("dir");
 
