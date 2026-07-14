@@ -5,7 +5,7 @@
 <policyconfig>
   <vendor />
   <vendor_url />
-  <action id="org.deepin.Filemanager.UserShareManager">
+  <action id="org.lingmo.Filemanager.UserShareManager">
     <description>User share manager</description>
     <message>Authentication is required to change your user share data</message>
     <message xml:lang="zh_CN">修改您的共享信息需要认证</message>

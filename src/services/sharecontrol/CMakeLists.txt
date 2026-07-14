@@ -31,10 +31,10 @@ dfm_setup_sharecontrol_dependencies(${PROJECT_NAME})
 install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
 install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/system/)
 install(FILES org.lingmo.filemanager.usersharemanager.conf DESTINATION share/dbus-1/system.d/)
-INSTALL_DBUS_SERVICE(org.deepin.Filemanager.UserShareManager root)
+INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.UserShareManager root)
 
 set(PolicyDir "${CMAKE_INSTALL_PREFIX}/share/polkit-1/actions")
-install(FILES polkit/org.deepin.filemanager.usersharemanager.policy DESTINATION ${PolicyDir})
+install(FILES polkit/org.lingmo.filemanager.usersharemanager.policy DESTINATION ${PolicyDir})
 
 # Install systemd drop-in configuration for security hardening
 # This adds security restrictions without modifying the shared service template

@@ -1,5 +1,5 @@
 {
-    "name": "org.deepin.Filemanager.UserShareManager",
+    "name": "org.lingmo.Filemanager.UserShareManager",
     "libPath": "libdde-filemanager-sharecontrol.so",
     "group": "app",
     "policyStartType": "OnDemand",
@@ -7,7 +7,7 @@
     "idleTime": 1,
     "policy": [
         {
-            "path": "/org/deepin/Filemanager/UserShareManager"
+            "path": "/org/lingmo/Filemanager/UserShareManager"
         }
     ]
 }

@@ -40,9 +40,9 @@ DFMBASE_USE_NAMESPACE
 namespace dfmplugin_dirshare {
 
 namespace DaemonServiceIFace {
-static constexpr char kInterfaceService[] { "org.deepin.Filemanager.UserShareManager" };
-static constexpr char kInterfacePath[] { "/org/deepin/Filemanager/UserShareManager" };
-static constexpr char kInterfaceInterface[] { "org.deepin.Filemanager.UserShareManager" };
+static constexpr char kInterfaceService[] { "org.lingmo.Filemanager.UserShareManager" };
+static constexpr char kInterfacePath[] { "/org/lingmo/Filemanager/UserShareManager" };
+static constexpr char kInterfaceInterface[] { "org.lingmo.Filemanager.UserShareManager" };
 
 static constexpr char kFuncIsPasswordSet[] { "IsUserSharePasswordSet" };
 static constexpr char kFuncSetPasswd[] { "SetUserSharePassword" };

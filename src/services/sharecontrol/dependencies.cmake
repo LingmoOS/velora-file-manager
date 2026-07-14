@@ -39,7 +39,7 @@ function(dfm_setup_sharecontrol_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up sharecontrol DBus interfaces for: ${target_name}")
     
     # Define the DBus interface file path using DFM_ASSETS_DIR
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.ShareControl.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.UserShareManager.xml")
     
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")
@@ -47,7 +47,9 @@ function(dfm_setup_sharecontrol_dbus_interfaces target_name)
         
         # Generate DBus adaptor
         qt6_add_dbus_adaptor(ADAPTOR_SOURCES ${DBUS_INTERFACE_FILE}
-            sharecontroldbus.h ShareControlDBus)
+            sharecontroldbus.h ShareControlDBus
+            sharecontroladaptor
+            UserShareManagerAdaptor)
         
         # Add generated sources to target
         if(ADAPTOR_SOURCES)
