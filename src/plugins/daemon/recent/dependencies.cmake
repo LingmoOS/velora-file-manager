@@ -3,7 +3,7 @@ function(dfm_setup_daemon_recent_dependencies target_name)
     dfm_apply_default_plugin_config(${target_name})
     
     # Set DBus XML file path
-    set(RecentManager_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.RecentManager.xml)
+    set(RecentManager_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.RecentManager.xml)
     
     # Find required Qt6 components
     find_package(Qt6 COMPONENTS

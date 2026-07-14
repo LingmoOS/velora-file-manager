@@ -117,8 +117,8 @@ int RecentManager::size()
 void RecentManager::init()
 {
     recentDBusInterce.reset(
-            new RecentManagerDBusInterface("org.deepin.Filemanager.Daemon",
-                                           "/org/deepin/Filemanager/Daemon/RecentManager",
+            new RecentManagerDBusInterface("org.lingmo.Filemanager.Daemon",
+                                           "/org/lingmo/Filemanager/Daemon/RecentManager",
                                            QDBusConnection::sessionBus(), this));
     recentDBusInterce->setTimeout(2000);
 

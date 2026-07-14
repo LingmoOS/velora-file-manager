@@ -13,7 +13,7 @@
 
 typedef QMap<QString, DockItemData> ItemContainer;
 
-using DeviceManager = OrgDeepinFilemanagerDaemonDeviceManagerInterface;
+using DeviceManager = OrgLingmoFilemanagerDaemonDeviceManagerInterface;
 class DockItemDataManager : public QObject
 {
     Q_OBJECT

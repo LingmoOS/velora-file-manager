@@ -3,9 +3,9 @@ function(dfm_setup_daemon_core_dependencies target_name)
     dfm_apply_default_plugin_config(${target_name})
     
     # Set DBus XML file paths
-    set(DeviceManager_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.DeviceManager.xml)
-    set(OperationsStackManager_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.OperationsStackManager.xml)
-    set(Sync_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.Sync.xml)
+    set(DeviceManager_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.DeviceManager.xml)
+    set(OperationsStackManager_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.OperationsStackManager.xml)
+    set(Sync_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.Sync.xml)
     
     # Find required packages
     find_package(Qt6 COMPONENTS

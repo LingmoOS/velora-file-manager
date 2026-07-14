@@ -12,8 +12,8 @@
 #include <glib.h>
 
 using namespace dfmbase;
-static constexpr char kDeviceService[] { "org.deepin.Filemanager.Daemon" };
-static constexpr char kDevMngPath[] { "/org/deepin/Filemanager/Daemon/DeviceManager" };
+static constexpr char kDeviceService[] { "org.lingmo.Filemanager.Daemon" };
+static constexpr char kDevMngPath[] { "/org/lingmo/Filemanager/Daemon/DeviceManager" };
 
 DeviceProxyManager *DeviceProxyManager::instance()
 {
@@ -21,7 +21,7 @@ DeviceProxyManager *DeviceProxyManager::instance()
     return &ins;
 }
 
-const OrgDeepinFilemanagerDaemonDeviceManagerInterface *DeviceProxyManager::getDBusIFace() const
+const OrgLingmoFilemanagerDaemonDeviceManagerInterface *DeviceProxyManager::getDBusIFace() const
 {
     return d->devMngDBus.data();
 }

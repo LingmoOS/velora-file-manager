@@ -25,7 +25,7 @@ namespace dfmplugin_recent {
 
 using BasicExpand = QMultiMap<QString, QPair<QString, QString>>;
 using ExpandFieldMap = QMap<QString, BasicExpand>;
-using RecentManagerDBusInterface = OrgDeepinFilemanagerDaemonRecentManagerInterface;
+using RecentManagerDBusInterface = OrgLingmoFilemanagerDaemonRecentManagerInterface;
 
 namespace RecentHelper {
 inline QString scheme()

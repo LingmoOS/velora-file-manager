@@ -11,7 +11,7 @@
 DAEMONPTAG_BEGIN_NAMESPACE
 DFM_LOG_REGISTER_CATEGORY(DAEMONPTAG_NAMESPACE)
 
-static constexpr char kTagManagerObjPath[] { "/org/deepin/Filemanager/Daemon/TagManager" };
+static constexpr char kTagManagerObjPath[] { "/org/lingmo/Filemanager/Daemon/TagManager" };
 
 void TagDBusWorker::launchService()
 {

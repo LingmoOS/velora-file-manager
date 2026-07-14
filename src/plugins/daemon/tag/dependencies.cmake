@@ -3,7 +3,7 @@ function(dfm_setup_daemon_tag_dependencies target_name)
     dfm_apply_default_plugin_config(${target_name})
     
     # Set DBus XML file path
-    set(TagManager_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.TagManager.xml)
+    set(TagManager_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.TagManager.xml)
     
     # Find required Qt6 components
     find_package(Qt6 COMPONENTS

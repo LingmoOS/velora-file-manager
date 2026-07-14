@@ -144,7 +144,7 @@ TEST_F(TestTagDBusWorker, LaunchService_SuccessfulRegistration_ShouldCreateManag
                    [&connectionRegistered](QDBusConnection *, const QString &path, QObject *object, QDBusConnection::RegisterOptions) {
                        __DBG_STUB_INVOKE__
                        connectionRegistered = true;
-                       EXPECT_EQ(path, "/org/deepin/Filemanager/Daemon/TagManager");
+                       EXPECT_EQ(path, "/org/lingmo/Filemanager/Daemon/TagManager");
                        EXPECT_NE(object, nullptr);
                        return true;
                    });

@@ -20,8 +20,8 @@ Q_DECLARE_LOGGING_CATEGORY(logAppDock)
 DGUI_BEGIN_NAMESPACE
 DGUI_END_NAMESPACE
 
-static constexpr char kDeviceDaemonName[] { "org.deepin.Filemanager.Daemon" };
-static constexpr char kDevMngPath[] { "/org/deepin/Filemanager/Daemon/DeviceManager" };
+static constexpr char kDeviceDaemonName[] { "org.lingmo.Filemanager.Daemon" };
+static constexpr char kDevMngPath[] { "/org/lingmo/Filemanager/Daemon/DeviceManager" };
 static const bool kDisplay = true;
 static const bool kIgnore = false;
 

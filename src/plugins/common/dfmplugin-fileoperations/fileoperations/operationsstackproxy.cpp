@@ -7,8 +7,8 @@
 DPFILEOPERATIONS_BEGIN_NAMESPACE
 
 static constexpr uint8_t kMaxStep { 100 };
-static const char *kOperationsStackService { "org.deepin.Filemanager.Daemon" };
-static const char *kOperationsStackPath { "/org/deepin/Filemanager/Daemon/OperationsStackManager" };
+static const char *kOperationsStackService { "org.lingmo.Filemanager.Daemon" };
+static const char *kOperationsStackPath { "/org/lingmo/Filemanager/Daemon/OperationsStackManager" };
 
 OperationsStackProxy &OperationsStackProxy::instance()
 {

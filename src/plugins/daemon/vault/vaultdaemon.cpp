@@ -15,8 +15,8 @@ DFMBASE_USE_NAMESPACE
 namespace daemonplugin_vaultdaemon {
 DFM_LOG_REGISTER_CATEGORY(DAEMONPVAULT_NAMESPCE)
 
-static constexpr char kDaemonName[] { "org.deepin.Filemanager.Daemon" };
-static constexpr char kVaultManagerObjPath[] { "/org/deepin/Filemanager/Daemon/VaultManager" };
+static constexpr char kDaemonName[] { "org.lingmo.Filemanager.Daemon" };
+static constexpr char kVaultManagerObjPath[] { "/org/lingmo/Filemanager/Daemon/VaultManager" };
 
 void VaultManagerDBusWorker::launchService()
 {

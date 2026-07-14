@@ -15,7 +15,7 @@
 
 #include <QObject>
 
-using OperationsStackManagerInterface = OrgDeepinFilemanagerDaemonOperationsStackManagerInterface;
+using OperationsStackManagerInterface = OrgLingmoFilemanagerDaemonOperationsStackManagerInterface;
 
 DPFILEOPERATIONS_BEGIN_NAMESPACE
 

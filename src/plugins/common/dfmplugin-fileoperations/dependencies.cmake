@@ -47,8 +47,8 @@ function(dfm_setup_fileoperations_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up fileoperations DBus interfaces for: ${target_name}")
     
     # Define the DBus interface file paths using DFM_ASSETS_DIR for proper standalone/integrated mode support
-    set(OPERATIONS_STACK_MANAGER_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.Daemon.OperationsStackManager.xml")
-    set(SYNC_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.Daemon.Sync.xml")
+    set(OPERATIONS_STACK_MANAGER_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.Daemon.OperationsStackManager.xml")
+    set(SYNC_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.Daemon.Sync.xml")
     
     # Setup OperationsStackManager DBus interface
     if(EXISTS "${OPERATIONS_STACK_MANAGER_INTERFACE_FILE}")

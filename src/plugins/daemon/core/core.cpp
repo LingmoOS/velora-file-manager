@@ -25,10 +25,10 @@ DFM_LOG_REGISTER_CATEGORY(DAEMONPCORE_NAMESPACE)
 
 DFMBASE_USE_NAMESPACE
 
-static constexpr char kDaemonName[] { "org.deepin.Filemanager.Daemon" };
-static constexpr char kDeviceManagerObjPath[] { "/org/deepin/Filemanager/Daemon/DeviceManager" };
-static constexpr char kOperationsStackManagerObjPath[] { "/org/deepin/Filemanager/Daemon/OperationsStackManager" };
-static constexpr char kSyncObjPath[] { "/org/deepin/Filemanager/Daemon/Sync" };
+static constexpr char kDaemonName[] { "org.lingmo.Filemanager.Daemon" };
+static constexpr char kDeviceManagerObjPath[] { "/org/lingmo/Filemanager/Daemon/DeviceManager" };
+static constexpr char kOperationsStackManagerObjPath[] { "/org/lingmo/Filemanager/Daemon/OperationsStackManager" };
+static constexpr char kSyncObjPath[] { "/org/lingmo/Filemanager/Daemon/Sync" };
 
 void Core::initialize()
 {

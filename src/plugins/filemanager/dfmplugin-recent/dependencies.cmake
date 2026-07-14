@@ -33,7 +33,7 @@ function(dfm_setup_recent_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up recent DBus interfaces for: ${target_name}")
     
     # Define the DBus interface file path using DFM_ASSETS_DIR for proper standalone/integrated mode support
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.Daemon.RecentManager.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.Daemon.RecentManager.xml")
     
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")

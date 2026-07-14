@@ -210,9 +210,9 @@ inline constexpr char kNetWorkDBusServiceName[] { "org.deepin.service.SystemNetw
 inline constexpr char kNetWorkDBusPath[] { "/org/deepin/service/SystemNetwork" };
 inline constexpr char kNetWorkDBusInterfaces[] { "org.deepin.service.SystemNetwork" };
 
-inline constexpr char kFileManagerDBusDaemonName[] { "org.deepin.Filemanager.Daemon" };
-inline constexpr char kFileManagerVaultDBusPath[] { "/org/deepin/Filemanager/Daemon/VaultManager" };
-inline constexpr char kFileManagerVaultDBusInterfaces[] { "org.deepin.Filemanager.Daemon.VaultManager" };
+inline constexpr char kFileManagerDBusDaemonName[] { "org.lingmo.Filemanager.Daemon" };
+inline constexpr char kFileManagerVaultDBusPath[] { "/org/lingmo/Filemanager/Daemon/VaultManager" };
+inline constexpr char kFileManagerVaultDBusInterfaces[] { "org.lingmo.Filemanager.Daemon.VaultManager" };
 
 enum RemoveWidgetType : int {
     kPasswordWidget = 0,

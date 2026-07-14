@@ -45,12 +45,12 @@ function(dfm_configure_base_library target_name)
     # Generate DBus interface for Qt6
     if(${QT_VERSION_MAJOR} EQUAL "6")
         qt6_add_dbus_interface(Qt6App_dbus
-            ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.DeviceManager.xml
+            ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.DeviceManager.xml
             devicemanager_interface_qt6)
         target_sources(${target_name} PRIVATE ${Qt6App_dbus})
     else()
         qt5_add_dbus_interface(Qt5App_dbus
-            ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.DeviceManager.xml
+            ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.DeviceManager.xml
             devicemanager_interface)
         target_sources(${target_name} PRIVATE ${Qt5App_dbus})
     endif()

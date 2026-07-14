@@ -1540,9 +1540,9 @@ void FileOperateBaseWorker::performAsyncSync()
     fmInfo() << "Performing non-blocking sync for external device - target:" << targetUrl;
 
     // Create typed D-Bus interface to daemon sync service
-    OrgDeepinFilemanagerDaemonSyncInterface syncInterface(
-            "org.deepin.Filemanager.Daemon",
-            "/org/deepin/Filemanager/Daemon/Sync",
+    OrgLingmoFilemanagerDaemonSyncInterface syncInterface(
+            "org.lingmo.Filemanager.Daemon",
+            "/org/lingmo/Filemanager/Daemon/Sync",
             QDBusConnection::sessionBus(),
             this);
 

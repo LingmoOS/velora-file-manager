@@ -20,7 +20,7 @@
 #include <QtCore/qobjectdefs.h>
 #include <QReadWriteLock>
 
-using DeviceManagerInterface = OrgDeepinFilemanagerDaemonDeviceManagerInterface;
+using DeviceManagerInterface = OrgLingmoFilemanagerDaemonDeviceManagerInterface;
 class QDBusServiceWatcher;
 namespace dfmbase {
 

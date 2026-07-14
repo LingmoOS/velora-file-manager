@@ -15,7 +15,7 @@
 
 #include <QDBusVariant>
 
-using TagManagerDBusInterface = OrgDeepinFilemanagerDaemonTagManagerInterface;
+using TagManagerDBusInterface = OrgLingmoFilemanagerDaemonTagManagerInterface;
 
 class QDBusServiceWatcher;
 namespace dfmplugin_tag {

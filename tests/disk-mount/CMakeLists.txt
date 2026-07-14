@@ -34,7 +34,7 @@ set(QRC_FILE
 qt6_add_resources(QRC_RESOURCES ${QRC_FILE})
 
 qt6_add_dbus_interface(DOCK_FILES
-    "${DFM_ROOT_PATH}/assets/dbus/org.deepin.Filemanager.Daemon.DeviceManager.xml"
+    "${DFM_ROOT_PATH}/assets/dbus/org.lingmo.Filemanager.Daemon.DeviceManager.xml"
     devicemanager_interface)
 
 add_executable(${PROJECT_NAME}

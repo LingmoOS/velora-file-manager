@@ -99,7 +99,7 @@ void Core::connectToServer()
     if (!DevProxyMng->initService()) {
         // active server
         QDBusInterface ifs("org.lingmo.Filemanager.Daemon",
-                           "/org/deepin/Filemanager/Daemon");
+                           "/org/lingmo/Filemanager/Daemon");
         ifs.asyncCall("Ping");
 
         fmCritical() << "device manager cannot connect to daemon!";

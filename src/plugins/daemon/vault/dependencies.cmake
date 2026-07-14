@@ -3,7 +3,7 @@ function(dfm_setup_daemon_vault_dependencies target_name)
     dfm_apply_default_plugin_config(${target_name})
     
     # Set DBus XML file path
-    set(VaultManager_XML ${DFM_DBUS_XML_DIR}/org.deepin.Filemanager.Daemon.VaultManager.xml)
+    set(VaultManager_XML ${DFM_DBUS_XML_DIR}/org.lingmo.Filemanager.Daemon.VaultManager.xml)
     
     # Find required Qt6 components
     find_package(Qt6 COMPONENTS DBus REQUIRED)
