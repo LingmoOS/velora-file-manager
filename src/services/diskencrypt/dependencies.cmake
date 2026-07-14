@@ -39,7 +39,7 @@ function(dfm_setup_diskencrypt_dependencies target_name)
     
     # Add compile definitions
     target_compile_definitions(${target_name} PRIVATE
-        SERVICE_CONFIG_DIR="${CMAKE_INSTALL_PREFIX}/share/deepin-service-manager/"
+        SERVICE_CONFIG_DIR="${CMAKE_INSTALL_PREFIX}/share/lingmo-service-manager/"
     )
     
     # Setup DBus interface generation

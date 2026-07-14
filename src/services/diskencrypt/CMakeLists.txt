@@ -24,7 +24,7 @@ dfm_setup_diskencrypt_dependencies(${PROJECT_NAME})
 target_link_options(${BIN_NAME} PRIVATE -pie)
 
 install(TARGETS ${BIN_NAME} DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/other/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/other/)
 install(FILES org.lingmo.filemanager.diskencrypt.conf DESTINATION share/dbus-1/system.d/)
 install(FILES lingmo-filemanager-diskencrypt.service DESTINATION lib/systemd/system/)
 install(FILES lingmo-diskencrypt-tmpfiles.conf DESTINATION lib/tmpfiles.d/)

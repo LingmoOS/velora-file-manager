@@ -177,7 +177,7 @@ function(dfm_setup_definitions)
     set(DFM_DBUS_XML_DIR ${DFM_DBUS_XML_DIR} PARENT_SCOPE)
     
     # Common definitions
-    add_definitions(-DAPPSHAREDIR="${CMAKE_INSTALL_PREFIX}/share/dde-file-manager")
+    add_definitions(-DAPPSHAREDIR="${CMAKE_INSTALL_PREFIX}/share/lingmo-file-manager")
     
     message(STATUS "DFM: Definitions configured")
     message(STATUS "  - DBUS XML dir: ${DFM_DBUS_XML_DIR}")

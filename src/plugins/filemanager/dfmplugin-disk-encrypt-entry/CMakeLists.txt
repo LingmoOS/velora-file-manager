@@ -42,7 +42,7 @@ add_dependencies(${BIN_NAME} ${BIN_NAME}_translations)
 install(TARGETS ${BIN_NAME} LIBRARY DESTINATION ${DFM_PLUGIN_FILEMANAGER_CORE_DIR})
 
 # 安装翻译文件
-install(FILES ${QM_FILES} DESTINATION share/dde-file-manager/translations)
+install(FILES ${QM_FILES} DESTINATION share/lingmo-file-manager/translations)
 
 INSTALL_DCONFIG("org.deepin.dde.file-manager.diskencrypt.json")
 

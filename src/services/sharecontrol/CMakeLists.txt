@@ -28,8 +28,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../
 # Apply service configuration using shared dependencies
 dfm_setup_sharecontrol_dependencies(${PROJECT_NAME})
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/system/)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/lingmo-service-manager/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/system/)
 install(FILES org.lingmo.filemanager.usersharemanager.conf DESTINATION share/dbus-1/system.d/)
 INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.UserShareManager root)
 

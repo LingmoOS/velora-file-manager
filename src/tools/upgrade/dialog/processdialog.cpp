@@ -38,7 +38,7 @@ void ProcessDialog::initialize(bool desktop)
 
 bool ProcessDialog::execDialog()
 {
-    const QString exe = onDesktop ? QString("/usr/libexec/dde-file-manager") : QString("/usr/bin/dde-shell");
+    const QString exe = onDesktop ? QString("/usr/libexec/lingmo-file-manager") : QString("/usr/bin/dde-shell");
     auto process = queryProcess(exe);
     if (process.isEmpty())
         return true;

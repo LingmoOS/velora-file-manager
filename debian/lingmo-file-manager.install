@@ -1,7 +1,7 @@
 usr/bin/lingmo-file-manager
 usr/bin/file-manager.sh
 usr/libexec/lingmo-file-manager
-usr/libexec/dde-file-manager-preview
+usr/libexec/lingmo-file-manager-preview
 usr/bin/dde-file-manager-pkexec
 usr/bin/dde-file-manager-daemon
 usr/bin/dde-property-dialog

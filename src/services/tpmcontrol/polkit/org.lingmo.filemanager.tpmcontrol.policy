@@ -6,7 +6,7 @@
   <vendor>Deepin</vendor>
   <vendor_url>https://www.deepin.org</vendor_url>
 
-  <action id="org.deepin.Filemanager.TPMControl.Query">
+  <action id="org.lingmo.Filemanager.TPMControl.Query">
     <description>Query TPM status</description>
     <message>Authentication is required to query TPM status</message>
     <message xml:lang="zh_CN">查询 TPM 状态需要认证</message>
@@ -20,7 +20,7 @@
     </defaults>
   </action>
 
-  <action id="org.deepin.Filemanager.TPMControl.Encrypt">
+  <action id="org.lingmo.Filemanager.TPMControl.Encrypt">
     <description>Encrypt data with TPM</description>
     <message>Authentication is required to encrypt data with TPM</message>
     <message xml:lang="zh_CN">TPM 加密需要管理员认证</message>
@@ -34,7 +34,7 @@
     </defaults>
   </action>
 
-  <action id="org.deepin.Filemanager.TPMControl.Decrypt">
+  <action id="org.lingmo.Filemanager.TPMControl.Decrypt">
     <description>Decrypt data with TPM</description>
     <message>Authentication is required to decrypt data with TPM</message>
     <message xml:lang="zh_CN">TPM 解密需要管理员认证</message>

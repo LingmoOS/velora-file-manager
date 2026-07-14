@@ -1,10 +1,10 @@
 {
-	"name": "dde-file-manager",
+	"name": "lingmo-file-manager",
 	"group": "",
 	"submodules": [{
-			"name": "dde-file-manager",
+			"name": "lingmo-file-manager",
 			"filter": "",
-			"exec": "/usr/libexec/dde-file-manager",
+			"exec": "/usr/libexec/lingmo-file-manager",
 			"logType": "journal",
 			"logPath": ""
 		},

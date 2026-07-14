@@ -165,8 +165,8 @@ void ComputerEventReceiver::dirAccessPrehandler(quint64, const QUrl &url, std::f
         // do chmod
         fmInfo() << "Starting chmod operation for device:" << deviceName << "path:" << path;
         QDBusInterface daemonIface("org.lingmo.Filemanager.AccessControlManager",
-                                   "/org/deepin/Filemanager/AccessControlManager",
-                                   "org.deepin.Filemanager.AccessControlManager",
+                                   "/org/lingmo/Filemanager/AccessControlManager",
+                                   "org.lingmo.Filemanager.AccessControlManager",
                                    QDBusConnection::systemBus());
         auto ret = daemonIface.callWithArgumentList(QDBus::BlockWithGui, "Chmod", { path, static_cast<uint>(ACCESSPERMS) });
         fmInfo() << "Chmod finished for" << url << deviceID << ret;

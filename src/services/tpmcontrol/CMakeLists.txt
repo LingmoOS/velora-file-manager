@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(dde-filemanager-tpmcontrol)
+project(lingmo-filemanager-tpmcontrol)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -28,11 +28,11 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../
 # Apply service configuration using shared dependencies
 dfm_setup_tpmcontrol_dependencies(${PROJECT_NAME} "tpmcontrol")
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/system/)
-install(FILES org.deepin.filemanager.tpmcontrol.conf DESTINATION share/dbus-1/system.d/)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/lingmo-service-manager/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/system/)
+install(FILES org.lingmo.filemanager.tpmcontrol.conf DESTINATION share/dbus-1/system.d/)
 
 set(PolicyDir "${CMAKE_INSTALL_PREFIX}/share/polkit-1/actions")
-install(FILES polkit/org.deepin.filemanager.tpmcontrol.policy DESTINATION ${PolicyDir})
+install(FILES polkit/org.lingmo.filemanager.tpmcontrol.policy DESTINATION ${PolicyDir})
 
-INSTALL_DBUS_SERVICE(org.deepin.Filemanager.TPMControl root)
+INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.TPMControl root)

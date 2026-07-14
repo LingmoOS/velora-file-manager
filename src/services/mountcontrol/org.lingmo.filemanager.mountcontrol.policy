@@ -5,7 +5,7 @@
 <policyconfig>
   <vendor />
   <vendor_url />
-  <action id="org.deepin.Filemanager.MountController">
+  <action id="org.lingmo.Filemanager.MountController">
     <description>Mount and unmount file systems</description>
     <message>Authentication is required to mount or unmount file systems</message>
     <message xml:lang="zh_CN">挂载或卸载文件系统需要认证</message>
@@ -94,7 +94,7 @@
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
   </action>
-  <action id="org.deepin.Filemanager.MountController.CIFS">
+  <action id="org.lingmo.Filemanager.MountController.CIFS">
     <description>Mount and unmount CIFS file systems</description>
     <message>Authentication is required to mount or unmount CIFS file systems</message>
     <icon_name>folder</icon_name>

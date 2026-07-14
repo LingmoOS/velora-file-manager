@@ -40,7 +40,7 @@ function(dfm_setup_tpmcontrol_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up tpmcontrol DBus interfaces for: ${target_name}")
 
     # Define the DBus interface file path using DFM_ASSETS_DIR
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.TPMControl.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.TPMControl.xml")
 
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")
@@ -48,7 +48,7 @@ function(dfm_setup_tpmcontrol_dbus_interfaces target_name)
 
         # Generate DBus adaptor
         qt6_add_dbus_adaptor(ADAPTOR_SOURCES ${DBUS_INTERFACE_FILE}
-            tpmcontroldbus.h TPMControlDBus)
+            tpmcontroldbus.h TPMControlDBus tpmcontroladaptor TPMControlAdaptor)
 
         # Add generated sources to target
         if(ADAPTOR_SOURCES)

@@ -35,9 +35,9 @@ DGUI_USE_NAMESPACE
 using namespace dfmplugin_titlebar;
 
 namespace DaemonServiceIFace {
-static constexpr char kInterfaceService[] { "org.deepin.Filemanager.AccessControlManager" };
-static constexpr char kInterfacePath[] { "/org/deepin/Filemanager/AccessControlManager" };
-static constexpr char kInterfaceInterface[] { "org.deepin.Filemanager.AccessControlManager" };
+static constexpr char kInterfaceService[] { "org.lingmo.Filemanager.AccessControlManager" };
+static constexpr char kInterfacePath[] { "/org/lingmo/Filemanager/AccessControlManager" };
+static constexpr char kInterfaceInterface[] { "org.lingmo.Filemanager.AccessControlManager" };
 
 static constexpr char kFuncChangePwd[] { "ChangeDiskPassword" };
 static constexpr char kSigPwdChecked[] { "DiskPasswordChecked" };

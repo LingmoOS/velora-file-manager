@@ -62,9 +62,9 @@ inline constexpr char kTCMPcrBank[] { "sm3_256" };
 inline constexpr int kDiskEncryptDBusTimeoutMs = 2000;
 
 // TPM Control service constants
-inline constexpr char kTPMControlService[] = "org.deepin.Filemanager.TPMControl";
-inline constexpr char kTPMControlPath[] = "/org/deepin/Filemanager/TPMControl";
-inline constexpr char kTPMControlInterface[] = "org.deepin.Filemanager.TPMControl";
+inline constexpr char kTPMControlService[] = "org.lingmo.Filemanager.TPMControl";
+inline constexpr char kTPMControlPath[] = "/org/lingmo/Filemanager/TPMControl";
+inline constexpr char kTPMControlInterface[] = "org.lingmo.Filemanager.TPMControl";
 
 /**
  * @brief Setup QDBusInterface with standardized timeout

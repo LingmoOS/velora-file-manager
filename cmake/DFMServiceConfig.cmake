@@ -50,7 +50,7 @@ function(dfm_setup_service_dbus_interface target_name service_name interface_nam
     message(STATUS "DFM: Setting up DBus interface for service: ${service_name}")
     
     # Define the DBus interface file path using DFM_ASSETS_DIR
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.${interface_name}.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.${interface_name}.xml")
     
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")

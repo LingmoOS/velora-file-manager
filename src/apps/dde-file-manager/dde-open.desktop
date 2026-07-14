@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Utility;
 Comment=Open file with dialog
-Exec=/usr/bin/dde-file-manager -o %u
+Exec=/usr/bin/lingmo-file-manager -o %u
 GenericName=Open Dialog
 Icon=dde-file-manager
 Name=DDE Open Dialog

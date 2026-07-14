@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(BIN_NAME "dde-file-manager-preview")
+set(BIN_NAME "lingmo-file-manager-preview")
 
 configure_file(
     "${DFM_APP_SOURCE_DIR}/config.h.in"

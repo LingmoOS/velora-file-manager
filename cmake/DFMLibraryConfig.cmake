@@ -95,7 +95,7 @@ function(dfm_configure_base_library target_name)
     )
     
     # Compile definitions
-    set(ShareDir ${CMAKE_INSTALL_PREFIX}/share/dde-file-manager)
+    set(ShareDir ${CMAKE_INSTALL_PREFIX}/share/lingmo-file-manager)
     target_compile_definitions(${target_name}
         PRIVATE APPSHAREDIR="${ShareDir}"
         PRIVATE DFM_BASE_INTERNAL_USE=1

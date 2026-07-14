@@ -12,7 +12,7 @@ if(NOT DEFINED LIB_INSTALL_DIR)
 endif()
 
 if(NOT DEFINED DFM_LIB_DIR)
-    set(DFM_LIB_DIR ${LIB_INSTALL_DIR}/dde-file-manager)
+    set(DFM_LIB_DIR ${LIB_INSTALL_DIR}/lingmo-file-manager)
 endif()
 
 # DBUS XML directory

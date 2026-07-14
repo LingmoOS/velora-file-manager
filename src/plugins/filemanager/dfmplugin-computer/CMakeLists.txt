@@ -34,7 +34,7 @@ install(TARGETS
     ${DFM_PLUGIN_FILEMANAGER_CORE_DIR}
 )
 
-set(AppEntryInstallDir "${CMAKE_INSTALL_PREFIX}/share/dde-file-manager/extensions/appEntry")
+set(AppEntryInstallDir "${CMAKE_INSTALL_PREFIX}/share/lingmo-file-manager/extensions/appEntry")
 install(FILES .readme DESTINATION ${AppEntryInstallDir})
 
 # install dconfig files.

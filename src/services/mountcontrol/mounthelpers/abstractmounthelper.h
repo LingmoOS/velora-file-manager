@@ -13,7 +13,7 @@
 class QDBusContext;
 
 SERVICEMOUNTCONTROL_BEGIN_NAMESPACE
-inline constexpr char kPolicyKitActionIdDefault[] { "org.deepin.Filemanager.MountController" };
+inline constexpr char kPolicyKitActionIdDefault[] { "org.lingmo.Filemanager.MountController" };
 class AbstractMountHelper
 {
 public:

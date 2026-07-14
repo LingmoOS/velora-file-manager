@@ -5,7 +5,7 @@
 <policyconfig>
   <vendor />
   <vendor_url />
-  <action id="org.deepin.Filemanager.AccessControlManager.DiskPwd">
+  <action id="org.lingmo.Filemanager.AccessControlManager.DiskPwd">
     <description>Access control manager</description>
     <message>Authentication is required to change the disk encryption password</message>
     <message xml:lang="zh_CN">修改磁盘密码需要认证</message>
@@ -18,7 +18,7 @@
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
   </action>
-  <action id="org.deepin.Filemanager.AccessControlManager.Chmod">
+  <action id="org.lingmo.Filemanager.AccessControlManager.Chmod">
     <description>access control manager</description>
     <message>Authentication is required to modify the permission</message>
     <message xml:lang="zh_CN">修改访问权限需要认证</message>

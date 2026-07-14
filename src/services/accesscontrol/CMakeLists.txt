@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(dde-filemanager-accesscontrol)
+project(lingmo-filemanager-accesscontrol)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -28,9 +28,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../
 # Apply service configuration using shared dependencies
 dfm_setup_accesscontrol_dependencies(${PROJECT_NAME})
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/system/)
-install(FILES org.deepin.filemanager.accesscontrol.conf DESTINATION share/dbus-1/system.d/)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/lingmo-service-manager/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/system/)
+install(FILES org.lingmo.filemanager.accesscontrol.conf DESTINATION share/dbus-1/system.d/)
 
 set(PolicyDir "${CMAKE_INSTALL_PREFIX}/share/polkit-1/actions")
-install(FILES polkit/org.deepin.filemanager.accesscontrol.policy DESTINATION ${PolicyDir})
+install(FILES polkit/org.lingmo.filemanager.accesscontrol.policy DESTINATION ${PolicyDir})

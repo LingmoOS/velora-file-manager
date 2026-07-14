@@ -38,7 +38,7 @@ void common_helper::createDFMDesktopEntry()
         "[Desktop Entry]\n"
         "Categories=System;\n"
         "Comment=To auto launch reencryption\n"
-        "Exec=/usr/libexec/dde-file-manager -d\n"
+        "Exec=/usr/libexec/lingmo-file-manager -d\n"
         "GenericName=Disk Reencrypt\n"
         "Icon=dde-file-manager\n"
         "Name=Disk Reencrypt\n"

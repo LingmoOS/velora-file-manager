@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(dde-filemanager-mountcontrol)
+project(lingmo-filemanager-mountcontrol)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -28,19 +28,19 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../
 # Apply service configuration using shared dependencies
 dfm_setup_mountcontrol_dependencies(${PROJECT_NAME} "mountcontrol")
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/system/)
-install(FILES org.deepin.filemanager.mountcontrol.conf DESTINATION share/dbus-1/system.d/)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/lingmo-service-manager/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/system/)
+install(FILES org.lingmo.filemanager.mountcontrol.conf DESTINATION share/dbus-1/system.d/)
 
 set(PolicyDir "${CMAKE_INSTALL_PREFIX}/share/polkit-1/actions")
-install(FILES org.deepin.filemanager.mountcontrol.policy DESTINATION ${PolicyDir})
+install(FILES org.lingmo.filemanager.mountcontrol.policy DESTINATION ${PolicyDir})
 
-INSTALL_DBUS_SERVICE(org.deepin.Filemanager.MountControl root)
+INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.MountControl root)
 
 # Install systemd drop-in configuration for security hardening
 # This adds security restrictions without modifying the shared service template
 install(FILES
     systemd/security-hardening.conf
     DESTINATION
-    lib/systemd/system/deepin-service-plugin@org.deepin.Filemanager.MountControl.service.d/
+    lib/systemd/system/deepin-service-plugin@org.lingmo.Filemanager.MountControl.service.d/
 )

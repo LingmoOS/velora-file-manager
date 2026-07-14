@@ -1,0 +1,13 @@
+{
+    "name": "org.lingmo.Filemanager.TPMControl",
+    "libPath": "liblingmo-filemanager-tpmcontrol.so",
+    "group": "app",
+    "policyStartType": "OnDemand",
+    "pluginType": "qt",
+    "idleTime": 600,
+    "policy": [
+        {
+            "path": "/org/lingmo/Filemanager/TPMControl"
+        }
+    ]
+}

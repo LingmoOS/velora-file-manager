@@ -18,7 +18,7 @@
       <allow_inactive>no</allow_inactive>
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
-    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/dde-file-manager</annotate>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/lingmo-file-manager</annotate>
     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
   </action>
   <action id="com.deepin.pkexec.dde-file-manager-pkexec">

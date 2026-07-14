@@ -86,15 +86,15 @@ function run_app() {
     fi
 
 
-    # [NOTE] 假设 dde-file-manager 是最终执行的程序
-    echo "Starting dde-file-manager with args: ${app_args[*]} and CWD: $(pwd)"
+    # [NOTE] 假设 lingmo-file-manager 是最终执行的程序
+    echo "Starting lingmo-file-manager with args: ${app_args[*]} and CWD: $(pwd)"
     file-manager.sh "${app_args[@]}" -w "$(pwd)"
 
 }
 
 # --- Main script logic ---
 
-echo "run dde-file-manager in $XDG_SESSION_TYPE"
+echo "run lingmo-file-manager in $XDG_SESSION_TYPE"
 echo "current file: $0"
 
 if [ "$(id -u)" -ne 0 ];then

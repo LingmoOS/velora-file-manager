@@ -41,10 +41,10 @@ static constexpr char kSavePasswd[] { "savePasswd" };
 static constexpr char kStashedSmbDevices[] { "StashedSmbDevices" };
 static constexpr char kSavedPasswordType[] { "SavedPasswordType" };
 
-static constexpr char kDaemonService[] { "org.deepin.Filemanager.MountControl" };
-static constexpr char kDaemonPath[] { "/org/deepin/Filemanager/MountControl" };
-static constexpr char kDaemonMountPath[] { "/org/deepin/Filemanager/MountControl" };
-static constexpr char kDaemonMountIface[] { "org.deepin.Filemanager.MountControl" };
+static constexpr char kDaemonService[] { "org.lingmo.Filemanager.MountControl" };
+static constexpr char kDaemonPath[] { "/org/lingmo/Filemanager/MountControl" };
+static constexpr char kDaemonMountPath[] { "/org/lingmo/Filemanager/MountControl" };
+static constexpr char kDaemonMountIface[] { "org.lingmo.Filemanager.MountControl" };
 static constexpr char kDaemonIntroIface[] { "org.freedesktop.DBus.Introspectable" };
 static constexpr char kDaemonIntroMethod[] { "Introspect" };
 

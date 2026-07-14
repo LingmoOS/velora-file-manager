@@ -34,7 +34,7 @@
 
 SERVICEMOUNTCONTROL_USE_NAMESPACE
 
-static constexpr char kPolicyKitActionIdCIFS[] { "org.deepin.Filemanager.MountController.CIFS" };
+static constexpr char kPolicyKitActionIdCIFS[] { "org.lingmo.Filemanager.MountController.CIFS" };
 
 CifsMountHelper::CifsMountHelper(QDBusContext *context)
     : AbstractMountHelper(context), d(new CifsMountHelperPrivate()) { }

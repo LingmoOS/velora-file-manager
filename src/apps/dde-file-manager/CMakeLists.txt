@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(dde-file-manager)
+project(lingmo-file-manager)
 
 message("PROJECT_BINARY_DIR: " ${PROJECT_BINARY_DIR})
 
@@ -58,7 +58,7 @@ install(FILES dde-property-dialog DESTINATION bin)
 # desktop
 install(FILES dde-file-manager.desktop DESTINATION share/applications)
 install(FILES dde-open.desktop DESTINATION share/applications)
-INSTALL_TREELAND_OVERRIDES("dde-file-manager")
+INSTALL_TREELAND_OVERRIDES("lingmo-file-manager")
 
 # pkexec
 install(FILES pkexec/com.deepin.pkexec.dde-file-manager.policy DESTINATION share/polkit-1/actions/)
@@ -76,4 +76,4 @@ qt6_add_translation(QM_FILES ${TS_FILES})
 add_custom_target(${PROJECT_NAME}_translations ALL DEPENDS ${QM_FILES})
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_translations)
 
-install(FILES ${QM_FILES} DESTINATION share/dde-file-manager/translations)
+install(FILES ${QM_FILES} DESTINATION share/lingmo-file-manager/translations)

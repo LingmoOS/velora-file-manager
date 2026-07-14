@@ -42,7 +42,7 @@ function(dfm_setup_mountcontrol_dbus_interfaces target_name)
     message(STATUS "DFM: Setting up mountcontrol DBus interfaces for: ${target_name}")
     
     # Define the DBus interface file path using DFM_ASSETS_DIR
-    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.deepin.Filemanager.MountControl.xml")
+    set(DBUS_INTERFACE_FILE "${DFM_ASSETS_DIR}/dbus/org.lingmo.Filemanager.MountControl.xml")
     
     # Check if the DBus interface file exists
     if(EXISTS "${DBUS_INTERFACE_FILE}")
@@ -50,7 +50,7 @@ function(dfm_setup_mountcontrol_dbus_interfaces target_name)
         
         # Generate DBus adaptor
         qt6_add_dbus_adaptor(ADAPTOR_SOURCES ${DBUS_INTERFACE_FILE}
-            mountcontroldbus.h MountControlDBus)
+            mountcontroldbus.h MountControlDBus mountcontroladaptor MountControlAdaptor)
         
         # Add generated sources to target
         if(ADAPTOR_SOURCES)

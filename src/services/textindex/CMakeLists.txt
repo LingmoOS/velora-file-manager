@@ -29,8 +29,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../
 # Apply service configuration using shared dependencies
 dfm_setup_textindex_dependencies(${PROJECT_NAME} "textindex")
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/deepin-service-manager/)
-install(FILES ${PROJECT_NAME}.json DESTINATION share/deepin-service-manager/user/)
+install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR}/lingmo-service-manager/)
+install(FILES ${PROJECT_NAME}.json DESTINATION share/lingmo-service-manager/user/)
 INSTALL_DBUS_SERVICE(org.lingmo.Filemanager.TextIndex)
 INSTALL_DCONFIG("org.deepin.dde.file-manager.textindex.json")
 

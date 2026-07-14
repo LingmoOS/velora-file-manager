@@ -42,7 +42,7 @@ add_library(${BIN_NAME}
 # Configure library using unified configuration function
 dfm_configure_base_library(${BIN_NAME})
 
-set(ShareDir ${CMAKE_INSTALL_PREFIX}/share/dde-file-manager)
+set(ShareDir ${CMAKE_INSTALL_PREFIX}/share/lingmo-file-manager)
 set(AssetsPath ${DFM_PROJECT_ROOT}/assets)
 
 add_library(DFM${DTK_VERSION_MAJOR}::base ALIAS ${BIN_NAME})
@@ -87,13 +87,13 @@ configure_file(${PROJECT_SOURCE_DIR}/assets/dev/${BIN_NAME}/${BIN_NAME}Config.cm
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${BIN_NAME}Config.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${BIN_NAME})
 
 set(DLNFS_SCRIPT ${AssetsPath}/scripts/dfm-dlnfs-automount)
-install(FILES ${DLNFS_SCRIPT} DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/deepin/dde-file-manager)
+install(FILES ${DLNFS_SCRIPT} DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/deepin/lingmo-file-manager)
 
 set(DLNFS_SCRIPT_LAUNCHER ${AssetsPath}/scripts/99dfm-dlnfs-automount)
 install(FILES ${DLNFS_SCRIPT_LAUNCHER} DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/X11/Xsession.d)
 
 set(DFM_DLNFS_SCRIPT_LAUNCHER
-    ${AssetsPath}/scripts/dde-file-manager
+    ${AssetsPath}/scripts/lingmo-file-manager
     ${AssetsPath}/scripts/file-manager.sh)
 install(PROGRAMS ${DFM_DLNFS_SCRIPT_LAUNCHER} DESTINATION bin)
 
@@ -109,15 +109,15 @@ set(Templates "${ShareDir}/templates")
 FILE(GLOB TEMPLATES_FILES ${AssetsPath}/templates/*)
 install(FILES ${TEMPLATES_FILES} DESTINATION ${Templates})
 
-set(OemMenuDir "${CMAKE_INSTALL_PREFIX}/share/deepin/dde-file-manager/oem-menuextensions")
+set(OemMenuDir "${CMAKE_INSTALL_PREFIX}/share/deepin/lingmo-file-manager/oem-menuextensions")
 install(FILES ${AssetsPath}/.readme DESTINATION ${OemMenuDir})
 
 set(ContexMenuDir "${CMAKE_INSTALL_PREFIX}/share/applications/context-menus")
 install(FILES ${AssetsPath}/.readme DESTINATION ${ContexMenuDir})
 
 # log viewer
-set(LogViewerConfDir "${CMAKE_INSTALL_PREFIX}/share/deepin-log-viewer/deepin-log.conf.d")
-install(FILES ${AssetsPath}/log/viewer/dde-file-manager.json DESTINATION ${LogViewerConfDir})
+set(LogViewerConfDir "${CMAKE_INSTALL_PREFIX}/share/lingmo-log-viewer/deepin-log.conf.d")
+install(FILES ${AssetsPath}/log/viewer/lingmo-file-manager.json DESTINATION ${LogViewerConfDir})
 
 # log debug
 set(LogDebugConfDir "${CMAKE_INSTALL_PREFIX}/share/deepin-debug-config/deepin-debug-config.d")
