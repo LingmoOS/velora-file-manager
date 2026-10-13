@@ -1,3 +1,16 @@
+velora-file-manager (6.6.4.lingmo5u1) unstable; urgency=medium
+
+  * fix: 修正 InfoCache 的监视器 LRU 记账
+    - updateSortTimeWatcherWorker 在移除路径上误调 removeInfosTimeWorker，
+      把监视器的通知记到了 fileinfo 的 LRU 表上
+    - 导致监视器 LRU 只增不减，超过 5000 后每次取 watcher 都会驱逐
+      WatcherCache 中最老的一项，破坏 "一个 URL 一个 watcher" 的约定，
+      并误删仍在缓存中的 fileinfo 的 LRU 记录
+    - 改为调用配对的 removeWatcherTimeInfo，并删除已无调用者的
+      removeInfosTimeWorker
+
+ -- Lingmo OS Team <team@lingmo.org>  Tue, 13 Oct 2026 23:48:01 +0800
+
 velora-file-manager (6.6.3.lingmo.2) unstable; urgency=medium
 
   * new release for Lingmo OS.

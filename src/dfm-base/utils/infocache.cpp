@@ -373,15 +373,6 @@ void InfoCache::timeRemoveCache()
         emit cacheRemoveCaches(delList);
 }
 
-void InfoCache::removeInfosTimeWorker(const QList<QUrl> urls)
-{
-    for (auto url : urls) {
-        if (d->urlTimeSortHash.contains(url)) {
-            d->timeToUrlMap.remove(d->urlTimeSortHash.take(url));
-        }
-    }
-}
-
 void InfoCache::updateSortTimeWatcherWorker(const QList<QUrl> &urls, const bool add)
 {
     Q_ASSERT(qApp->thread() != QThread::currentThread());
@@ -390,7 +381,7 @@ void InfoCache::updateSortTimeWatcherWorker(const QList<QUrl> &urls, const bool 
     if (add)
         return addWatcherTimeInfo(urls);
 
-    removeInfosTimeWorker(urls);
+    removeWatcherTimeInfo(urls);
 }
 
 void InfoCache::fileAttributeChanged(const QUrl url)

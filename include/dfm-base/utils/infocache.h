@@ -83,7 +83,6 @@ private:
     void removeCaches(const QList<QUrl> urls);
     bool updateSortTimeWorker(const QUrl url);
     void timeRemoveCache();
-    void removeInfosTimeWorker(const QList<QUrl> urls);
     void updateSortTimeWatcherWorker(const QList<QUrl> &urls, const bool add);
 
 private Q_SLOTS:
