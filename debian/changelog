@@ -1,3 +1,17 @@
+velora-file-manager (6.6.5.lingmo5u1) unstable; urgency=medium
+
+  * fix: 修复桌面开机后不自动刷新、右键“新建”菜单被置灰
+    - FileProvider::setRoot() 在开机早期可能取不到 watcher（scheme 工厂尚未注册完）
+      或 startWatcher() 失败（~/Desktop 还没就绪），原实现只打一条警告就不再重试，
+      桌面此后永远收不到 subfileCreated/fileDeleted，新建或删除文件都必须手动刷新；
+      文件管理器是另一个进程、自己的 watcher 正常，所以同一目录在文件管理器里显示正常。
+      改为失败后退避重试（最多 20 次 × 1s）
+    - NewCreateMenuScene::updateState() 依据 FileInfo 的 kIsWritable 把“新建文件夹/
+      新建文档”置灰，而该属性可能异步填充，开机早期会被误判为“不可写”，打开文件管理器
+      预热该目录后才恢复。改为用本地路径的 QFileInfo 再确认一次，只有确实不可写才置灰
+
+ -- Lingmo OS Team <team@lingmo.org>  Wed, 14 Oct 2026 16:31:01 +0800
+
 velora-file-manager (6.6.4.lingmo5u1) unstable; urgency=medium
 
   * fix: 修正 InfoCache 的监视器 LRU 记账

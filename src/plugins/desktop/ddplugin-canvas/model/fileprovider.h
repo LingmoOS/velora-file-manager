@@ -52,7 +52,14 @@ protected:
     QList<QSharedPointer<FileFilter>> fileFilters;
 
 private:
+    // 开机早期 watcher 可能创建失败（scheme 工厂尚未注册完）或启动失败（~/Desktop 还没就绪），
+    // 原实现遇到失败只打一条警告、之后不再重试，桌面就永远收不到文件变更事件（只能手动刷新）。
+    // 失败后退避重试，直到成功或达到 kMaxWatcherStartAttempts。
+    void startWatcherWithRetry();
+    void retryStartWatcher();
+
     QAtomicInteger<bool> updateing = false;
+    int m_watcherStartAttempt { 0 };
     DFMBASE_NAMESPACE::TraversalDirThread *traversalThread { nullptr };
 };
 

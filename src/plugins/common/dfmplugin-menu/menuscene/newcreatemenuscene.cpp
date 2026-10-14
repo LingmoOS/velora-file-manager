@@ -16,6 +16,7 @@
 
 #include <QMenu>
 #include <QVariant>
+#include <QFileInfo>
 
 using namespace dfmplugin_menu;
 DFMBASE_USE_NAMESPACE
@@ -125,7 +126,15 @@ void NewCreateMenuScene::updateState(QMenu *parent)
     auto curDirInfo = InfoFactory::create<FileInfo>(d->currentDir);
     if (!curDirInfo)
         return;
-    if (!curDirInfo->isAttributes(OptInfoType::kIsWritable)) {
+    // FileInfo 的可写属性可能是异步填充的，开机早期会被误判为“不可写”，
+    // 导致“新建文件夹/新建文档”被置灰，直到文件管理器预热了该目录才恢复。
+    // 这里用本地路径再确认一次，只有确实不可写才置灰。
+    bool notWritable = !curDirInfo->isAttributes(OptInfoType::kIsWritable);
+    if (notWritable) {
+        const QString localPath = d->currentDir.toLocalFile();
+        notWritable = !localPath.isEmpty() && !QFileInfo(localPath).isWritable();
+    }
+    if (notWritable) {
         auto actions = parent->actions();
         for (auto act : actions) {
             const auto &actId = act->property(ActionPropertyKey::kActionID);

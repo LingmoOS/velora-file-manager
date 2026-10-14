@@ -10,6 +10,7 @@
 #include <dfm-base/utils/thumbnail/thumbnailfactory.h>
 
 #include <QApplication>
+#include <QTimer>
 
 DFMBASE_USE_NAMESPACE
 using namespace ddplugin_canvas;
@@ -31,6 +32,10 @@ FileProvider::~FileProvider()
     }
 }
 
+// 桌面开机早期可能拿不到/起不来 watcher，失败后退避重试的次数与间隔
+static constexpr int kMaxWatcherStartAttempts = 20;      // 20 次 × 1s，约 20 秒
+static constexpr int kWatcherStartRetryIntervalMs = 1000;
+
 bool FileProvider::setRoot(const QUrl &url)
 {
     if (!url.isValid()) {
@@ -40,30 +45,61 @@ bool FileProvider::setRoot(const QUrl &url)
 
     fmInfo() << "Setting file provider root URL to:" << url;
     rootUrl = url;
+    m_watcherStartAttempt = 0;
 
     if (watcher) {
         fmDebug() << "Disconnecting existing file watcher";
         watcher->disconnect(this);
+        // rootUrl 可能已经变了，必须丢掉旧实例，让下一次重新按新 url 取
+        watcher.clear();
     }
 
-    watcher = WatcherFactory::create<AbstractFileWatcher>(rootUrl);
+    startWatcherWithRetry();
+    return !watcher.isNull();
+}
 
-    if (Q_LIKELY(!watcher.isNull())) {
-        fmDebug() << "File watcher created successfully for:" << url;
+void FileProvider::startWatcherWithRetry()
+{
+    if (rootUrl.isEmpty() || !rootUrl.isValid())
+        return;
+
+    if (watcher.isNull()) {
+        watcher = WatcherFactory::create<AbstractFileWatcher>(rootUrl);
+        if (watcher.isNull()) {
+            fmWarning() << "Failed to create file watcher for:" << rootUrl;
+            retryStartWatcher();
+            return;
+        }
+
+        fmDebug() << "File watcher created successfully for:" << rootUrl;
 
         // using Qt::QueuedConnection to reduce UI jamming.
         connect(watcher.data(), &AbstractFileWatcher::fileDeleted, this, &FileProvider::remove, Qt::QueuedConnection);
         connect(watcher.data(), &AbstractFileWatcher::subfileCreated, this, &FileProvider::insert, Qt::QueuedConnection);
         connect(watcher.data(), &AbstractFileWatcher::fileRename, this, &FileProvider::rename, Qt::QueuedConnection);
         connect(watcher.data(), &AbstractFileWatcher::fileAttributeChanged, this, &FileProvider::update, Qt::QueuedConnection);
-
-        watcher->startWatcher();
-        fmInfo() << "File watcher started successfully for:" << url;
-        return true;
     }
 
-    fmWarning() << "Failed to create file watcher for:" << url;
-    return false;
+    if (watcher->startWatcher()) {
+        m_watcherStartAttempt = 0;
+        fmInfo() << "File watcher started successfully for:" << rootUrl;
+        return;
+    }
+
+    fmWarning() << "Failed to start file watcher for:" << rootUrl;
+    retryStartWatcher();
+}
+
+void FileProvider::retryStartWatcher()
+{
+    if (m_watcherStartAttempt >= kMaxWatcherStartAttempts) {
+        fmWarning() << "Give up starting file watcher for:" << rootUrl
+                    << "after" << kMaxWatcherStartAttempts << "attempts";
+        return;
+    }
+
+    ++m_watcherStartAttempt;
+    QTimer::singleShot(kWatcherStartRetryIntervalMs, this, [this]() { startWatcherWithRetry(); });
 }
 
 QUrl ddplugin_canvas::FileProvider::root() const
