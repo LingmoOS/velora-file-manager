@@ -1,3 +1,13 @@
+velora-file-manager (6.6.8.lingmo5u1) unstable; urgency=medium
+
+  * fix(desktop): 桌面图标不再需要手动点击才刷新
+    FileProvider 的 watcher 快速重试（1s × 20）用完后会彻底放弃，此后桌面永远收不到
+    subfileCreated 等文件变更事件，图标只能靠点击触发的重绘才出现。改为失败后退化为
+    低频轮询（每 5s 重新遍历一次桌面目录，目录很小、代价可忽略），并在每次轮询时继续
+    尝试恢复 watcher，一旦恢复立即停止轮询。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 19:47:35 +0800
+
 velora-file-manager (6.6.7.lingmo5u1) unstable; urgency=medium
 
   * fix: 首次全量索引推迟到登录之后（30s），不再与桌面启动抢 I/O

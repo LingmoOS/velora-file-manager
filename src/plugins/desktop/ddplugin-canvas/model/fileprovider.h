@@ -14,6 +14,8 @@
 #include <QMutex>
 #include <QUrl>
 
+class QTimer;
+
 namespace ddplugin_canvas {
 class FileFilter;
 class FileProvider : public QObject
@@ -57,9 +59,13 @@ private:
     // 失败后退避重试，直到成功或达到 kMaxWatcherStartAttempts。
     void startWatcherWithRetry();
     void retryStartWatcher();
+    // 快速重试全部失败后退化为低频轮询（见 startWatchFallbackPoll）
+    void startWatchFallbackPoll();
+    void onWatchFallbackTimeout();
 
     QAtomicInteger<bool> updateing = false;
     int m_watcherStartAttempt { 0 };
+    QTimer *pollTimer { nullptr };
     DFMBASE_NAMESPACE::TraversalDirThread *traversalThread { nullptr };
 };
 

@@ -35,6 +35,8 @@ FileProvider::~FileProvider()
 // 桌面开机早期可能拿不到/起不来 watcher，失败后退避重试的次数与间隔
 static constexpr int kMaxWatcherStartAttempts = 20;      // 20 次 × 1s，约 20 秒
 static constexpr int kWatcherStartRetryIntervalMs = 1000;
+// 快速重试都失败后，改为每隔这么久重新遍历一次桌面目录（~桌面目录很小，代价可忽略）
+static constexpr int kWatchFallbackPollIntervalMs = 5000;
 
 bool FileProvider::setRoot(const QUrl &url)
 {
@@ -83,6 +85,10 @@ void FileProvider::startWatcherWithRetry()
     if (watcher->startWatcher()) {
         m_watcherStartAttempt = 0;
         fmInfo() << "File watcher started successfully for:" << rootUrl;
+        if (pollTimer && pollTimer->isActive()) {
+            fmInfo() << "File watcher is back, stopping the fallback poll for:" << rootUrl;
+            pollTimer->stop();
+        }
         return;
     }
 
@@ -93,13 +99,46 @@ void FileProvider::startWatcherWithRetry()
 void FileProvider::retryStartWatcher()
 {
     if (m_watcherStartAttempt >= kMaxWatcherStartAttempts) {
+        // 快速重试（1s × 20）用完仍然拿不到 watcher：inotify 限额耗尽、scheme 插件
+        // 长期未注册、或桌面目录迟迟不可用等。没有 watcher 就收不到 subfileCreated
+        // 等事件，桌面上的图标只能靠"点击触发重绘"才出现——这正是用户看到的现象。
+        // 退化为低频轮询：定期重新遍历目录，让桌面自行保持同步；同时继续尝试恢复
+        // watcher，一旦恢复就停止轮询。
         fmWarning() << "Give up starting file watcher for:" << rootUrl
-                    << "after" << kMaxWatcherStartAttempts << "attempts";
+                    << "after" << kMaxWatcherStartAttempts << "attempts, falling back to polling";
+        startWatchFallbackPoll();
         return;
     }
 
     ++m_watcherStartAttempt;
     QTimer::singleShot(kWatcherStartRetryIntervalMs, this, [this]() { startWatcherWithRetry(); });
+}
+
+void FileProvider::startWatchFallbackPoll()
+{
+    if (!pollTimer) {
+        pollTimer = new QTimer(this);
+        pollTimer->setInterval(kWatchFallbackPollIntervalMs);
+        connect(pollTimer, &QTimer::timeout, this, &FileProvider::onWatchFallbackTimeout);
+    }
+
+    if (!pollTimer->isActive()) {
+        fmInfo() << "No file watcher available, polling the desktop directory every"
+                 << kWatchFallbackPollIntervalMs / 1000 << "seconds for:" << rootUrl;
+        pollTimer->start();
+    }
+}
+
+void FileProvider::onWatchFallbackTimeout()
+{
+    // 先尝试把 watcher 恢复回来（成功的分支会自行停掉轮询）
+    m_watcherStartAttempt = 0;
+    startWatcherWithRetry();
+    if (!watcher.isNull())
+        return;
+
+    fmDebug() << "Still without a file watcher, refreshing the desktop directory as a fallback";
+    refresh();
 }
 
 QUrl ddplugin_canvas::FileProvider::root() const
