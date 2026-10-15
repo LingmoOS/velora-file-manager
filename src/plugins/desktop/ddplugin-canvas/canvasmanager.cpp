@@ -24,6 +24,7 @@
 #include <dfm-framework/dpf.h>
 
 #include <QApplication>
+#include <QTimer>
 
 DFMBASE_USE_NAMESPACE
 using namespace ddplugin_canvas;
@@ -311,8 +312,37 @@ void CanvasManager::onCanvasBuild()
     }
 
     // source model is ready
-    if (d->sourceModel->modelState() & 0x1)
+    if (d->sourceModel->modelState() & 0x1) {
         reloadItem();
+    } else {
+        // The root windows can be built before the model finished loading
+        // (state 0) or while it is still refreshing (state 2 - and note
+        // 2 & 0x1 == 0). The old code simply skipped the reload in that case and
+        // nothing retried it, so the desktop stayed without items and its
+        // right-click actions had no context to work on until some unrelated
+        // event (for example a file created from the file manager) forced a
+        // reload. Retry until the model reports itself ready.
+        fmInfo() << "Model is not ready when the desktop windows are built, state:"
+                 << d->sourceModel->modelState() << "- scheduling item reload retries";
+        retryReloadItem(20);
+    }
+}
+
+void CanvasManager::retryReloadItem(int attemptsLeft)
+{
+    if (d->sourceModel->modelState() & 0x1) {
+        fmInfo() << "Model ready after" << (20 - attemptsLeft) << "retry(ies), reloading desktop items";
+        reloadItem();
+        return;
+    }
+
+    if (attemptsLeft <= 0) {
+        fmWarning() << "Desktop item reload retries exhausted, model state:"
+                    << d->sourceModel->modelState();
+        return;
+    }
+
+    QTimer::singleShot(1000, this, [this, attemptsLeft]() { retryReloadItem(attemptsLeft - 1); });
 }
 
 void CanvasManager::onDetachWindows()

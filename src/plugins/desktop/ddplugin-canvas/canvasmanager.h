@@ -46,6 +46,7 @@ public slots:
     void refresh(bool silent);
 protected slots:
     void reloadItem();
+    void retryReloadItem(int attemptsLeft);
 signals:
 
 private:

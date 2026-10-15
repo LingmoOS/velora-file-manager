@@ -1,3 +1,16 @@
+velora-file-manager (6.6.6.lingmo5u1) unstable; urgency=medium
+
+  * fix: 桌面在模型未就绪时不再永久空白（右键无上下文）
+    CanvasManager::onCanvasBuild() 末尾只有在 sourceModel->modelState() & 0x1
+    时才调用 reloadItem()，而模型状态 2 表示"刷新中"（2 & 0x1 == 0）。
+    建窗口时若模型尚未就绪（0）或正在刷新（2），重载被跳过且**没有任何重试**，
+    于是桌面没有条目、右键菜单也没有可作用的上下文，直到别的事件（例如在文件
+    管理器里新建文件）触发一次重载才恢复正常。
+    改为按 1s 间隔退避重试（最多 20 次），模型就绪后立即重载；原分支本来就什么都
+    不做，因此不存在回归风险。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 18:49:40 +0800
+
 velora-file-manager (6.6.5.lingmo5u1) unstable; urgency=medium
 
   * fix: 修复桌面开机后不自动刷新、右键“新建”菜单被置灰
