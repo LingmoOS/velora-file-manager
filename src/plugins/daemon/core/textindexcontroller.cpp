@@ -15,6 +15,9 @@ DAEMONPCORE_BEGIN_NAMESPACE
 static constexpr char kSearchCfgPath[] { "org.deepin.dde.file-manager.search" };
 static constexpr char kEnableFullTextSearch[] { "enableFullTextSearch" };
 
+/// Delay before the first full index pass (see TextIndexController::initialize).
+static constexpr int kFirstIndexDelayMs = 30 * 1000;
+
 TextIndexController::TextIndexController(QObject *parent)
     : QObject(parent), keepAliveTimer(new QTimer(this))
 {
@@ -101,8 +104,24 @@ void TextIndexController::initialize()
     keepAliveTimer->setInterval(5 * 60 * 1000);   // 5 min
     updateKeepAliveTimer();
 
-    if (isConfigEnabled)
-        activeBackend(true);   // init
+    if (isConfigEnabled) {
+        // Give the session a moment before the first full index scan. This used
+        // to start the moment the daemon came up, i.e. while the desktop was
+        // still starting, and the scan is a full I/O pass over the home
+        // directory - on a fresh live session (empty index every boot) that
+        // competes with logging in and made the desktop slow to become usable.
+        // The index is still built, just after the session has settled.
+        fmInfo() << "[TextIndexController] Full text search enabled, first index pass in"
+                 << kFirstIndexDelayMs / 1000 << "seconds";
+        QTimer::singleShot(kFirstIndexDelayMs, this, [this]() {
+            if (!isConfigEnabled) {
+                fmInfo() << "[TextIndexController] Full text search was disabled before the first pass, skipping";
+                return;
+            }
+            fmInfo() << "[TextIndexController] Starting the delayed initial index pass";
+            activeBackend(true);   // init
+        });
+    }
 
     // 使用心跳，否则 textindex backend 会被退出
     connect(keepAliveTimer, &QTimer::timeout, this, &TextIndexController::keepBackendAlive);

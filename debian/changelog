@@ -1,3 +1,15 @@
+velora-file-manager (6.6.7.lingmo5u1) unstable; urgency=medium
+
+  * fix: 首次全量索引推迟到登录之后（30s），不再与桌面启动抢 I/O
+    TextIndexController::initialize() 在全文搜索开启时会立即 activeBackend()，
+    也就是 daemon 一起来（= 登录瞬间）就开始对主目录做一次全量扫描。Live 会话
+    每次开机索引库都是空的，于是每次登录都要全量重建，日志里能看到
+    Index writer initialized → Running，明显拖慢"进桌面"。
+    改为登录后延迟 30 秒再启动首次索引（期间若配置被关闭则跳过），索引照常建立，
+    只是不再和会话启动抢磁盘。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 18:50:14 +0800
+
 velora-file-manager (6.6.6.lingmo5u1) unstable; urgency=medium
 
   * fix: 桌面在模型未就绪时不再永久空白（右键无上下文）
